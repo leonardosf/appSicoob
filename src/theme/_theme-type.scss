@@ -1,0 +1,79 @@
+    @font-face {
+        font-family: 'myriad';
+        src: url('#{$ionicons-font-path}/MyriadPro-Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'myriad';
+        src: url('#{$ionicons-font-path}/MyriadPro-SemiboldCond.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'Linearicons-Free';
+        src: url('#{$ionicons-font-path}/Linearicons-Free.woff?w118d') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'themify';
+        src: url('#{$ionicons-font-path}/themify.woff?-fvbane') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        font-weight: $headings-font-weight;
+        font-family: $theme-font-family;
+        color: $theme-text-color;
+        margin: 0 !important;
+        padding: 0 !important;
+        small {
+            font-size: 11px;
+        }
+    }
+    
+    h1,
+    .h1 {
+        font-size: $theme-header-fontsize-base !important;
+    }
+    
+    h2,
+    .h2 {
+        font-size: floor($theme-header-fontsize-base / 1.333) !important;
+    }
+    
+    h3,
+    .h3 {
+        font-size: floor($theme-header-fontsize-base / (1.333 * 1.333)) !important;
+    }
+    
+    h4,
+    .h4 {
+        font-size: floor($theme-header-fontsize-base / (1.999 * 1.333)) !important;
+    }
+    
+    h5,
+    .h5 {
+        font-size: floor($theme-header-fontsize-base / (2.7 * 1.333)) !important;
+    }
+    
+    h6,
+    .h6 {
+        font-size: floor($theme-header-fontsize-base / (2.81 * 1.333)) !important;
+    }

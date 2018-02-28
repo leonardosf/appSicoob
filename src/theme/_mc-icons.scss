@@ -1,0 +1,216 @@
+//Variables
+$icomoon-font-path: '#{$font-path}/mc-icons';
+$mc-icon-logo-microcredito: "\e91a";
+$mc-icon-logo-full: "\e919";
+$mc-icon-info: "\e918";
+$mc-icon-checked: "\e917";
+$mc-icon-anterior: "\e915";
+$mc-icon-proximo: "\e916";
+$mc-icon-delete: "\e911";
+$mc-icon-exibir-menos: "\e913";
+$mc-icon-exibir-mais: "\e914";
+$mc-icon-configuracoes: "\e90f";
+$mc-icon-help: "\e906";
+$mc-icon-options: "\e907";
+$mc-icon-microcredito: "\e908";
+$mc-icon-visitas: "\e909";
+$mc-icon-desempenho: "\e90a";
+$mc-icon-relatorio: "\e90b";
+$mc-icon-simular: "\e90c";
+$mc-icon-mensagem: "\e90d";
+$mc-icon-operacoes: "\e90e";
+$mc-icon-photo-add: "\e905";
+$mc-icon-done: "\e904";
+$mc-icon-assignment: "\e902";
+$mc-icon-add: "\e903";
+$mc-icon-warning: "\e901";
+$mc-icon-user: "\e900";
+$mc-icon-encaminhar: "\ea34";
+$mc-icon-garantia: "\e98e";
+@font-face {
+    font-family: 'mc-icons';
+    src: url('#{$icomoon-font-path}/mc-icons.eot?dhppme');
+    src: url('#{$icomoon-font-path}/mc-icons.eot?dhppme#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/mc-icons.ttf?dhppme') format('truetype'),
+    url('#{$icomoon-font-path}/mc-icons.woff?dhppme') format('woff'),
+    url('#{$icomoon-font-path}/mc-icons.svg?dhppme#mc-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mc-icon-"],
+[class*=" mc-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'mc-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mc-icon-logo-microcredito {
+    &:before {
+        content: $mc-icon-logo-microcredito;
+    }
+}
+
+.mc-icon-logo-full {
+    &:before {
+        content: $mc-icon-logo-full;
+    }
+}
+
+.mc-icon-info {
+    &:before {
+        content: $mc-icon-info;
+    }
+}
+
+.mc-icon-checked {
+    &:before {
+        content: $mc-icon-checked;
+    }
+}
+
+.mc-icon-anterior {
+    &:before {
+        content: $mc-icon-anterior;
+    }
+}
+
+.mc-icon-proximo {
+    &:before {
+        content: $mc-icon-proximo;
+    }
+}
+
+.mc-icon-delete {
+    &:before {
+        content: $mc-icon-delete;
+    }
+}
+
+.mc-icon-exibir-menos {
+    &:before {
+        content: $mc-icon-exibir-menos;
+    }
+}
+
+.mc-icon-exibir-mais {
+    &:before {
+        content: $mc-icon-exibir-mais;
+    }
+}
+
+.mc-icon-configuracoes {
+    &:before {
+        content: $mc-icon-configuracoes;
+    }
+}
+
+.mc-icon-help {
+    &:before {
+        content: $mc-icon-help;
+    }
+}
+
+.mc-icon-options {
+    &:before {
+        content: $mc-icon-options;
+    }
+}
+
+.mc-icon-microcredito {
+    &:before {
+        content: $mc-icon-microcredito;
+    }
+}
+
+.mc-icon-visitas {
+    &:before {
+        content: $mc-icon-visitas;
+    }
+}
+
+.mc-icon-desempenho {
+    &:before {
+        content: $mc-icon-desempenho;
+    }
+}
+
+.mc-icon-relatorio {
+    &:before {
+        content: $mc-icon-relatorio;
+    }
+}
+
+.mc-icon-encaminhar {
+    &:before {
+        content: $mc-icon-encaminhar;
+    }
+}
+
+.mc-icon-garantia {
+    &:before {
+        content: $mc-icon-garantia;
+    }
+}
+
+.mc-icon-simular {
+    &:before {
+        content: $mc-icon-simular;
+    }
+}
+
+.mc-icon-mensagem {
+    &:before {
+        content: $mc-icon-mensagem;
+    }
+}
+
+.mc-icon-operacoes {
+    &:before {
+        content: $mc-icon-operacoes;
+    }
+}
+
+.mc-icon-photo-add {
+    &:before {
+        content: $mc-icon-photo-add;
+    }
+}
+
+.mc-icon-done {
+    &:before {
+        content: $mc-icon-done;
+    }
+}
+
+.mc-icon-assignment {
+    &:before {
+        content: $mc-icon-assignment;
+    }
+}
+
+.mc-icon-add {
+    &:before {
+        content: $mc-icon-add;
+    }
+}
+
+.mc-icon-warning {
+    &:before {
+        content: $mc-icon-warning;
+    }
+}
+
+.mc-icon-user {
+    &:before {
+        content: $mc-icon-user;
+    }
+}

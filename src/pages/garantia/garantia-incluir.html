@@ -1,0 +1,188 @@
+<ion-header>
+    <mcc-cabecalho titulo="{{titulo}}"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="garantiapage">
+
+    <form #f="ngForm" class="form-padrao">
+        <div *ngIf="exibirGridCombos">
+            <ion-card margin-top class="garantia-box">
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Tipo Garantia</ion-label>
+                                    <ion-select interface="alert" [(ngModel)]="tipoDeGarantia" ngControl="tipoGarantia" #tipoGarantia="ngModel" name="tipoGarantia" cancelText="Cancelar" >
+                                        <ion-option *ngFor="let tipo of tipoGarantias" [value]="tipo.codigo">{{tipo.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Grupo Garantia</ion-label>
+                                    <ion-select interface="alert" [(ngModel)]="grupoDeGarantia" ngControl="grupoGarantia" #linhaCredito="ngModel" name="grupoGarantia" cancelText="Cancelar">
+                                        <ion-option *ngFor="let grupo of grupoGarantias" [value]="grupo.codigo">{{grupo.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row> 
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Enquadramento Sicoob</ion-label>
+                                    <ion-select interface="alert" [(ngModel)]="enquadramentoDeGarantia" ngControl="enquadramentoGarantia" #linhaCredito="ngModel" name="enquadramentoGarantia" cancelText="Cancelar" >
+                                        <ion-option *ngFor="let enquadramento of enquadramentoGarantias" [value]="enquadramento.codigo">{{enquadramento.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Origem Garantia</ion-label>
+                                    <ion-select interface="alert" [(ngModel)]="origemDeGarantia" ngControl="origemGarantia" #linhaCredito="ngModel" name="origemGarantia" cancelText="Cancelar" >
+                                        <ion-option *ngFor="let origem of origemGarantias" [value]="origem.codigo">{{origem.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row> 
+                    </ion-grid>
+                </ion-card-content>
+                <ion-card margin-top class="garantia-box">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-item>
+                                            <ion-label color="primary" stacked>Valor(R$)</ion-label>
+                                            <ion-input type="tel" maxlength="10" text-right mascara="MONETARIO" text-right [(ngModel)]="valorGarantia" ngControl="valorDeGarantia" #valorDeGarantia="ngModel" name="valorDeGarantia" ></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                     <ion-item>
+                                        <ion-label>Última Avaliação</ion-label>
+                                        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="ultimaAvaliacao" ngControl="ultimaAvaliacaoGar" #ultimaAvaliacaoGar="ngModel" name="ultimaAvaliacaoGar"></ion-datetime>
+                                      </ion-item>
+                                 </ion-col>
+                            </ion-row> 
+                            <ion-row>
+                                <ion-col>
+                                    <ion-item>
+                                            <ion-label color="primary" stacked>Descrição</ion-label>
+                                            <ion-textarea [(ngModel)]="descricaoGarantia" name="descricaoGarantia" 
+                                             maxlength="500" required></ion-textarea>
+                                    </ion-item>
+                                </ion-col>
+                             </ion-row>
+                        </ion-grid>
+                    </ion-card>
+            </ion-card>
+        </div>
+
+        <div *ngIf="exibirGridProprietario">
+            <ion-card id="box-cpf-cnpj" class="garantia-box">
+                <ion-card-content>
+                    <ion-grid no-padding>
+                        <ion-row>
+                            <ion-col col-auto>
+                                <i class="mc-icon-user icon"></i>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item class="search-box-input">
+                                    <ion-label stacked>CPF/CNPJ</ion-label>
+                                    <ion-input maxlength="18" mascara="CPF-CNPJ" type="tel" [(ngModel)]="numCpfCnpj" ngControl="cpfCnpj" #cpfCnpj="ngModel" name="cpfCnpj"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col col-auto>
+                                <ion-icon name="search" (click)="consultaPessoaCapes()" id="btn-search"></ion-icon>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+            
+            <div *ngIf="exibirConteudoTomador" class="garantia-box">
+                <ion-card padding-sm id="tomador-info" >
+                    <ion-card-header>
+                        <ion-grid>
+                            <ion-row>
+                                    <ion-col col-auto>
+                                        <i class="mc-icon-user icon"></i>
+                                    </ion-col>
+                                    <ion-col>
+                                        <h1>
+                                            {{tomador.nomePessoa}}
+                                            <small>{{tomador.numCpfCnpj}}</small>
+                                        </h1>
+                                    </ion-col>
+                                    <ion-col>
+                                        <div class="btn-full-warp">
+                                            <ion-grid>
+                                                <ion-row>
+                                                    <ion-col>
+                                                        <button ion-button (click)="incluirDadosProprietario()" block>Incluir</button>
+                                                    </ion-col>
+                                                </ion-row>
+                                            </ion-grid>
+                                        </div>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-item>
+                                            <ion-label>Responsabilidade</ion-label>
+                                            <ion-select interface="alert" [(ngModel)]="responsabilidadeDeGarantia" ngControl="responsabilidadeGarantia" #responsabilidadeGarantia="ngModel"
+                                                name="responsabilidadeGarantia" cancelText="Cancelar">
+                                                <ion-option *ngFor="let responsabilidade of responsabilidadeGarantias" [value]="responsabilidade.codigo">{{responsabilidade.nome}}</ion-option>
+                                            </ion-select>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                        </ion-grid>
+                    </ion-card-header>
+
+                </ion-card>
+            </div>
+        </div>
+
+        
+        <ion-list *ngIf="proprietarios.length > 0 && exibirTomador" radio-group>
+                <ion-card *ngFor="let proprietario of proprietarios" >
+                    <ion-card-content>
+                        <ion-grid class="operacao-list">
+                            <ion-row class="operacao-item" align-items-center>
+                                <ion-col>
+                                    <h2><small>Responsabilidade</small>{{proprietario.responsabilidade}}</h2>
+                                </ion-col>
+                                <ion-col>
+                                    <h2><small>CPF/CNPJ</small>{{proprietario.numCpfCnpj}}</h2>
+                                </ion-col>
+                                <ion-col>
+                                    <h2><small>Nome</small>{{proprietario.nome}}</h2>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card-content>
+                </ion-card>
+         </ion-list>
+
+
+        <div class="btn-full-warp" >
+            <ion-grid>
+                <ion-row >
+                    <ion-col *ngIf="exibirGridCombos">
+                        <button ion-button block (click)="incluirProprietario()">Incluir Proprietário</button>
+                    </ion-col>
+                    <ion-col *ngIf="exibirGridProprietario">
+                        <button ion-button block (click)="incluirGarantia()">Incluir Garantia</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </form>
+</ion-content>
+
+
+<ion-footer id="app-footer">
+        <mcc-rodape ></mcc-rodape>
+</ion-footer>

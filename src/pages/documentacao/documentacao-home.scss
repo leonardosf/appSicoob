@@ -1,0 +1,386 @@
+#micro-credito-tipo {
+    .mensage {
+        margin-bottom: $margin-sm
+    }
+    .item-select {
+        background-color: #1B7772;
+        border-radius: 6px;
+    }
+    .select-icon-inner,
+    .label {
+        color: #fff;
+    }
+}
+
+#micro-credito-itens {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    .card-content {
+        margin: 0;
+        padding: 0;
+        .item {
+            padding: 0 $margin-sm;
+            margin-bottom: $margin-sm;
+            border-radius: 4px;
+            background-color: $app-box-color;
+            color: $apoio-secundaria;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            small {
+                display: block;
+                color: $apoio-secundaria;
+                font-size: 9px;
+                font-weight: lighter;
+                text-transform: uppercase;
+            }
+            .icon {
+                position: absolute;
+                right: 12px;
+                top: 20px;
+                color: $apoio-secundaria;
+                display: none;
+            }
+            
+            &[disabled] {
+                opacity: .75;
+            }
+        }
+    }
+    .circle-number {
+        border: 2px solid $apoio-secundaria;
+        color: $apoio-secundaria;
+        border-radius: 50% 50%;
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 26px;
+        font-weight: 700;
+        margin-right: $margin-sm;
+    }
+    button.item {
+        .item-inner {
+            background-image: none;
+            &:after {
+                font-family: 'mc-icons' !important;
+                content: $mc-icon-proximo;
+                position: absolute;
+                right: 12px;
+                font-size: 14px;
+                top: 22px;
+            }
+        }
+        &.done {
+            .item-inner:after {
+                content: $mc-icon-done;
+            }
+        }
+    }
+    button.item[disabled] {
+        color: $institucional-secundaria !important;
+        * {
+            color: $institucional-secundaria !important;
+        }
+        .circle-number {
+            border-color: $institucional-secundaria
+        }
+        box-shadow: none;
+    }
+    .list-ios>.item-block:first-child,
+    .list-ios>.item-block:last-child,
+    .list-ios>.item-wrapper:last-child .item-block {
+        border: none;
+    }
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+
+    .page-documentacao {
+
+        @media only screen and (min-width:1366px){
+       
+            width: 800px;
+            margin-left: 26em;
+           
+        }
+        @media only screen and (max-width:300px){
+        
+        width: 480px;
+        margin-left: 26em;
+        
+        } 
+    
+    }
+
+    #documentacaopage {
+        .scroll-content {
+            margin-bottom: 60px;
+        }
+        .search-box {
+            padding: 0;
+            overflow: hidden;
+            .col {
+                margin: 0;
+                padding: 0;
+               
+            }
+            .button {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                font-size: 2.3rem;
+                border: none !important;
+                outline: none;
+                margin: 0;
+            }
+            .label-md {
+                margin-top: 6px;
+            }
+            .input-has-focus {
+                .item-inner {
+                    border-bottom-color: transparent;
+                    box-shadow: none;
+                }
+            }
+            .search-box-tipo-pessoa {
+                background-color: #1F9A93;
+                color: #fff;
+                font-weight: 700;
+                padding: 0;
+                ion-select {
+                    max-width: initial;
+                    padding-right: $margin-sm;
+                    .select-icon-inner {
+                        color: #fff
+                    }
+                }
+            }
+            .search-box-input {
+                padding-left: $margin-sm;
+                .text-input {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+        .garantia-box {
+            .grid {
+                padding: 0;
+                .item {
+                    background: transparent;
+                    padding-left: 0;
+                    .label {
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 9px;
+                        letter-spacing: .05rem;
+                    }
+                    .input-cover,
+                    &.item-select {
+                        border-bottom: 1px solid $singular-terciaria;
+                    }
+                    .text-input,
+                    .select,
+                    .datetime {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #fff;
+                    }
+                    &.item-select {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .garantia-resumo {
+            background: $app-box-color;
+            .card-header {
+                color: #fff;
+                font-weight: 400;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: .05rem;
+                padding-bottom: 0;
+            }
+            .card-content {
+                padding-top: 0;
+                .grid {
+                    padding: 5px 0 0 0;
+                    letter-spacing: .05rem;
+                    border-top: 1px solid $app-box-line-color;
+                    margin-top: 5px;
+                    span {
+                        display: block;
+                        color: $apoio-primaria;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                    small {
+                        display: block;
+                        font-size: 9px;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-weight: 200;
+                    }
+                    .col:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+        .list {
+            margin-bottom: 0
+        }
+    }
+    
+    #footer-bar {
+        background-color: #1B7772;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        div {
+            margin: $margin-sm;
+        }
+        .button-clear {
+            color: #fff;
+            .icon {
+                margin-left: $margin-sm/2;
+                margin-right: $margin-sm/2;
+            }
+        }
+    }
+    
+    .btn-show-more {
+        background: transparent !important;
+        border: 0 !important;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+        height: 20px;
+        padding: $margin-sm 0;
+        box-shadow: none;
+    }
+}
+#credito-itens {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    .card-content {
+        margin: 0;
+        padding: 0;
+        .label {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: .05rem;
+            bottom:  5px;
+        }
+        .item {
+            padding: 0 $margin-sm;
+            margin-bottom: $margin-sm;
+            border-radius: 4px;
+            background-color: $app-box-color;
+            color: $apoio-secundaria;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            small {
+                display: block;
+                color: $apoio-secundaria;
+                font-size: 9px;
+                font-weight: lighter;
+                text-transform: uppercase;
+            }
+            .icon {
+                position: absolute;
+                right: 12px;
+                top: 20px;
+                color: $apoio-secundaria;
+                display: none;
+                font-size: 30px;
+                float: left;
+                margin-right: $margin-sm
+            }
+            &[disabled] {
+                opacity: .75;
+            }
+        }
+    }
+    .circle-number {
+        border: 2px solid $apoio-secundaria;
+        color: $apoio-secundaria;
+        border-radius: 50% 50%;
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 26px;
+        font-weight: 700;
+        margin-right: $margin-sm;
+    }
+    button.item {
+
+        .item-inner {
+            background-image: none;
+            &:after {
+                font-family: 'mc-icons' !important;
+                content: $mc-icon-proximo;
+                position: absolute;
+                right: 12px;
+                font-size: 14px;
+                top: 22px;
+            }
+        }
+        &.done {
+            .item-inner:after {
+                content: $mc-icon-done;
+            }
+        }
+        .ion-img {
+            float: left;
+            margin-right: 8px;
+            background: transparent;
+            width: 35px;
+            height: 20px;
+        }
+    }
+    button.item[disabled] {
+        color: $institucional-secundaria !important;
+        * {
+            color: $institucional-secundaria !important;
+        }
+
+        .circle-number {
+            border-color: $institucional-secundaria
+        }
+        box-shadow: none;
+    }
+    .list-ios>.item-block:first-child,
+    .list-ios>.item-block:last-child,
+    .list-ios>.item-wrapper:last-child .item-block {
+        border: none;
+    }
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}

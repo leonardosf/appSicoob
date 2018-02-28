@@ -1,0 +1,83 @@
+<ion-header>
+    <mcc-cabecalho titulo="Simulação | selecionar tomador"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="seleciona-tomador">
+
+    <ion-card id="box-cpf-cnpj">
+        <ion-card-content>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col col-auto>
+                        <i class="mc-icon-user icon"></i>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item class="search-box-input">
+                            <ion-label stacked>CPF/CNPJ</ion-label>
+                            <ion-input maxlength="18" mascara="CPF-CNPJ" type="tel" [(ngModel)]="cpfCnpj"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-auto>
+                        <ion-icon name="search" (click)="consultaPessoaCapes()" id="btn-search"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <div id="div-padrao" *ngIf="tomador.idPessoa != null && exibirConteudoTomador">
+        <ion-card padding-sm id="tomador-info">
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                        <ion-col>
+                            <h1>
+                                {{tomador.nomePessoa}}
+                                <small>{{tomador.numCpfCnpj}}</small>
+                            </h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-4>TELEFONE</ion-col>
+                        <ion-col col-8>
+                            <ion-list *ngFor="let telefone of tomador.telefones">
+                                {{telefone.ddd+telefone.telefone | telefone}}
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>Endereço</ion-col>
+                        <ion-col col-8>{{tomador.endereco.descricao}} - {{tomador.endereco.complemento}} - {{tomador.endereco.bairro}}</ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>Última<br/>Renovação</ion-col>
+                        <ion-col col-8>{{tomador.dataRenovacaoCadastral | date: 'dd/MM/yyyy'}}</ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card-content>
+        </ion-card>
+
+        <div class="btn-full-warp" *ngIf="tomador">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button block (click)="abreSimulacaoPage()" id="btn-simular">Simular</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+    </div>
+</ion-content>
+
+<!-- <ion-footer id="app-footer">
+    <ion-toolbar>
+        <mcc-rodape></mcc-rodape>
+    </ion-toolbar>
+</ion-footer> -->

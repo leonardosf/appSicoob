@@ -1,0 +1,149 @@
+#operacao-page {
+    .operacao-list {
+        .operacao-item {
+            color: #fff;
+            h2 {
+                padding-bottom: $margin-sm/2 !important;
+                margin-bottom: $margin-sm/2 !important;
+            }
+            small {
+                display: block;
+                text-transform: uppercase;
+                font-size: 9px;
+                letter-spacing: 0.05rem;
+                margin: 1px 0;
+                line-height: 1rem;
+            }
+            span {
+                font-weight: 300;
+                font-size: 14px;
+                white-space: nowrap;
+                line-height: 1rem;
+            }
+            .operacao-item-situacao span {
+                font-weight: 500
+            }
+        }
+    }
+    .card {
+        border-bottom: 3px solid #686868;
+        &.prospeccao {
+            border-color: $app-operacao-prospeccao;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-prospeccao;
+                }
+            }
+        }
+        &.analise {
+            border-color: $app-operacao-analise;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-analise;
+                }
+            }
+        }
+        &.aprovada {
+            border-color: $app-operacao-aprovada;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-aprovada;
+                }
+            }
+        }
+        &.cancelada {
+            border-color: $app-operacao-cancelada;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-cancelada;
+                }
+            }
+        }
+        &.reprovada {
+            border-color: $app-operacao-reprovada;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-reprovada;
+                }
+            }
+        }
+        &.encerrada {
+            border-color: $app-operacao-encerrada;
+            .operacao-item-situacao {
+                span {
+                    color: $app-operacao-encerrada;
+                }
+            }
+        }
+        @media only screen and (min-width:1366px){
+   
+            width: 800px;
+            margin-left: 23em;
+           
+        }
+        @media only screen and (max-width:300px){
+        
+        width: 480px;
+        margin: auto; 
+        
+        } 
+    }
+    
+}
+
+.popoverpage {
+    .list {
+        border-bottom: 0;
+        .list-header {
+            text-transform: uppercase;
+            color: #135B57;
+            font-weight: 700;
+            letter-spacing: .1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            .label {
+                margin-top: $margin-sm;
+                margin-bottom: $margin-sm;
+            }
+            .button {
+                float: right;
+                margin: 0;
+                font-size: 1rem;
+                height: 2rem;
+                .icon {
+                    margin-left: 4px
+                }
+            }
+        }
+        .item {
+            .label {
+                margin-top: $margin-sm;
+                margin-bottom: $margin-sm;
+            }
+            &:last-item {
+                border: 0;
+            }
+        }
+    }
+}
+
+.menssagem {
+    &.info {
+        border: 0 !important;
+        background: rgba(0, 0, 0, 0.2);
+        margin: $margin-lg $margin-md;
+        border-radius: 3px;
+        padding: $margin-sm $margin-sm/2;
+        color: #f4f4f4;
+        line-height: 20px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        i {
+            padding: 0 5px;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

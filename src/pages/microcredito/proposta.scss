@@ -1,0 +1,107 @@
+#micro-credito-tipo {
+    .mensage {
+        margin-bottom: $margin-sm
+    }
+    .item-select {
+        background-color: #1B7772;
+        border-radius: 6px;
+    }
+    .select-icon-inner,
+    .label {
+        color: #fff;
+    }
+}
+
+#micro-credito-itens {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    .card-content {
+        margin: 0;
+        padding: 0;
+        .item {
+            padding: 0 $margin-sm;
+            margin-bottom: $margin-sm;
+            border-radius: 4px;
+            background-color: $app-box-color;
+            color: $apoio-secundaria;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            small {
+                display: block;
+                color: $apoio-secundaria;
+                font-size: 9px;
+                font-weight: lighter;
+                text-transform: uppercase;
+            }
+            .icon {
+                position: absolute;
+                right: 12px;
+                top: 20px;
+                color: $apoio-secundaria;
+                display: none;
+            }
+            &[disabled] {
+                opacity: .75;
+            }
+        }
+    }
+    .circle-number {
+        border: 2px solid $apoio-secundaria;
+        color: $apoio-secundaria;
+        border-radius: 50% 50%;
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 26px;
+        font-weight: 700;
+        margin-right: $margin-sm;
+    }
+    button.item {
+        .item-inner {
+            background-image: none;
+            &:after {
+                font-family: 'mc-icons' !important;
+                content: $mc-icon-proximo;
+                position: absolute;
+                right: 12px;
+                font-size: 14px;
+                top: 22px;
+            }
+        }
+        &.done {
+            .item-inner:after {
+                content: $mc-icon-done;
+            }
+        }
+    }
+    button.item[disabled] {
+        color: $institucional-secundaria !important;
+        * {
+            color: $institucional-secundaria !important;
+        }
+        .circle-number {
+            border-color: $institucional-secundaria
+        }
+        box-shadow: none;
+    }
+    .list-ios>.item-block:first-child,
+    .list-ios>.item-block:last-child,
+    .list-ios>.item-wrapper:last-child .item-block {
+        border: none;
+    }
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}

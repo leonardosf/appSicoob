@@ -1,0 +1,68 @@
+#login {
+    .scroll-content {
+        @include bck-gradient;
+    }
+    color: $white;
+    #logo-microcredito {
+        span {
+            display: none;
+        }
+        text-align: center;
+        color: $app-logo-color;
+        font-size: 45px !important;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.45);
+        height: 65px !important;
+        overflow: hidden;
+    }
+    .label {
+        i:before {
+            font-size: 1.8rem;
+            color: $app-input-border-color;
+            margin-left: 8px;
+            margin-right: 0;
+        }
+    }
+    .form-login {
+        .text-input {
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+            &::placeholder {
+                color: #fff;
+            }
+        }
+    }
+    .btn-box {
+        border: 1px solid $app-input-border-color;
+        border-radius: 3rem;
+        color: $app-input-border-color;
+        letter-spacing: .1rem;
+        height: 5rem;
+        text-transform: uppercase;
+        background-color: $institucional-primaria;
+    }
+    .lembrar-usuario {
+        padding-top: 8px;
+        .item-inner {
+            border-bottom: 0;
+            color: #fff;
+            .toggle {
+                padding-left: 0;
+                .toggle-icon {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    &:before {
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                }
+                &.toggle-checked {
+                    .toggle-icon {
+                        background: $central-terciaria;
+                    }
+                }
+            }
+        }
+        .input-wrapper {
+            order: 2;
+        }
+    }
+}

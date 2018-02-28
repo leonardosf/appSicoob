@@ -1,0 +1,67 @@
+<ion-header>
+    <mcc-cabecalho titulo="Visita | Motivo"></mcc-cabecalho>
+    <ion-card>
+        <ion-card-content>
+            <ion-grid class="acompanhamento-list" no-padding>
+                <ion-row class="acompanhamento-item" align-items-center>
+                    <ion-col>
+                        <small>CPF/CNPJ: {{acompanhamento.numCpfCnpj | cpfcnpj}}</small>
+                        <span>{{acompanhamento.nomePessoa}}</span>
+                        <small>operação</small>
+                        <span>{{acompanhamento.idOperacao}}</span>
+                    </ion-col>
+                    <!--ion-col col-3 text-center>
+                    </ion-col-->
+                    <ion-col col-2>
+                        <button ion-button icon-only (click)="detalharContrato()">
+                            <ion-icon class="mc-icon-relatorio"></ion-icon>
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-header>
+
+<ion-content id="acompanhamento-page">
+
+    <form #formAcompanhamento="ngForm">
+        <ion-card>
+            <ion-card-content>
+                <ion-list radio-group name="visitaAgenda.idMotivoVisita" [(ngModel)]="acompanhamento.visitaAgenda.idMotivoVisita" required>
+                    <ion-list-header>Motivo</ion-list-header>
+                    <ion-item *ngFor="let motivoVisita of acompanhamento.motivosVisita">
+                        <ion-label>{{motivoVisita.descricao}}</ion-label>
+                        <ion-radio value={{motivoVisita.idMotivoVisita}}></ion-radio>
+                    </ion-item>
+                </ion-list>
+                <ion-list>
+                    <ion-list-header>Observações</ion-list-header>
+                    <ion-item>
+                        <ion-textarea [(ngModel)]="acompanhamento.visitaAgenda.descricao" name="visitaAgenda.descricao" 
+                                        (keyup)="contarCaracteresDescricao()" maxlength="500" required></ion-textarea>
+                    </ion-item>
+                    <span class="count">{{quantidadeCaracteresDescricao}}</span>
+                </ion-list>
+
+            </ion-card-content>
+        </ion-card>
+    </form>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block (click)="voltar()"><ion-icon ios="ios-arrow-back" start></ion-icon> Voltar</button>
+                </ion-col>
+                <ion-col>
+                    <button block ion-button (click)="abrirDocumentos()" [disabled]="!formAcompanhamento.valid">Próximo<ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon></button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

@@ -1,0 +1,22 @@
+.clean-form {
+  .item {
+    background-color: transparent !important;
+    padding: 0;
+
+  }
+}
+
+.white-form {
+  &.input-has-value, &.input-has-focus {
+    .item-inner {
+      color: $white !important;
+      border-bottom: 1px solid $white;
+    }
+  }
+  .item-inner {
+    border-bottom: 1px solid $white;
+  }
+  .label {
+    color: $white !important;
+  }
+}

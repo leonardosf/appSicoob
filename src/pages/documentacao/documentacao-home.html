@@ -1,0 +1,87 @@
+<ion-header>
+    <mcc-cabecalho titulo="Documentação"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="documentacaopage">
+    <div *ngIf="nomePessoa && numCpfCnpj">
+        <ion-card padding-sm id="tomador-info">
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-auto>
+                            <i class="mc-icon-user icon"></i>
+                        </ion-col>
+                        <ion-col>
+                            <h1>
+                                {{nomePessoa}}
+                                <small>{{numCpfCnpj}}</small>
+                            </h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+        </ion-card>
+    </div>
+    
+    <div>
+        <ion-card id="credito-itens">
+            <ion-card-content>
+                <ion-list *ngFor="let fase of faseDocumento">
+                
+                    <ion-label stacked>{{fase.titulo}}</ion-label>
+                    <ion-list *ngFor="let documento of fase.documentos">
+                        <button ion-item (click)="abreTelaDocumentacao(documento.titulo)">
+                            <span *ngIf="!documento.nomeDocumento" class="circle-number">+</span> 
+                            <ion-img class="ion-img" *ngIf="documento.nomeDocumento"  src="../../assets/img/{{documento.nomeDocumento}}"></ion-img>
+                
+                            {{documento.titulo}}
+                            <small>{{documento.descricao}}</small>
+                
+                        </button>
+                    </ion-list>
+                </ion-list>
+               
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div class="btn-full-warp">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button block (click)="gravarDocumento()">{{tituloBotao}}</button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button block (click)="enviarParaGarantia()" [disabled]='botaoEncaminhar'>Encaminhar</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+</ion-content>
+
+
+<!-- <ion-card id="credito-itens">
+        <ion-card-content>
+            <ion-list *ngFor="let origem of origemGarantias">
+                <button ion-item [disabled]="lseIsDisabled" (click)="abreTelaDocumentacao()" [ngClass]="{'done': simulacaoPreenchida}">
+                    <ion-col col-auto>
+                            <i class="mc-icon-user icon"></i>
+                    </ion-col>
+                    Cadastro Proposta
+                    <small>Plano de pagamento / valor da operação</small>
+                </button>
+                <button ion-item [disabled]="documentosIsDisabled" (click)="abrirDocumentacao()" [ngClass]="{'done': documentosPreenchidos}">
+                    <span class="circle-number">2</span>
+                    Documentação
+                    <small>Documentos comprobatórios</small>
+                </button>
+                <button ion-item [disabled]="simulacaoIsDisabled" (click)="abreTelaGarantia()" [ngClass]="{'done': garantiaPreenchida}">
+                    <span class="circle-number">3</span>
+                    Garantia
+                    <small>Garantias vinculadas</small>
+                </button>
+            </ion-list>
+        </ion-card-content> -->
+
+<ion-footer id="app-footer">
+    <mcc-rodape trocaPagina={{trocaPagina}}></mcc-rodape>
+</ion-footer>

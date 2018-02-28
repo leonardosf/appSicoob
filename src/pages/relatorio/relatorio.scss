@@ -1,0 +1,287 @@
+#relatorio-page {
+    .list-header {
+        padding: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        background: transparent;
+        border: 0;
+        margin: 0;
+        .label {
+            margin: 0;
+        }
+    }
+    #relatorio-list {
+        .relatorio-item {
+            .grid {
+                padding: 0
+            }
+        }
+        .item-wrapper {
+            background-color: $app-box-color;
+            margin-bottom: $margin-sm/2;
+            border: 1px solid $app-box-line-color;
+            border-radius: 4px;
+            .item {
+                background-color: transparent;
+                padding-left: $margin-sm;
+                border: 0;
+                border-radius: 4px;
+                .item-inner {
+                    background-color: transparent;
+                    border-bottom: 0;
+                }
+            }
+            &.active-slide * {
+                border: 0
+            }
+            .button {
+                border-radius: 0 !important;
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+                font-size: 12px;
+            }
+        }
+    }
+    .filtro-box {
+        .grid {
+            padding: 0;
+            .item {
+                background: transparent;
+                padding-left: 0;
+                .label {
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 9px;
+                    letter-spacing: .05rem;
+                }
+                .input-cover,
+                &.item-select {
+                    border-bottom: 1px solid $singular-terciaria;
+                }
+                .text-input,
+                .select,
+                .datetime {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #fff;
+                }
+                &.item-select {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .list {
+        .label {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 300
+        }
+        .item-radio {
+            background-color: $app-box-color;
+            border-bottom: 1px solid $app-box-line-color;
+            &:last-child {
+                border-bottom: 0;
+            }
+            &.item-radio-checked {
+                background: $app-box-line-color;
+            }
+        }
+        .item-input {
+            background-color: $app-box-color;
+            border-bottom-color: $app-box-line-color;
+            padding: 0;
+            .item-inner {
+                padding: 0;
+                textarea,
+                input,
+                .input {
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding: 4px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .relatorio-resumo {
+        background: $app-box-color;
+        .card-header {
+            color: #fff;
+            font-weight: 400;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .05rem;
+            padding-bottom: 0;
+        }
+        .card-content {
+            padding-top: 0;
+            .grid {
+                padding: 5px 0 0 0;
+                letter-spacing: .05rem;
+                border-top: 1px solid $app-box-line-color;
+                margin-top: 5px;
+                span {
+                    display: block;
+                    color: $apoio-primaria;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                small {
+                    display: block;
+                    font-size: 9px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-weight: 200;
+                }
+                .col:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.relatorio-list {
+    .relatorio-item {
+        h2,
+        span {
+            font-size: 12px !important;
+            font-weight: 400;
+            letter-spacing: .05rem;
+            color: #fff;
+        }
+        small {
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 10px;
+            margin: 1px 0;
+            line-height: 1rem;
+            font-weight: 200;
+        }
+        span {
+            &.inadimplente {
+                color: #E4636E;
+            }
+            &.adimplente {
+                color: #fff; 
+            }
+            >span {
+                display: inline-block;
+            }
+        }
+        .icon {
+            color: #fff;
+        }
+    }
+}
+
+#page-filter {
+    .filter-order {
+        .icon {
+            font-size: 1.1rem;
+            color: #B6BE37;
+            padding: 2px;
+        }
+    }
+}
+
+.popoverpage {
+    .btn-filter {
+        background-color: transparent;
+        box-shadow: none;
+        border: 1px solid #DADBDC;
+        color: #9c9c9c;
+        font-weight: 600;
+        &.active {
+            border-color: #1f9a93;
+            color: #1f9a93;
+            .icon {
+                font-size: 1.1rem;
+                padding: 2px;
+            }
+        }
+    }
+    .btn-filter-clear {
+        &:disabled {
+            background: #DADBDC;
+            color: #000;
+        }
+    }
+}
+
+$border-color: rgba(black, .3);
+.timeline {
+    .timeline-header {
+        display: inline-block;
+        background: $border-color;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 4px;
+        margin: 0 $margin-md;
+        font-size: 14px;
+        padding: $margin-sm;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: .1rem;
+    }
+    .timeline-item {
+        margin: 0 $margin-sm 0 $margin-md;
+        padding: $margin-md $margin-sm $margin-sm $margin-md;
+        position: relative;
+        color: rgba(black, .7);
+        border-left: 2px solid $border-color;
+        .card {
+            margin: 0;
+            width: 100%;
+            background: transparent;
+            box-shadow: none;
+            .card-header {
+                text-transform: uppercase;
+                padding: 0;
+                font-size: 11px;
+                margin-bottom: 5px;
+                color: #fff;
+                letter-spacing: 0.1rem;
+                font-weight: 300;
+            }
+            .card-content {
+                background: $app-box-color;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                border-top-left-radius: 0px;
+                border-top-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                h3,
+                p {
+                    font-size: 14px !important;
+                    color: #fff !important;
+                }
+                h3 {
+                    margin-bottom: 4px;
+                }
+                .button {
+                    font-size: 12px;
+                }
+            }
+        }
+        &::after {
+            width: 10px;
+            height: 10px;
+            display: block;
+            top: $margin-md + 3px;
+            position: absolute;
+            left: -7px;
+            border-radius: 10px;
+            content: '';
+            border: 2px solid $border-color;
+            background: white;
+        }
+        &:last-child {
+            border-image: linear-gradient( to bottom, $border-color 60%, rgba($border-color, 0)) 1 100%;
+        }
+    }
+}

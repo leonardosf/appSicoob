@@ -1,0 +1,73 @@
+<ion-header>
+    <mcc-cabecalho titulo="LSE | questionário" subtitulo="Questões respondidas: {{preguntasRespostas}}/{{preguntasTotal}}"></mcc-cabecalho>
+</ion-header>
+
+<ion-content>
+    <ion-card padding-sm id="tomador-info">
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                    <ion-col>
+                        <h1>
+                            {{tomador.nomePessoa}}
+                            <small>{{tomador.numCpfCnpj | cpfcnpj}}</small>
+                        </h1>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+    </ion-card>
+
+    <form>
+        <div id="lse-list">
+            <div *ngFor="let pergunta of questionario.perguntas; let i = index" class="lse-item {{pergunta.cssClass}}">
+                <div class="lse-item-col">
+                    <div class="lse-item-number">{{pergunta.id}}</div>
+                </div>
+                <div class="lse-item-col">
+
+                    <div class="lse-item-question"><span>{{pergunta.descricao}}</span></div>
+
+                    <div class="lse-item-answer">
+                        <ion-list radio-group *ngIf="pergunta.tipo == 'CHECK'" name="alternativa{{i}}" [(ngModel)]="pergunta.resposta">
+                            <ion-item *ngFor="let alternativa of pergunta.alternativas">
+                                <ion-label (click)="countRespostas()">{{alternativa.nomeCampoAssunto}}</ion-label>
+                                <ion-radio value="{{alternativa.id}}" (click)="countRespostas()"></ion-radio>
+                            </ion-item>
+                        </ion-list>
+
+                        <ion-item *ngIf="pergunta.tipo == 'TEXTO'">
+                            <ion-textarea [(ngModel)]="pergunta.resposta" (keyup)="contarCaracteres(pergunta)" maxlength="500" name="resposta{{i}}" (blur)="countRespostas()"></ion-textarea>
+                        </ion-item>
+
+                        <ion-item *ngIf="pergunta.tipo == 'NUMÉRICO COM PONTOS E VÍRGULAS'">
+                            <ion-input [(ngModel)]="pergunta.resposta" type="tel" mascara="MONETARIO-LSE" name="resposta{{i}}" (blur)="countRespostas()"></ion-input>
+                        </ion-item>
+
+                        <ion-item *ngIf="pergunta.tipo == 'INTEIRO'">
+                            <ion-input [(ngModel)]="pergunta.resposta" type="number" pattern="[0-9]*" name="resposta{{i}}" (blur)="countRespostas()"></ion-input>
+                        </ion-item>
+                        <span class="count">{{pergunta.quantidadeCaracteres}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block (click)="enviar()" [disabled]="btnIsDisabled"> Próximo <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon> </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape trocaPagina="{{trocaPagina}}"></mcc-rodape>
+</ion-footer>

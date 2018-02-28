@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-grid>
+        <ion-row>
+            <ion-col align-self-center>{{imagem.nome}}</ion-col>
+            <ion-col col-auto>
+                <button ion-button small (click)="fechar()">X</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-header>
+<ion-content>
+    <div class="modal-content">
+        <img [src]="imagem.getImagem()" (load)="carregada()" class="modal-item" />
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button block small (click)="abrirCamera()">
+                    Alterar
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button block small (click)="removerImagem()">
+                    Excluir
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

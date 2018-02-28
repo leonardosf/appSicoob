@@ -1,0 +1,76 @@
+<ion-header>
+    <mcc-cabecalho titulo="{{tituloPagina}}"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="relatorio-page" padding-sm>
+    <ion-card>
+        <ion-card-content>
+            <ion-grid class="relatorio-list" no-padding>
+                <ion-row class="relatorio-item" align-items-center>
+                    <ion-col>
+                        <h2>
+                            <small>CPF/CNPJ: {{cabecalho.numCpfCnpj | cpfcnpj}}</small> {{cabecalho.nomePessoa}}
+                        </h2>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="relatorio-detalhe">
+        <ion-card-content>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col col-7>Número do Contrato</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.numeroContrato}}</ion-col>
+                </ion-row>
+                <ion-row>
+                        <ion-col col-7>Data do Contrato</ion-col>
+                        <ion-col col-5 text-right>{{relatorio.dataContrato | date:'dd/MM/yyyy'}}</ion-col>
+                    </ion-row>
+                <ion-row>
+                    <ion-col col-7>Valor do Contrato</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.valorContrato | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-7>Valor Saldo devedor</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.saldoDevedor | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-8>Valor Parcelas em atraso</ion-col>
+                    <ion-col col-4 text-right>{{relatorio.valorParcelasAtraso | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-7>Valor Parcelas pagas</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.valorParcelasPagas | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-7>Qtd. de parcelas</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.totalParcelas}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-8>Qtd. parcelas em atraso</ion-col>
+                    <ion-col col-4 text-right>{{relatorio.quantidadeParcelasAtraso}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-7>Qtd. parcelas pagas</ion-col>
+                    <ion-col col-5 text-right>{{relatorio.quantidadeParcelasPagas}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block (click)="voltar()"><ion-icon ios="ios-arrow-back" start></ion-icon> Voltar</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

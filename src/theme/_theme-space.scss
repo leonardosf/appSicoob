@@ -1,0 +1,277 @@
+//
+//                         I created standalone package, look here
+//
+//                            https://github.com/hinok/spejson
+//
+
+// ----
+// libsass (v3.0.2)
+// ----
+
+//
+// From less to sass.
+// Ported version of Responsive Margin & Padding Shortcuts
+// for Twitter Bootstrap 3.0
+//---------------------------------------------------------------
+//
+// Responsive Margin & Padding Shortcuts for Twitter Bootstrap 3.0
+// ---------------------------------------------------------------
+// This is an addition to Twitter Bootstrap that allows additional margin and padding shortcuts
+// for enhanced layout control purposes. It should be included after the bootstrap.less
+// import statement or precompiled as you see fit. It differs from bootstrap standards in
+// that for any given screen size it predetermines the margin/padding size. All you have to
+// do is specify the size you want xs,sm,md,lg, or xl. The exception is for items that you
+// want to be centered using auto left/right margins. This can be device responsive by
+// specifying mc-xs, mc-sm, mc-md, or mc-lg depending on when you want that behavior.
+
+// ** you shouldnt need to change anything below this point **
+// ---------------------------------------------------------------
+
+// these are the device-agnostic resets and centering
+.m-0 {
+  margin: 0 !important;
+}
+
+.mc {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+
+// what follows are all the different device size adjustments
+@media (max-width: #{$screen-xs-max}) {
+  .mc-sm {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include responsive-margin-padding($margin-scale-xs);
+}
+
+@media (min-width: #{$screen-sm}){
+  .mc-md {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include responsive-margin-padding($margin-scale-sm);
+}
+
+@media (min-width: #{$screen-md}) {
+  .mc-lg {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include responsive-margin-padding($margin-scale-md);
+}
+
+@media (min-width: #{$screen-lg}) {
+  .mc-xl {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include responsive-margin-padding($margin-scale-lg);
+}
+
+
+/*
+.mt-xs {
+
+  margin-top: 5px !important
+}
+
+.mr-xs {
+  margin-right: 5px !important
+}
+
+.mb-xs {
+  margin-bottom: 5px !important
+}
+
+.ml-xs {
+  margin-left: 5px !important
+}
+
+.mt-sm {
+  margin-top: 10px !important
+}
+
+.mr-sm {
+  margin-right: 10px !important
+}
+
+.mb-sm {
+  margin-bottom: 10px !important
+}
+
+.ml-sm {
+  margin-left: 10px !important
+}
+
+.mt-md {
+  margin-top: 15px !important
+}
+
+.mr-md {
+  margin-right: 15px !important
+}
+
+.mb-md {
+  margin-bottom: 15px !important
+}
+
+.ml-md {
+  margin-left: 15px !important
+}
+
+.mt-lg {
+  margin-top: 30px !important
+}
+
+.mr-lg {
+  margin-right: 30px !important
+}
+
+.mb-lg {
+  margin-bottom: 30px !important
+}
+
+.ml-lg {
+  margin-left: 30px !important
+}
+
+.mt-xl {
+  margin-top: 50px !important
+}
+
+.mr-xl {
+  margin-right: 50px !important
+}
+
+.mb-xl {
+  margin-bottom: 50px !important
+}
+
+.ml-xl {
+  margin-left: 50px !important
+}
+
+.pt-xs {
+  padding-top: 5px !important
+}
+
+.pr-xs {
+  padding-right: 5px !important
+}
+
+.pb-xs {
+  padding-bottom: 5px !important
+}
+
+.pl-xs {
+  padding-left: 5px !important
+}
+
+.pt-sm {
+  padding-top: 10px !important
+}
+
+.pr-sm {
+  padding-right: 10px !important
+}
+
+.pb-sm {
+  padding-bottom: 10px !important
+}
+
+.pl-sm {
+  padding-left: 10px !important
+}
+
+.pt-md {
+  padding-top: 15px !important
+}
+
+.pr-md {
+  padding-right: 15px !important
+}
+
+.pb-md {
+  padding-bottom: 15px !important
+}
+
+.pl-md {
+  padding-left: 15px !important
+}
+
+.pt-lg {
+  padding-top: 30px !important
+}
+
+.pr-lg {
+  padding-right: 30px !important
+}
+
+.pb-lg {
+  padding-bottom: 30px !important
+}
+
+.pl-lg {
+  padding-left: 30px !important
+}
+
+.pt-xl {
+  padding-top: 50px !important
+}
+
+.pr-xl {
+  padding-right: 50px !important
+}
+
+.pb-xl {
+  padding-bottom: 50px !important
+}
+
+.pl-xl {
+  padding-left: 50px !important
+}
+
+*/

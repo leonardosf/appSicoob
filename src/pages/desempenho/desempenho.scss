@@ -1,0 +1,119 @@
+#desempenho-page {
+    .card-header {
+        padding-left: 0;
+        .card-title {
+            color: #fff;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+            background: $institucional-primaria;
+            display: inline-block;
+            letter-spacing: 0.05rem;
+            white-space: normal;
+        }
+        small {
+            display: block;
+            padding-left: 10px;
+            color: rgba(255, 255, 255, .7);
+            font-size: 9px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: .05rem;
+            font-style: italic;
+        }
+    }
+    .card-content {
+        h3 {
+            font-size: 12px !important;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .7);
+            margin: 20px 0 12px !important;
+        }
+    }
+    .legenda {
+        margin-top: 12px;
+        padding: 0;
+        &.margin-0 {
+            margin: 0;
+        }
+        .legenda-item {
+            background: $institucional-primaria;
+            border-radius: 4px;
+            margin-left: 4px;
+            &:first-child {
+                margin-left: 0;
+            }
+            span {
+                display: block;
+                text-align: center;
+                &.legenda-valor {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                &.legenda-titulo {
+                    font-size: 9px;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    color: #fff;
+                    letter-spacing: 0.05rem;
+                }
+            }
+            &.prospeccao .legenda-valor {
+                color: #00AF9D
+            }
+            &.analise .legenda-valor {
+                color: #D4B700
+            }
+            &.proposta .legenda-valor {
+                color: #8BAAAF
+            }
+            &.contrato .legenda-valor {
+                color: #74C049
+            }
+            &.adimplencia .legenda-valor {
+                color: #74C049
+            }
+            &.inadimplencia .legenda-valor {
+                color: #E4636E
+            }
+            &.line {
+                margin: 0;
+            }
+        }
+    }
+    .filtro-box {
+        padding: 0;
+        margin-bottom: 4px;
+        overflow: hidden;
+        background-color: $app-box-color;
+        border: 1px solid $app-box-line-color;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 300;
+        .list-header {
+            color: #fff;
+            background: transparent !important;
+            border-bottom: none;
+        }
+        .item {
+            background-color: $app-box-color;
+            color: #fff;
+            border-top: 1px solid $app-box-line-color;
+            &:last-child {
+                border-bottom: 0;
+            }
+            &:first-child {
+                border-top: 0;
+            }
+            .checkbox-icon {
+                background-color: $app-box-color;
+                border-width: 1px;
+            }
+            &.item-checkbox-checked {
+                background-color: $app-box-line-color
+            }
+        }
+    }
+}

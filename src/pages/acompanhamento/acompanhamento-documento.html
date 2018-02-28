@@ -1,0 +1,72 @@
+<ion-header>
+    <mcc-cabecalho titulo="Visita | Documentos"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="documentacao-page">
+    <ion-card>
+        <ion-card-content>
+            <ion-grid class="acompanhamento-list" no-padding>
+                <ion-row class="acompanhamento-item" align-items-center>
+                    <ion-col>
+                        <small>CPF/CNPJ: {{acompanhamento.numCpfCnpj | cpfcnpj}}</small>
+                        <span>{{acompanhamento.nomePessoa}}</span>
+                    </ion-col>
+                    <ion-col col-3 text-center>
+                        <small>operação</small>
+                        <span>{{acompanhamento.idOperacao}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+
+    <div id="documentos">
+        <ion-segment [(ngModel)]="tipoDocumento">
+            <ion-segment-button value="fachada">
+                Fachada
+            </ion-segment-button>
+            <ion-segment-button value="instalacao">
+                Instalação
+            </ion-segment-button>
+            <ion-segment-button value="outro">
+                Outros
+            </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="tipoDocumento">
+            <div *ngSwitchCase="'fachada'" class="documentos-list">
+                <documento [documentos]=fachadas></documento>
+            </div>
+            <div *ngSwitchCase="'instalacao'" class="documentos-list">
+                <documento [documentos]=instalacoes></documento>
+            </div>
+            <div *ngSwitchCase="'outro'" class="documentos-list">
+                <documento [documentos]=outros></documento>
+            </div>
+        </div>
+    </div>
+
+    <ion-item class="mc-toggle">
+        <ion-toggle [(ngModel)]="anexarDocumentos" start></ion-toggle>
+        <ion-label end>Anexar documentos</ion-label>
+    </ion-item>
+
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block (click)="voltar()"><ion-icon ios="ios-arrow-back" start></ion-icon>Voltar</button>
+                </ion-col>
+                <ion-col>
+                    <button block ion-button (click)="registrar()" [disabled]="anexarDocumentos && !temImagem()">Registrar</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

@@ -1,0 +1,12 @@
+.nav-top {
+    .toolbar-background {
+        background-color: transparent !important;
+        border: none !important;
+        border-width: 0 !important;
+    }
+    .toolbar,
+    .toolbar-title,
+    .bar-button {
+        color: $white !important;
+    }
+}

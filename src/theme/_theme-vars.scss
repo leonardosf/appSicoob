@@ -1,0 +1,168 @@
+$theme-verde-one: #1a7772;
+$theme-base-color: transparent;
+$theme-text-color: #4C535E;
+$theme-header-fontsize-base: 35px;
+// fonts
+$theme-font-family: '-apple-system',
+"Roboto",
+"Segoe UI",
+sans-serif !default;
+$theme-secondary-font-family: '-apple-system',
+"Roboto-Light",
+"Segoe UI-Light",
+sans-serif-light !default;
+$theme-font-size: 16px;
+$theme-font-size-sm: 11px;
+$theme-font-size-xs: 8px;
+// caminhos das imagens
+$theme-img-path: "../assets/img";
+// caminhos das fontes
+$ionicons-font-path: "../assets/fonts" !default;
+//$fa-font-path:   "../assets/fonts" !default;
+// Cores genéricas
+$white: #fff;
+$light-blue: #438CB9;
+$blue-light-two: #4990E2;
+$red: #AD4C57;
+$green: #00a65a;
+$aqua: #00c0ef;
+$yellow: #f39c12;
+$blue: #0073b7;
+$navy: #001F3F;
+$teal: #39CCCC;
+$olive: #3D9970;
+$lime: #01FF70;
+$orange: #FF851B;
+$fuchsia: #F012BE;
+$purple: #932ab6;
+$maroon: #85144B;
+$black: #222;
+$gray: #eaeaec;
+//cores sicoob
+$institucional-primaria: #003641;
+$institucional-secundaria: #4c7c83;
+$institucional-terciaria: #98b2b6;
+$singular-primaria: #00a091;
+$singular-secundaria:#00c9b8;
+$singular-terciaria: #94e1d6;
+$central-primaria: #7db61c;
+$central-secundaria: #a5cd5c;
+$central-terciaria: #cee2a2;
+$apoio-primaria: #c9d200;
+$apoio-secundaria: #d6e266;
+$apoio-terciaria: #ebeea8;
+$app-logo-color: #fff;
+$app-box-color: rgba(0, 54, 65, 0.5);
+$app-box-text-color: #F8F7F7;
+$app-box-line-color:#265965;
+$app-icon-color: $singular-terciaria;
+$app-icon-text-color: #fff;
+$app-icon-active-color: $apoio-secundaria;
+$app-icon-active-text-color: $apoio-terciaria;
+$app-input-border-color: $singular-terciaria;
+$app-input-border-color-active: $singular-primaria;
+$app-page-title-color: $apoio-secundaria;
+$app-page-subtitle-color: #fff;
+$app-mensage-box-bg: #1A4E59;
+$app-mensage-box-text-color: #fff;
+$app-btn-default-border: 1px solid $singular-terciaria;
+$app-btn-default-text-color: $singular-terciaria;
+$app-btn-default-border-disable: 1px solid $institucional-secundaria;
+$app-btn-default-text-color-disable: $institucional-secundaria;
+$app-operacao-prospeccao:#00AF9D;
+$app-operacao-analise:#D4B700;
+$app-operacao-aprovada:#74C043;
+$app-operacao-reprovada:#E4636E;
+$app-operacao-cancelada:#E4636E;
+$app-operacao-encerrada: #8BAAAF;
+// these are the base sizes
+// adjust to your preference
+// ---------------------------------------------------------------
+$margin-xs: 4px;
+$margin-sm: 8px;
+$margin-md: 16px;
+$margin-lg: 32px;
+$margin-xl: 40px;
+// these are the scale values for each device size
+// adjust to your preference
+// ---------------------------------------------------------------
+$margin-scale-xs: 0.75;
+$margin-scale-sm: 0.75;
+$margin-scale-md: 1;
+$margin-scale-lg: 1.5;
+// Defined breakpoints
+// ---------------------------------------------------------------
+$screen-xs: 100px;
+$screen-xs-min: 80px;
+$screen-sm: 200px;
+$screen-sm-min: 180px;
+$screen-md: 300px;
+$screen-md-min: 280px;
+$screen-lg: 320px;
+$screen-lg-min: 300px;
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+//
+// Grid system
+// --------------------------------------------------
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs: 50px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min: $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone: $screen-xs-min !default;
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm: 120px !default;
+$screen-sm-min: $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet: $screen-sm-min !default;
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md: 200px !default;
+$screen-md-min: $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop: $screen-md-min !default;
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg: 300px !default;
+$screen-lg-min: $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min !default;
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+//== Grid system
+//
+//## Define your custom responsive grid.
+//** Number of columns in the grid.
+$grid-columns: 12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 8px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+// Small screen / tablet
+$container-tablet: 100% !default;
+//** For `$screen-sm-min` and up.
+$container-sm: $container-tablet !default;
+// Medium screen / desktop
+$container-desktop: 100% !default;
+//** For `$screen-md-min` and up.
+$container-md: $container-desktop !default;
+// Large screen / wide desktop
+$container-large-desktop: 100% !default;
+//** For `$screen-lg-min` and up.
+$container-lg: $container-large-desktop !default;

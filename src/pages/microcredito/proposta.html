@@ -1,0 +1,57 @@
+<ion-header>
+    <mcc-cabecalho titulo="Fluxo de Crédito"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="seleciona-tomador">
+    <ion-card padding-sm id="tomador-info">
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                    <ion-col>
+                        <h1>
+                            {{tomador.nomePessoa}}
+                            <!-- <small>{{tomador.numCpfCnpj | cpfcnpj}}</small> -->
+                            <small>{{tomador.numCpfCnpj}}</small>
+                        </h1>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-card id="micro-credito-itens">
+        <ion-card-content>
+            <ion-list>
+
+                <button ion-item [disabled]="lseIsDisabled" (click)="abreTelaSimulacao()" [ngClass]="{'done': simulacaoPreenchida}">
+                    <span class="circle-number">1</span>
+                    Cadastro Proposta
+                    <small>Plano de pagamento / valor da operação</small>
+                </button>
+                <button ion-item [disabled]="documentosIsDisabled" (click)="abrirDocumentacao()" [ngClass]="{'done': documentosPreenchidos}">
+                    <span class="circle-number">2</span>
+                    Documentação
+                    <small>Documentos comprobatórios</small>
+                </button>
+                <button ion-item [disabled]="simulacaoIsDisabled" (click)="abreTelaGarantia()" [ngClass]="{'done': garantiaPreenchida}">
+                    <span class="circle-number">3</span>
+                    Garantia
+                    <small>Garantias vinculadas</small>
+                </button>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col><button [disabled]="botaoEnviarDisabled" (click)="enviarProposta()" ion-button full><i class="mc-icon-microcredito"></i>Enviar proposta</button></ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

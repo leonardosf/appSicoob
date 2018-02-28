@@ -1,0 +1,133 @@
+<ion-header>
+    <mcc-cabecalho titulo="Garantia"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="garantiapage">
+    <div *ngIf="nomePessoa && numCpfCnpj">
+        <ion-card padding-sm id="tomador-info">
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-auto>
+                            <i class="mc-icon-user icon"></i>
+                        </ion-col>
+                        <ion-col>
+                            <h1>
+                                {{nomePessoa}}
+                                <small>{{numCpfCnpj}}</small>
+                            </h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+        </ion-card>
+    </div>
+    <div>
+        <ion-card class="garantia-resumo">
+            <ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Real
+                    </ion-col>
+                    <ion-col></ion-col>
+                    <ion-col>
+                        Pessoal
+                    </ion-col>
+                </ion-row>        
+            </ion-card-header >
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <small>Exigido</small>
+                            <span>{{realExigido}}</span>
+                            <small>Percentual</small>
+                            <span>{{percRealExigido}}</span>
+                        </ion-col>
+                        <ion-col>
+                            <small>Alcançado</small>
+                            <span>{{realAlcancado}}</span>
+                            <small> Percentual</small>
+                            <span>{{percRealAlcancado}}</span>
+                        </ion-col>
+                        <ion-col>
+                            <small>Exigido</small>
+                            <span>{{pessoalExigido}}</span>
+                            <small> Alcançado</small>
+                            <span>{{pessoalAlcancado}}</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <ion-grid>
+            <ion-row>
+                <ion-col style="text-align: right">
+                     <button ion-button (click)="incluirGarantia()">+</button>
+                </ion-col>
+            </ion-row>
+    </ion-grid>
+    <ion-card class="garantia-resumo" *ngIf="garantias.length > 0" >
+        <ion-card-header>
+            <ion-row>
+                <ion-col>
+                    Garantias
+                </ion-col>
+           </ion-row>        
+        </ion-card-header >
+    
+        <ion-list radio-group>
+                <ion-card *ngFor="let garantia of garantias" >
+                    <ion-card-content>
+                        <ion-grid class="operacao-list">
+                            <ion-row class="operacao-item" align-items-center>
+                                <ion-col>
+                                    <h2><small>Tipo </small>{{garantia.tipoGarantia}}</h2>
+                                </ion-col>
+                                <ion-col>
+                                        <h2><small>Grupo </small>{{garantia.grupoGarantia}}</h2>
+                                    </ion-col>
+                                <ion-col>
+                                    <h2><small>Descrição</small>{{garantia.descricao}}</h2>
+                                </ion-col>
+                                <ion-col>
+                                    <h2><small>Valor </small>{{garantia.valor}}</h2>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card-content>
+                </ion-card>
+        </ion-list>
+    </ion-card>
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col >
+                     <button ion-button block (click)="botaoHabilitado()"> {{tituloBotao}}</button>
+                </ion-col>
+                <ion-col >
+                    <button ion-button block (click)="enviarMesa()" [disabled]="botaoEncaminhar"> Encaminhar</button>
+                </ion-col>
+                <!-- <ion-col style="text-align: center">
+                    <ion-fab >
+                        <button ion-fab mini style="background-color: #1B7772"  (click)="incluirGarantia()">
+                            +
+                        </button>
+                    </ion-fab>
+                </ion-col> -->
+            </ion-row>
+            <!-- <ion-row>
+                <ion-col>
+                </ion-col>
+                    <button ion-button block (click)="incluirGarantia()">Incluir
+                        <ion-icon ios="ios-arrow-forward"></ion-icon>  </button>
+            </ion-row> -->
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape trocaPagina={{trocaPagina}}></mcc-rodape>
+</ion-footer>

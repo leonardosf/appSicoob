@@ -1,0 +1,278 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-header.header {
+    box-shadow: none;
+}
+
+.card {
+    background-color: $app-box-color;
+    .card-header,
+    .card-content {
+        padding: $margin-sm
+    }
+}
+
+//mensage
+.mensage {
+    color: $app-mensage-box-text-color !important;
+    border: 1px solid #A7B9BC;
+    .alert-wrapper {
+        background: $app-mensage-box-bg;
+    }
+    .alert-title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px !important;
+        text-transform: uppercase;
+        color: $app-mensage-box-text-color !important;
+        &:before {
+            font-family: "mc-icons";
+            display: block;
+            font-size: 47px;
+            margin: $margin-sm $margin-md $margin-sm;
+        }
+    }
+    .alert-message {
+        text-align: center;
+        font-size: 14px !important;
+        color: $app-mensage-box-text-color !important;
+    }
+    .alert-button {
+        color: $app-mensage-box-text-color;
+        font-weight: 300;
+        border-color: $app-box-line-color;
+    }
+    &.mensage-alert {
+        .alert-wrapper {
+            .alert-title {
+                &:before {
+                    content: $mc-icon-warning;
+                    color: $apoio-primaria;
+                }
+            }
+        }
+    }
+    &.mensage-sucesso {
+        .alert-wrapper {
+            .alert-title {
+                &:before {
+                    content: $mc-icon-checked;
+                    color: $central-primaria;
+                }
+            }
+        }
+    }
+}
+
+//Title page content
+.title-page-content {
+    margin: $margin-sm !important;
+    text-transform: uppercase;
+    font-size: 1.2rem !important;
+    font-weight: 700;
+    color: #1B7772;
+    padding-left: 10px !important;
+    letter-spacing: .03rem;
+}
+
+#page-filter {
+    .toolbar-background {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .grid {
+        padding: 0
+    }
+    .col {
+        small {
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 9px;
+            margin: 1px 0;
+            line-height: 1rem;
+        }
+        span {
+            color: #fff;
+            font-weight: 300;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .button {
+            margin: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            height: 100%;
+            padding: 0 4px 0 0;
+            .button-inner {
+                background: transparent;
+            }
+        }
+    }
+}
+
+.steps {
+    margin: $margin-sm;
+    ul {
+        display: flex;
+        padding: 0;
+        li {
+            list-style: none;
+            padding-left: $margin-sm;
+            padding-right: $margin-sm;
+            font-weight: 600;
+            color: #949494;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: .05rem;
+            .step-number {
+                border-radius: 50% 50%;
+                border: 1px solid #a9a9a9;
+                display: inline-block;
+                margin-right: 8px;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                width: 2rem;
+                text-align: center;
+            }
+            &.active {
+                color: #3e827e;
+                .step-number {
+                    background: #1B7772;
+                    color: #fff;
+                    border-color: #3D8A86
+                }
+            }
+            &.step-ok {
+                color: #82b5b2;
+                .step-number {
+                    background: #82b5b2;
+                    color: #236f6b;
+                    border-color: #85b7b4;
+                }
+            }
+        }
+    }
+}
+
+// Input: text-right
+.text-right {
+    text-align: right
+}
+
+.mc-toggle {
+    padding-top: 0;
+    background: transparent;
+    .item-inner {
+        border-bottom: 0 !important;
+        color: #fff;
+        .toggle {
+            padding-left: 0;
+            .toggle-icon {
+                background-color: rgba(0, 0, 0, 0.2);
+                &:before {
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+            }
+            &.toggle-checked {
+                .toggle-icon {
+                    background: $central-terciaria;
+                }
+            }
+        }
+        .label {
+            font-size: 14px;
+        }
+    }
+    .input-wrapper {
+        order: 2;
+    }
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}
+
+.count {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+}
+
+#box-cpf-cnpj {
+    background: rgba(0, 0, 0, 0.20);
+    overflow: hidden;
+    height: 50px;
+    .mc-icon-user {
+        font-size: 35px;
+        color: rgba(0, 0, 0, 0.30);
+    }
+    ion-icon.icon:before {
+        color: $app-icon-color;
+        font-size: 25px;
+        margin: 4px 6px;
+    }
+    .search-box-input {
+        background: transparent;
+        padding-left: $margin-sm;
+        .item-inner {
+            padding-right: $margin-sm;
+        }
+        .label {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: normal;
+            color: #f4f4f4;
+            letter-spacing: .1rem;
+            font-weight: 200
+        }
+        .text-input {
+            margin: 0;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.1rem;
+            line-height: 18px;
+            height: 20px;
+        }
+    }
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto;
+
+        .search-box-input {
+            .label {
+                font-size: 15px;
+            } 
+        }
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}

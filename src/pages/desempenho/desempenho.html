@@ -1,0 +1,176 @@
+<ion-header>
+    <mcc-cabecalho titulo="Desempenho"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="desempenho-page">
+
+    <ion-card margin-top class="filtro-box" *ngIf="!buscaRealizada">
+        <ion-card-content>
+            <ion-list>
+                <ion-list-header>Acompanhamento do Desempenho</ion-list-header>
+                <ion-item>
+                    <ion-label>Demonstrativo Físico</ion-label>
+                    <ion-checkbox [(ngModel)]="demonstrativoFisico"></ion-checkbox>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Demonstrativo Financeiro</ion-label>
+                    <ion-checkbox [(ngModel)]="demonstrativoFinanceiro"></ion-checkbox>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label stacked>Linha de Crédito</ion-label>
+                    <ion-select interface="action-sheet" [(ngModel)]="linhaSelecionada" name="linhaCredito" cancelText="Cancelar">
+                        <ion-option *ngFor="let linha of linhasDeCredito" [value]="linha.idLinhaCredito">{{linha.nomeComercialLinhaCredito}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="procurouGraficoFisico && !encontrouFisico" class="menssagem info">
+        <i class="mc-icon-info"></i>
+        <p>Nenhum registro Físico encontrado!</p>
+    </div>
+
+
+    <div *ngIf="procurouGraficoFinanceiro && !encontrouFinanceiro" class="menssagem info">
+        <i class="mc-icon-info"></i>
+        <p>Nenhum registro Financeiro encontrado!</p>
+    </div>
+
+    <div *ngIf="linhaSelecionada && buscaRealizada" class="menssagem info">
+<!--        <i class="mc-icon-info"></i>       -->
+        <div>
+            <ion-row>
+                <p text-wrap>Linha de Crédito:</p>
+            </ion-row>
+            <ion-row>
+                <p text-wrap>{{nomeLinhaCreditoSelecionada}}</p>
+            </ion-row>
+        </div>
+    </div>
+
+    <ion-card [hidden]="!temGraficoFisico">
+        <ion-card-header>
+            <ion-card-title>Demonstrativo Físico da Carteira</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+            <ion-grid class="legenda margin-0">
+                <ion-row>
+
+                    <ion-col class="legenda-item contrato">
+                        <span class="legenda-valor">{{ graficoFisico.quantidadeProspeccao + graficoFisico.quantidadeAnalise +  graficoFisico.quantidadeProposta }}</span>
+                        <span class="legenda-titulo">Operações</span>
+                    </ion-col>
+
+                    <ion-col class="legenda-item contrato">
+                        <span class="legenda-valor">{{ graficoFisico.quantidadeContrato }}</span>
+                        <span class="legenda-titulo">Contrato</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <h3>operações em fluxo</h3>
+
+            <canvas #barCanvas></canvas>
+
+            <ion-grid class="legenda">
+                <ion-row>
+                    <ion-col class="legenda-item prospeccao">
+                        <span class="legenda-valor">{{ graficoFisico.quantidadeProspeccao }}</span>
+                        <span class="legenda-titulo">Prospecção</span>
+                    </ion-col>
+                    <ion-col class="legenda-item analise">
+                        <span class="legenda-valor">{{ graficoFisico.quantidadeAnalise }}</span>
+                        <span class="legenda-titulo">Análise</span>
+                    </ion-col>
+                    <ion-col class="legenda-item proposta">
+                        <span class="legenda-valor">{{ graficoFisico.quantidadeProposta }}</span>
+                        <span class="legenda-titulo">Proposta</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card [hidden]="!temGRaficoFinanceiro">
+        <ion-card-header>
+            <ion-card-title>Demonstrativo Financeiro da Carteira</ion-card-title>
+            <small>* Apenas Operações em Aberto.</small>
+        </ion-card-header>
+        <ion-card-content>
+
+            <ion-grid class="legenda margin-0">
+                <ion-row>
+                    <ion-col class="legenda-item contrato">
+                        <span class="legenda-valor">R$ {{graficoFinanceiro.valorTotalCarteira | number:'1.2-2'}}</span>
+                        <span class="legenda-titulo">Total da Carteira</span>
+                    </ion-col>
+
+                    <ion-col class="legenda-item contrato">
+                        <span class="legenda-valor">{{graficoFinanceiro.totalContratosAdimplentes + graficoFinanceiro.totalContratosInadimplentes}}</span>
+                        <span class="legenda-titulo">Total de contratos</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <h3>Percentual Financeiro</h3>
+
+            <canvas #barCanvasFiannceiro></canvas>
+
+            <ion-grid class="legenda">
+                <ion-row class="legenda-item adimplencia line">
+                    <ion-col col-3>
+                        <span class="legenda-valor">{{graficoFinanceiro.totalContratosAdimplentes}}</span>
+                        <span class="legenda-titulo">contratos</span>
+                    </ion-col>
+                    <ion-col col-4>
+                        <span class="legenda-valor">{{graficoFinanceiro.percentualAdimplente | number:'1.2-2'}} %</span>
+                        <span class="legenda-titulo">percentual</span>
+                    </ion-col>
+                    <ion-col>
+                        <span class="legenda-valor">R$ {{graficoFinanceiro.valorAdimplente | number:'1.2-2'}}</span>
+                        <span class="legenda-titulo">total</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid class="legenda">
+                <ion-row class="legenda-item inadimplencia line">
+                    <ion-col col-3>
+                        <span class="legenda-valor">{{graficoFinanceiro.totalContratosInadimplentes}}</span>
+                        <span class="legenda-titulo">contratos</span>
+                    </ion-col>
+                    <ion-col col-4>
+                        <span class="legenda-valor">{{graficoFinanceiro.percentualInadimplente | number:'1.2-2'}} %</span>
+                        <span class="legenda-titulo">percentual</span>
+                    </ion-col>
+                    <ion-col>
+                        <span class="legenda-valor">R$ {{graficoFinanceiro.valorInadimplente | number:'1.2-2'}}</span>
+                        <span class="legenda-titulo">total</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
+
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngIf="!exibirBotaoLimpar"><button block clean (click)="buscarDashboards()" ion-button>Exibir</button></ion-col>
+                <ion-col *ngIf="exibirBotaoLimpar"><button ion-button outline full (click)="limparBusca()" class="btn-box button-light">Voltar</button></ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+
+</ion-content>
+
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

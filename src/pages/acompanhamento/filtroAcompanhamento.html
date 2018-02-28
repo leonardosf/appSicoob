@@ -1,0 +1,46 @@
+<div class="popoverpage">
+    <ion-list>
+        <ion-list-header>
+            <button (click)="fechar()" ion-button small outline menuClose><ion-icon name="close" class="text-white"></ion-icon></button>
+            Nome
+            <button ion-button (click)="limparNome()" [disabled]="consultaNome">
+                        limpar
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-input [(ngModel)]="nome" (ionChange)="filtrarNome()" maxlength="30" max-length="30" type="text" [disabled]="consultaNome"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header>
+            CPF/CNPJ
+            <button ion-button (click)="limparCpfCnpj()" [disabled]="consultaCpfCnpj">
+                        limpar
+                        <ion-icon name="close"></ion-icon>
+                    </button>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-input placeholder="___.___.___-__" mascara="CPF-CNPJ" maxlength="18" type="tel" [(ngModel)]="cpfCnpj" (ionChange)="filtrarCpfCnpj()" [disabled]="consultaCpfCnpj"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Ordenado por
+        </ion-list-header>
+        <ion-row>
+            <ion-col>
+                <button ion-button full [ngClass]="{'btn-filter':true, 'active' : order == 'nomePessoa'}" (click)="ordernar('nomePessoa')" [disabled]="consultaCpfCnpj">
+                  <ion-icon name="arrow-round-up" *ngIf="!reverse && order == 'nomePessoa'" ></ion-icon>
+                  <ion-icon name="arrow-round-down" *ngIf="reverse && order == 'nomePessoa'"></ion-icon>
+                  Nome
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+
+
+</div>

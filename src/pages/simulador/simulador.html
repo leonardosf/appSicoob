@@ -1,0 +1,207 @@
+<ion-header>
+    <mcc-cabecalho titulo="{{tituloPagina}}"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="simuladorpage">
+
+    <form #f="ngForm">
+        <div *ngIf="nomePessoa && numCpfCnpj">
+            <ion-card padding-sm id="tomador-info">
+                <ion-card-header>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                            <ion-col>
+                                <h1>
+                                    {{nomePessoa}}
+                                    <small>{{numCpfCnpj | cpfcnpj}}</small>
+                                </h1>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-header>
+            </ion-card>
+        </div>
+        <div *ngIf="!exibirGrid">
+            <ion-card margin-top class="simulador-box">
+                <ion-card-content>
+                    <ion-grid>
+                        <!-- <ion-col>
+                            <ion-item>
+                                <ion-label color="primary" stacked>Capacidade Pgto (R$)</ion-label>
+                                <ion-input type="tel" maxlength="10" text-right mascara="MONETARIO" [(ngModel)]="capacidadePagamento" ngControl="capPag" #capPag="ngModel" name="capPag" (ionChange)="limparPlanos()" (ionBlur)="atualizarTrocaPagina()" [readonly]="capacidadePagamentoSomenteLeitura" required></ion-input>
+                            </ion-item>
+                        </ion-col> -->
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label color="primary" stacked>Valor da Operação (R$)</ion-label>
+                                    <ion-input type="tel" text-right maxlength="10" mascara="MONETARIO" [(ngModel)]="valorOperacao" ngControl="valOper" #valOper="ngModel"
+                                        name="valOper" (ionBlur)="atualizarTrocaPagina()" required></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label color="primary" stacked>Dia de Vencimento</ion-label>
+                                    <ion-select  [(ngModel)]="diaVencimento" interface="alert" ngControl="diaVencimentoCtrl" #diaVencimentoCtrl="ngModel" name="diaVencimentoCtrl" (ionBlur)="atualizarTrocaPagina()" required>
+                                        <ion-option *ngFor="let dia of dias" [value]="dia">{{dia | number:'2.0-0'}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label>Primeiro Vencimento</ion-label>
+                                    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="primeiroVencimento" ngControl="primeiroVencimentoData" #primeiroVencimentoData="ngModel"
+                                        name="primeiroVencimentoData" required></ion-datetime>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Linha de Crédito</ion-label>
+                                    <ion-select interface="action-sheet" [(ngModel)]="linhaDeCredito" ngControl="linhaCredito" #linhaCredito="ngModel" name="linhaCredito"
+                                        cancelText="Cancelar" (ionBlur)="atualizarTrocaPagina()" required>
+                                        <ion-option *ngFor="let linha of linhas" [value]="linha.idLinhaCredito">{{linha.nomeComercialLinhaCredito}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item class="mc-toggle">
+                                    <ion-label end>Financia TAC</ion-label>
+                                    <ion-toggle [(ngModel)]="financiaTac" ngControl="financiaDeTac" #financiaDeTac="ngModel" name="financiaDeTac" start></ion-toggle>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item class="mc-toggle">
+                                    <ion-label end>Financia IOF</ion-label>
+                                    <ion-toggle [(ngModel)]="financiaIOF" ngControl="financiaDeIof" #financiaDeIof="ngModel" name="financiaDeIof" start></ion-toggle>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label color="primary" stacked>Tipo de Seguro</ion-label>
+                                    <ion-select [(ngModel)]="tipoDeSeguro" interface="alert" ngControl="tipoDeSeguros" #tipoDeSeguros="ngModel" name="tipoDeSeguros"
+                                        required>
+                                        <ion-option *ngFor="let tipo of tipoSeguros" [value]="tipo.codigo">{{tipo.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label color="primary" stacked>Corretor</ion-label>
+                                    <ion-select [(ngModel)]="corretorDeSeguro" interface="action-sheet" ngControl="corretorDeSeguros" #corretorDeSeguros="ngModel" name="corretorDeSeguros"
+                                        required>
+                                        <ion-option *ngFor="let corretor of corretorSeguros" [value]="corretor.codigo">{{corretor.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-label stacked>Seguradora</ion-label>
+                                    <ion-select interface="action-sheet" [(ngModel)]="seguradoraDeSeguro" ngControl="seguradoraDeSeguros" #seguradoraDeSeguros="ngModel" name="seguradoraDeSeguros"
+                                        cancelText="Cancelar" required>
+                                        <ion-option *ngFor="let seguradora of seguradoras" [value]="seguradora.codigo">{{seguradora.nome}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+            <div class="btn-full-warp">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-6><button ion-button block (click)="simular(f)" [disabled]="!f.valid"><i class="mc-icon-simular"></i>{{tituloSimular}}</button></ion-col>
+                        <ion-col col-6><button ion-button block class="btn-limpar" (click)="limpar(f)"><i class="mc-icon-delete"></i>Limpar</button></ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+
+        <ion-card *ngIf="exibirGrid" class="simulador-resumo">
+            <ion-card-header>
+                {{descricaoLinhaCredito}}
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <span>{{valorOperacao}}</span>
+                            <small>valor operação</small>
+                        </ion-col>
+                        <ion-col>
+                        <span>{{valorOperacao}}</span>
+                        <small>valor contratado</small>
+                        </ion-col>
+                        <ion-col>
+                            <span>{{primeiroVencimento | date: 'dd/MM/yyyy'}}</span>
+                            <small>Primeiro Vencimento</small>
+                        </ion-col>
+                        <!-- <ion-col col-auto text-center>
+                            <span>{{diaVencimento}}</span>
+                            <small>Vencimento</small>
+                        </ion-col> -->
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-list *ngIf="exibirGrid" radio-group [(ngModel)]="quantidadeDeParcelas" ngControl="qtdParc" #qtdParc="ngModel" name="qtdParc">
+            <ion-card class="simulador-resumo" *ngFor="let plano of planosAExibir" (click)="detalharParcela(plano)">
+                <ion-card-content>
+                    <ion-grid class="operacao-list">
+                        <ion-row class="operacao-item" align-items-center>
+                            <ion-col>
+                                <h2><small>parcelas</small>{{plano.quantidadeParcelas}}</h2>
+                            </ion-col>
+                            <ion-col>
+                                <h2><small>valor (R$)</small>{{plano.maiorValorParcela | number:'1.2-2'}}</h2>
+                            </ion-col>
+                            <ion-col>
+                                <h2><small>juros</small>{{plano.percentualTaxaJuros | number:'1.2-2'}}%</h2>
+                            </ion-col>
+                            <ion-col col-auto>
+                                <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <p *ngIf="f.submitted && !qtdParc.valid" class="text-center">Informe o Plano de Pagamento</p>
+                </ion-card-content>
+            </ion-card>
+        </ion-list>
+
+        <div class="btn-full-warp" *ngIf="exibirGrid">
+            <ion-grid>
+                <ion-row *ngIf="exibirBotaoExpandir">
+                    <ion-col>
+                        <button ion-button class="btn-show-more" (click)="exibirTodos()"><i [ngClass]="{'mc-icon-exibir-mais': !exibirTodosOsPlanos, 'mc-icon-exibir-menos': exibirTodosOsPlanos}"></i> {{tituloBotaoExpandir}}</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button block (click)="carregarNovaSimulacao()"><i class="mc-icon-simular"></i>{{tituloNovaSimulacao}}</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </form>
+</ion-content>
+
+
+<!-- <ion-footer id="app-footer">
+    <ion-toolbar>
+        <mcc-rodape trocaPagina="{{trocaPagina}}"></mcc-rodape>
+    </ion-toolbar>
+</ion-footer> -->

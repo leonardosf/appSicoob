@@ -1,0 +1,42 @@
+<ion-header>
+    <mcc-cabecalho titulo="Mensagens"></mcc-cabecalho>
+</ion-header>
+
+
+<ion-content id="page-mensagem">
+    <ion-card class="mensagem-detalhar">
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="mensagem-data">{{mensagem.dataHoraInclusao | date: 'dd/MM/yyyy HH:mm:ss'}}</ion-col>
+                </ion-row>
+                <ion-row *ngIf="mensagem.operacao">
+                    <ion-col col-9 class="mensagem-info">
+                        <small>CPF/CNPJ: {{mensagem.operacao.tomadorCredito.numCpfCnpj | cpfcnpj}}</small>
+                        <span>{{mensagem.operacao.tomadorCredito.nomePessoa}}</span>
+                    </ion-col>
+                    <ion-col col-3 class="mensagem-info" text-center>
+                        <small>Operação</small>
+                        <span>{{mensagem.operacao.idOperacao}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-header>
+        <ion-card-content style="white-space: pre-line;">{{mensagem.descMensagem}}</ion-card-content>
+    </ion-card>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6><button (click)="voltar()" ion-button block><ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>voltar</button></ion-col>
+                <ion-col col-6><button (click)="excluir()" ion-button block class="btn-excluir">excluir</button></ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

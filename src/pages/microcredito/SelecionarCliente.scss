@@ -1,0 +1,129 @@
+// Button - Default
+$btn-default-border-color: #81B1AF;
+$btn-default-border-radius: 6px;
+$icon-default: #70A8A5;
+#tomador-info {
+    background-color: $app-box-color;
+    border: 1px solid $app-box-line-color;
+    border-radius: 4px;
+    .grid {
+        padding: 0
+    }
+    .card-header {
+        .col {
+            padding: 0;
+        }
+        .icon {
+            font-size: 30px;
+            color: $icon-default;
+            float: left;
+            margin-right: $margin-sm
+        }
+        h1 {
+            color: $app-box-text-color !important;
+            font-size: 14px !important;
+            font-weight: 300 !important;
+            white-space: normal;
+            small {
+                display: block;
+                font-size: 11px;
+                font-weight: normal;
+                letter-spacing: 0.05rem;
+            }
+        }
+    }
+    .card-content {
+        color: $app-box-text-color;
+        .grid {
+            .row {
+                border-top: 1px solid $app-box-line-color;
+                .col {
+                    &:first-child {
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        font-size: 11px;
+                        letter-spacing: 0.01rem;
+                        white-space: nowrap
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}
+
+.operacao-list {
+    margin: 0;
+    padding: 0;
+    .operacao-item {
+        .col {
+            padding-top: 0;
+            padding-bottom: 0;
+            &:first-child {
+                padding: 0;
+            }
+        }
+        .operacao-item-icon {
+            color: $icon-default;
+            font-size: 30px;
+            float: left;
+            margin-right: $margin-sm
+        }
+        h2 {
+            font-size: 14px !important;
+            font-weight: 300;
+            color: #fff;
+            small {
+                display: block;
+                text-transform: uppercase;
+                font-size: .9rem;
+                margin: 1px 0;
+            }
+        }
+        .ion-ios-arrow-forward {
+            color: #fff;
+            vertical-align: middle;
+        }
+    }
+}
+
+.btn-add-microcredito {
+    text-align: left;
+    padding: $margin-sm;
+    height: 46px;
+    .button-inner {
+        display: block;
+        justify-content: flex-start;
+        min-height: 30px;
+        text-transform: none;
+        font-size: 1.4rem;
+        font-weight: 600;
+        span {
+            display: block;
+            padding-top: 4px
+        }
+        small {
+            font-style: italic;
+            font-weight: normal;
+            display: block;
+        }
+        .mc-icon-add {
+            font-size: 30px;
+            float: left;
+            margin-right: $margin-sm;
+        }
+    }
+}

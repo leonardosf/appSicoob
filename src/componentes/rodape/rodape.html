@@ -1,0 +1,5 @@
+<ion-toolbar>
+    <div id="toolbar-btn">
+        <button *ngFor="let item of itens" (click)="abrir(item)" class="toolbar-item" [ngClass]="{'active': isAtiva(item)}"><i class="mc-icon-{{item.icone}}"></i> <span>{{item.titulo}}</span></button>
+    </div>
+</ion-toolbar>

@@ -1,0 +1,68 @@
+<ion-content id="configuracoes-page">
+    <ion-grid class="config-header">
+        <ion-row>
+            <ion-col>
+                <i id="logo-microcredito" class="mc-icon-logo-full"></i>
+            </ion-col>
+            <ion-col col-auto>
+                <button ion-button small outline menuClose><ion-icon name="close" class="text-white"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-card *ngIf="agente">
+        <ion-card-header>Dados do usuário</ion-card-header>
+        <ion-card-content>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col>
+                        <small>Agente</small>
+                        <p>{{agente.nome}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-item class="search-box-input">
+                            <ion-label stacked>Cooperativa</ion-label>
+                            <ion-input maxlength="4" mascara="CPF-CNPJ" type="number" [(ngModel)]="agente.cooperativa" readonly="true"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <!--
+                    <ion-col>
+                        <ion-item class="search-box-input">
+                            <ion-label stacked>PAC</ion-label>
+                            <ion-input maxlength="2" type="number" [(ngModel)]="agente.pac" readonly="true"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    -->
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>Dados do Aplicativo</ion-card-header>
+        <ion-card-content>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col>
+                        <small>Versão</small>
+                        <!-- 13/10/2017 10:58 -->
+                        <p>{{versao}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+
+    <div id="btn-bar" menuClose>
+        <ion-grid>
+            <ion-row>
+                <ion-col><button ion-button small class="btn-box button-light" (click)="sair()">Sair<ion-icon name="log-out" ionic-icon-end></ion-icon></button></ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>

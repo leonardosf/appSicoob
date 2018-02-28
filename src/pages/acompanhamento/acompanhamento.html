@@ -1,0 +1,85 @@
+<ion-header>
+    <mcc-cabecalho titulo="Visitas"></mcc-cabecalho>
+    <ion-toolbar id="page-filter" *ngIf="exibirFiltro">
+        <ion-grid>
+            <ion-row>
+                <ion-col class="filter-order" *ngIf="ordernacao">
+                    <small>Ordenado por</small>
+                    <span>
+                    <span>
+                      <ion-icon name="arrow-round-up" *ngIf="!reverse" ></ion-icon>
+                      <ion-icon name="arrow-round-down" *ngIf="reverse"></ion-icon>
+                      {{ordernacao}}
+                    </span>
+                    </span>
+                </ion-col>
+
+                <ion-col *ngIf="nomeFiltro">
+                    <small>Nome</small>
+                    <span>{{nomeFiltro}}</span>
+                </ion-col>
+                <ion-col *ngIf="cpfCnpjFiltro">
+                    <small>CPF/CNPJ</small>
+                    <span>{{cpfCnpjFiltro}}</span>
+                </ion-col>
+
+                <ion-col col-auto>
+                    <button ion-button light (click)="abrirFiltros($event)">
+						     <ion-icon name="more"></ion-icon>
+					</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content id="acompanhamento-page" padding>
+    <div *ngIf="semResultado" class="menssagem info">
+        <i class="mc-icon-info"></i>
+        <p>Nenhum registro encontrado!</p>
+    </div>
+
+    <ion-list id="acompanhamento-list">
+        <ion-item-sliding *ngFor="let acompanhamento of acompanhamentos | orderBy : order : reverse" [hidden]="!acompanhamento.exibir">
+            <ion-item (click)="detalhar(acompanhamento)">
+                <ion-grid class="acompanhamento-list" no-padding>
+                    <ion-row class="acompanhamento-item">
+                        <ion-col>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col>
+                                        <small>CPF/CNPJ: {{acompanhamento.numCpfCnpj | cpfcnpj}}</small>
+                                        <span>{{acompanhamento.nomePessoa}}</span>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <small>operação</small>
+                                        <span>{{acompanhamento.idOperacao}}</span>
+                                    </ion-col>
+                                    <ion-col *ngIf="acompanhamento.dataHoraUltimaVisita">
+                                        <small>data da última visita</small>
+                                        <span>{{acompanhamento.dataHoraUltimaVisita | date: 'dd/MM/yyyy'}}</span>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-col>
+                        <ion-col col-1 text-right align-self-center>
+                            <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button (click)="registrar(acompanhamento)">Nova Visita</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

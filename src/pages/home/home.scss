@@ -1,0 +1,116 @@
+#div-padrao{
+    margin-top: 10px;
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto;
+
+        #box-menu {
+
+            .item{
+
+                span{
+
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}
+
+#div-lojista{
+    margin-top: 10px;
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+    }
+    
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}
+
+#text-label {
+    color: $app-logo-color;
+    font-size: 20px !important;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+#box-menu {
+    .item {
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.20);
+        @include theme-shadow-boxes(2px);
+        padding: 10px 0;
+        i,
+        span {
+            display: block;
+            text-align: center;
+        }
+        i {
+            font-size: 30px;
+            margin-bottom: 8px;
+            color: $app-icon-color;
+        }
+        span {
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: .05rem;
+
+            color: $app-icon-text-color;
+        }
+        .item-inner {
+            border: 0;
+            padding: 0;
+        }
+        .label {
+            margin: $margin-sm 0;
+        }
+    }
+}
+
+#box-mensagens {
+    background: rgba(0, 0, 0, 0.20);
+    .card-header {
+        background: rgba(0, 0, 0, 0.20);
+        color: $app-icon-color;
+        i:before {
+            font-size: 14px;
+            line-height: 14px;
+            margin-right: $margin-sm/2;
+        }
+        span {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08rem;
+            line-height: 14px;
+        }
+    }
+    .item {
+        background: transparent;
+        border-bottom: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.20);
+        &:first-child {
+            border-top: 0
+        }
+        .label {
+            margin-top: $margin-sm/2;
+            margin-bottom: $margin-sm/2;
+        }
+    }
+}

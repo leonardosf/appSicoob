@@ -1,0 +1,80 @@
+<ion-header>
+    <mcc-cabecalho titulo="Mesa de Operações"></mcc-cabecalho>
+    <ion-toolbar id="page-filter" *ngIf="this.exibirFiltro">
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngIf="situacao">
+                    <small>Fase</small>
+                    <span>{{situacao}}</span>
+                </ion-col>
+                <ion-col *ngIf="cpfCnpj">
+                    <small>CPF/CNPJ</small>
+                    <span>{{cpfCnpj}}</span>
+                </ion-col>
+                <ion-col *ngIf="numProposta">
+                    <small>Nº Proposta</small>
+                    <span>{{numProposta}}</span>
+                </ion-col>
+                <ion-col col-auto>
+                    <button ion-button light (click)="abrirFiltros($event)">
+						<ion-icon name="more"></ion-icon>
+					</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content id="operacao-page" padding-sm>
+    <div *ngIf="semResultado" class="menssagem info">
+        <i class="mc-icon-info"></i>
+        <p>Nenhum registro encontrado para os últimos 30 dias!</p>
+    </div>
+
+    <ion-card *ngFor="let operacao of operacoes" [hidden]="!operacao.exibir" [ngClass]="operacao.cssClass">
+        <ion-card-content (click)="abrirProposta(operacao)">
+            <ion-grid class="operacao-list">
+                <ion-row class="operacao-item" align-items-center>
+
+                    <ion-col>
+                        <ion-grid no-padding>
+                            <ion-row>
+                                <ion-col>
+                                    <h2>
+                                        <small>CPF/CNPJ: {{operacao.cpfCnpj | cpfcnpj}}</small> {{operacao.nome}}
+                                    </h2>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <small>operação</small>
+                                    <span>{{operacao.idOperacao}}</span>
+                                </ion-col>
+                                <ion-col>
+                                    <small>data</small>
+                                    <span>
+                                          {{operacao.dataOperacao | date: 'dd/MM/yyyy'}}
+                                        </span>
+                                </ion-col>
+                                <ion-col class="operacao-item-situacao">
+                                    <small>fase</small>
+                                    <span>{{operacao.situacao}}</span>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-col>
+                    <ion-col col-auto text-right align-self-center>
+                        <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
+<ion-footer id="app-footer">
+    <!-- <mcc-rodape></mcc-rodape> -->
+</ion-footer>

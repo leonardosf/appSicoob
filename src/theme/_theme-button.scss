@@ -1,0 +1,61 @@
+.button {
+    background-color: $institucional-primaria !important;
+    border-radius: 3rem !important;
+    border: $app-btn-default-border;
+    color: $app-btn-default-text-color;
+    text-transform: uppercase !important;
+    font-weight: 300 !important;
+    &[disabled] {
+        border: $app-btn-default-border-disable;
+        color: $app-btn-default-text-color-disable;
+    }
+    &.button-md {}
+}
+
+.btn-full-warp {
+    margin: $margin-sm;
+    .toolbar-background {
+        background: transparent;
+    }
+    .button {
+        padding: auto $margin-sm !important;
+        font-size: 14px;
+        letter-spacing: 0.08rem;
+    }
+    .button-inner {
+        [class^="mc-icon-"],
+        [class*=" mc-icon-"],
+        .ion-ios-arrow-back {
+            margin-right: $margin-sm;
+        }
+        .ion-ios-arrow-forward {
+            margin-left: $margin-sm;
+        }
+    }
+    .btn-show-more {
+        background: transparent;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+        height: 20px;
+        padding: $margin-sm 0;
+        box-shadow: none;
+    }
+    .grid {
+        padding: 0
+    }
+
+
+    @media only screen and (min-width:1366px){
+   
+        width: 800px;
+        margin: auto; 
+       
+    }
+    @media only screen and (max-width:300px){
+    
+    width: 480px;
+    margin: auto; 
+    
+    } 
+}

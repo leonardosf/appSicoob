@@ -1,0 +1,51 @@
+*,
+html,
+body {
+    font-family: $theme-font-family;
+}
+
+body,
+.ionic-body {
+    color: $theme-text-color;
+    font-size: $theme-font-size !important;
+    font-family: $theme-font-family;
+    line-height: $line-height-computed;
+    text-rendering: optimizeLegibility;
+    -webkit-backface-visibility: hidden;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    letter-spacing: -0.01em;
+    font-weight: 100;
+    background-color: $institucional-primaria !important;
+}
+
+p {
+    font-size: $theme-font-size !important;
+}
+
+.content-ios,
+.content-md {
+    @include bck-gradient;
+}
+
+.scroll-content{
+    background: transparent;
+}
+
+.tabbed-slidebox {
+    .slider {
+        margin: 5px 0;
+    }
+}
+
+.box-fluid {
+    margin: $margin-sm 0;
+    padding: $margin-sm;
+    background-color: $white;
+    @include theme-shadow-boxes(1px);
+    @include clearfix();
+}
+
+.has-navbottom {
+    padding-bottom: 120px;
+}

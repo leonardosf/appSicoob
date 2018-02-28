@@ -1,0 +1,143 @@
+<ion-header>
+    <mcc-cabecalho titulo="Relatório"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="relatorio-page" padding>
+    <div *ngIf="exibirFiltro">
+        <ion-card margin-top class="filtro-box">
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label color="primary" stacked>CPF/CNPJ</ion-label>
+                                <ion-input placeholder="___.___.___-__" mascara="CPF-CNPJ" maxlength="18" type="tel" [(ngModel)]="cpfCnpj"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label color="primary" stacked>Nome</ion-label>
+                                <ion-input [(ngModel)]="nome" maxlength="50" max-length="50" type="text"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label stacked>Situação Financeira</ion-label>
+                                <ion-select interface="action-sheet" [(ngModel)]="situacaoFinanceira" cancelText="Cancelar">
+                                    <ion-option *ngFor="let situacao of situacoes" [value]="situacao.id">{{situacao.descricao}}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-item>
+                                <ion-label stacked>Linha de Crédito</ion-label>
+                                <ion-select [disabled]="!situacaoFinanceira" interface="action-sheet" [(ngModel)]="linhaSelecionada" cancelText="Cancelar">
+                                    <ion-option *ngFor="let linha of linhasDeCredito" [value]="linha.idLinhaCredito">{{linha.nomeComercialLinhaCredito}}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+        <div class="btn-full-warp">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6><button ion-button block (click)="pesquisar()" [disabled]="!cpfCnpj && !nome && !situacaoFinanceira">Pesquisar</button></ion-col>
+                    <ion-col col-6><button ion-button block class="btn-limpar" (click)="limpar()">Limpar</button></ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+    <div *ngIf="semResultado" class="menssagem info">
+        <i class="mc-icon-info"></i>
+        <p>Nenhum registro encontrado!</p>
+    </div>
+
+    <ion-card class="relatorio-resumo" *ngIf="exibirResultado">
+        <ion-card-header>
+            Filtros informados
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <span>{{nome ? nome : '--'}}</span>
+                        <small>Nome</small>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <span>{{cpfCnpj ? cpfCnpj : '--'}}</span>
+                        <small>CPF/CNPJ</small>
+                    </ion-col>
+                    <ion-col col-auto text-center>
+                        <span>{{situacaoFinanceira ? recuperarSituacao(situacaoFinanceira) : '--'}}</span>
+                        <small>Situação Financeira</small>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <span>{{_nomeComercialLinhaPesquisada}}</span>
+                        <small>Linha de Crédito</small>
+                    </ion-col>                    
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-list id="relatorio-list" *ngIf="exibirResultado">
+        <ion-item-sliding *ngFor="let operacao of operacoes">
+            <ion-item (click)="detalhar(operacao)">
+                <ion-grid class="relatorio-list" no-padding>
+                    <ion-row class="relatorio-item">
+                        <ion-col>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col>
+                                        <small>CPF/CNPJ: {{operacao.numCpfCnpj | cpfcnpj}}</small>
+                                        <span>{{operacao.nomePessoa}}</span>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <small>operação</small>
+                                        <span>{{operacao.idOperacaoMicrocredito}}</span>
+                                    </ion-col>
+                                    <ion-col>
+                                        <small>situação</small>
+                                        <span [ngClass]="operacao.codInadimplencia=='i'?'inadimplente':'adimplente'">{{operacao.codInadimplencia=='i'?'Inadimplente':'Adimplente'}}</span>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-col>
+                        <ion-col col-1 text-right align-self-center>
+                            <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+
+    <div class="btn-full-warp" *ngIf="exibirResultado || semResultado">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block (click)="carregarNovaPesquisa()">Nova Pesquisa</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

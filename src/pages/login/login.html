@@ -1,0 +1,46 @@
+<ion-content padding="true" id="login">
+    <div class="login-content">
+
+        <div class="container">
+            <div class="theme-row mt-lg">
+                <div class="col-xs-12">
+                    <div id="logo-microcredito" class="mc-icon-logo-full">
+                        <span>Emprestimo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-row">
+                <div class="col-xs-12">
+                    <div class="clean-form form-login mt-md">
+                        <form #f="ngForm">
+                            <ion-item class="white-form mt-md text-center">
+                                <ion-label><i class="lnr lnr-user"></i></ion-label>
+                                <ion-input type="text" [(ngModel)]="user" ngControl="matricula" #matricula="ngModel" name="user"  placeholder="Usuário"></ion-input>
+                            </ion-item>
+                            <!-- <p *ngIf="f.submitted && !matricula.valid" class="text-center">
+                                Usuário obrigatório.
+                            </p> -->
+                            <ion-item class="white-form mt-md text-center">
+                                <ion-label><i class="lnr lnr-lock"></i></ion-label>
+                                <ion-input type="password" [(ngModel)]="senha" ngControl="pass" #pass="ngModel" name="pass"  placeholder="Senha"></ion-input>
+                            </ion-item>
+                            <!-- <p *ngIf="f.submitted && !pass.valid" class="text-center ">
+                                Senha obrigatória.
+                            </p> -->
+
+                            <ion-item class="lembrar-usuario">
+                                <ion-toggle checked="false" [(ngModel)]="lembrarUsuario" ngControl="lembrar" #lembrar="ngModel" name="lembrar" start></ion-toggle>
+                                <ion-label end>Lembrar usúario</ion-label>
+                            </ion-item>
+
+                            <div class="mt-sm">
+                                <button ion-button outline full class="btn-box button-light" (click)="logar(f)" type="submit">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ion-content>

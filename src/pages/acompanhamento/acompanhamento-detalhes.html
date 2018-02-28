@@ -1,0 +1,55 @@
+<ion-header>
+    <mcc-cabecalho titulo="Visita | Histórico"></mcc-cabecalho>
+</ion-header>
+
+<ion-content id="acompanhamento-page" padding-sm>
+    <ion-card>
+        <ion-card-content>
+            <ion-grid class="acompanhamento-list" no-padding>
+                <ion-row class="acompanhamento-item" align-items-center>
+                    <ion-col>
+                        <h2>
+                            <small>CPF/CNPJ: {{acompanhamento.numCpfCnpj | cpfcnpj}}</small> {{acompanhamento.nomePessoa}}
+                        </h2>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="timeline">
+        <div class="timeline-header">Operação: {{acompanhamento.idOperacao}}</div>
+
+        <div class="timeline-item">
+            <ion-card>
+                <ion-card-header class="timeline-item-title">
+                    Hoje
+                </ion-card-header>
+                <ion-card-content>
+                    <button ion-button small (click)="registrar()">Nova visita</button>
+                    <button ion-button small (click)="voltar()">Voltar</button>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+        <div class=" timeline-item " *ngFor="let visita of visitas">
+            <ion-card>
+                <ion-card-header class="timeline-item-title ">
+                    {{visita.dataHoraInclusao | date: 'dd/MM/yyyy HH:mm'}}
+                </ion-card-header>
+                <ion-card-content>
+                    <h3 class="timeline-item-motivo ">{{visita.motivoVisitaDTO.descricao}}</h3>
+                    <p class="timeline-item-descricao ">
+                        {{visita.descricao}}
+                    </p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+
+</ion-content>
+
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

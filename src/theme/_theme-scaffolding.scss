@@ -1,0 +1,362 @@
+.img-adaptative {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.avatar-md {
+  border-radius: 50%;
+  width: 114px;
+  height: 114px;
+}
+
+.fontsize-xs {
+  font-size: 11px;
+}
+
+.fontsize-sm {
+  font-size: 15px;
+}
+
+.fontsize-md {
+  font-size: 20px;
+}
+
+.fontsize-lg {
+  font-size: 25px;
+}
+
+.fontsize-xl {
+  font-size: 33px;
+}
+
+.fontsize-xxl {
+  font-size: 53px;
+}
+
+/* Dividers */
+
+.divider-top {
+  margin-top: $margin-sm !important;
+  padding-top: $margin-sm !important;
+  border-top: 1px solid #DBDBDB;
+}
+
+.divider-right {
+  margin-right: $margin-sm !important;
+  padding-right: $margin-sm !important;
+  border-right: 1px solid #DBDBDB;
+}
+
+.divider-bottom {
+  margin-bottom: $margin-sm !important;
+  padding-bottom: $margin-sm !important;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.divider-left {
+  margin-left: $margin-sm !important;
+  padding-left: $margin-sm !important;
+  border-left: 1px solid #DBDBDB;
+}
+
+/* Cores genéricas, para textos */
+.text-white {
+  color: #fff;
+  &.a {
+    color: #fff;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.text-red {
+  color: $red !important;
+  &.a {
+    color: $red;
+  }
+  a {
+    color: $red;
+  }
+}
+
+.text-yellow {
+  color: $yellow !important;
+  &.a {
+    color: $yellow;
+  }
+  a {
+    color: $yellow;
+  }
+}
+
+.text-aqua {
+  color: $aqua !important;
+  &.a {
+    color: $aqua;
+  }
+  a {
+    color: $aqua;
+  }
+}
+
+.text-blue {
+  color: $blue !important;
+  &.a {
+    color: $blue;
+  }
+  a {
+    color: $blue;
+  }
+}
+
+.text-black {
+  color: $black !important;
+  &.a {
+    color: $black;
+  }
+  a {
+    color: $black;
+  }
+}
+
+.text-light-blue {
+  color: $light-blue !important;
+  &.a {
+    color: $light-blue;
+  }
+  a {
+    color: $light-blue;
+  }
+}
+
+.text-light-blue-two {
+  color: $blue-light-two !important;
+  &.a {
+    color: $blue-light-two;
+  }
+  a {
+    color: $blue-light-two;
+  }
+}
+
+.text-green {
+  color: $green !important;
+  &.a {
+    color: $green;
+  }
+  a {
+    color: $green;
+  }
+}
+
+.text-navy {
+  color: $navy !important;
+  &.a {
+    color: $navy;
+  }
+  a {
+    color: $navy;
+  }
+}
+
+.text-teal {
+  color: $teal !important;
+  &.a {
+    color: $teal;
+  }
+  a {
+    color: $teal;
+  }
+}
+
+.text-olive {
+  color: $olive !important;
+  &.a {
+    color: $olive;
+  }
+  a {
+    color: $olive;
+  }
+}
+
+.text-lime {
+  color: $lime !important;
+  &.a {
+    color: $lime;
+  }
+  a {
+    color: $lime;
+  }
+}
+
+.text-orange {
+  color: $orange !important;
+  &.a {
+    color: $orange;
+  }
+  a {
+    color: $orange;
+  }
+}
+
+.text-fuchsia {
+  color: $fuchsia !important;
+  &.a {
+    color: $fuchsia;
+  }
+  a {
+    color: $fuchsia;
+  }
+}
+
+.text-purple {
+  color: $purple !important;
+  &.a {
+    color: $purple;
+  }
+  a {
+    color: $purple;
+  }
+}
+
+.text-maroon {
+  color: $maroon !important;
+  &.a {
+    color: $maroon;
+  }
+  a {
+    color: $maroon;
+  }
+}
+
+// ---------------------------------------------------------------
+
+/* Rolagens */
+
+.rol-vert {
+  display: block;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.rol-hor {
+  display: block;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.rol-hor-vert {
+  display: block;
+  overflow: auto;
+}
+
+.overflow-hide {
+  overflow: hidden;
+}
+
+/* Rolagens */
+
+.rol-vert {
+  display: block;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.rol-hor {
+  display: block;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.rol-hor-vert {
+  display: block;
+  overflow: auto;
+}
+
+.overflow-hide {
+  overflow: hidden;
+}
+
+.overflow-dots {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+//Força Uppercase/Lower
+.text-upper {
+  text-transform: uppercase !important;
+}
+
+.text-lower {
+  text-transform: lowercase !important;
+}
+
+.text-line-through {
+  text-decoration: line-through
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.bullet-indicators {
+width: 100%;
+  position: relative;
+  ul {
+    list-style-type: none;
+    @include clearfix;
+    width: auto;
+    position: absolute;
+    top: -15px;
+    right: 0;
+  }
+  .dot{
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0px 2px;
+    background-color: transparent;
+    border: 1px solid $theme-verde-one;
+    text-indent: -9000px;
+    border-radius: 50%;
+  }
+  .active{
+    background-color: $theme-verde-one !important;
+  }
+}
+
+
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-start {
+  text-align: start !important;
+}
+
+.text-end {
+  text-align: end !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+

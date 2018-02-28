@@ -1,0 +1,23 @@
+<div id="app-header">
+    <div class="row">
+        <div id="logo-microcredito">
+            <i class="mc-icon-logo-microcredito"></i>
+            <span>Sicoob Crédito</span>
+        </div>
+        <div id="app-nav-aux">
+            <button (click)="voltar()" class="toolbar-item" *ngIf="icoVoltar">
+                <i class="mc-icon-anterior"></i>
+                    <span>Voltar</span>
+            </button>
+            <button *ngFor="let item of itens" (click)="abrir(item)" class="toolbar-item" [ngClass]="{'active': isAtiva(item)}" [disabled]="icoHome"><i class="mc-icon-{{item.icone}}"></i> <span>{{item.titulo}}</span></button>
+        </div>
+
+    </div>
+
+    <div class="row" *ngIf="titulo">
+        <div id="app-page-title">
+            <h2>{{titulo}}</h2>
+            <h3 *ngIf="subtitulo">{{subtitulo}}</h3>
+        </div>
+    </div>
+</div>

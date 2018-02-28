@@ -1,0 +1,54 @@
+<ion-header>
+    <mcc-cabecalho titulo="Documentação"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="documentacao-page">
+    <ion-card padding-sm id="tomador-info">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+              <ion-col>
+                <h1>
+                  {{tomador.nomePessoa}}
+                  <small>{{tomador.numCpfCnpj | cpfcnpj}}</small>
+                </h1>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-item class="mc-toggle"style="padding-sm:0px">
+        <div id="documentos" style="margin:0px">
+            <ion-segment [(ngModel)]="tipoDocumento">
+                <ion-segment-button value="fachada">
+                    {{tituloFase}}
+                </ion-segment-button>
+            </ion-segment>
+
+            <div [ngSwitch]="tipoDocumento">
+                <div *ngSwitchCase="'fachada'" class="documentos-list">
+                    <documento [documentos]=fachadas></documento>
+                </div>
+            </div>
+        </div>
+    </ion-item>
+
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button (click)="enviarDocumentacao()">
+                        Anexar
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape></mcc-rodape>
+</ion-footer>

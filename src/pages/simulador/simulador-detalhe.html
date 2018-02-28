@@ -1,0 +1,112 @@
+<ion-header>
+    <mcc-cabecalho titulo="{{tituloPagina}}"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="simuladorpage">
+    <div *ngIf="nomePessoa && numCpfCnpj">
+        <ion-card padding-sm id="tomador-info">
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                        <ion-col>
+                            <h1>
+                                {{nomePessoa}}
+                                <small>{{numCpfCnpj | cpfcnpj}}</small>
+                            </h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+        </ion-card>
+    </div>
+
+    <ion-card class="simulador-resumo">
+        <ion-card-header>
+            {{linhaDeCredito.nomeComercialLinhaCredito}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <!-- <ion-col>
+                        <span>{{capacidadePagamento}}</span>
+                        <small>Capacidade PGTO</small>
+                    </ion-col> -->
+                    <ion-col>
+                        <span>{{valorOperacao}}</span>
+                        <small>valor operação</small>
+                    </ion-col>
+                    <ion-col>
+                    <span>{{valorOperacao}}</span>
+                    <small>valor Contratado</small>
+                    </ion-col>
+                    <ion-col>
+                        <span>{{primeiroVencimento | date: 'dd/MM/yyyy'}}</span>
+                        <small>Primeiro Vencimento</small>
+                    </ion-col>
+                    <!-- <ion-col col-auto text-center>
+                        <span>{{parcela.primeiroVencimento | date:'dd'}}</span>
+                        <small>Vencimento</small>
+                    </ion-col> -->
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="simulador-detalhe">
+        <ion-card-content>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col>Valor da parcela (R$)</ion-col>
+                    <ion-col text-right>{{parcela.maiorValorParcela | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>Nº de parcelas</ion-col>
+                    <ion-col text-right>{{parcela.quantidadeParcelas}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>Juros</ion-col>
+                    <ion-col text-right>{{parcela.percentualTaxaJuros | number:'1.2-2'}}%</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>Seguro (R$)</ion-col>
+                    <ion-col text-right>{{parcela.valorDoSeguro | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>IOF (R$)</ion-col>
+                    <ion-col text-right>{{parcela.valorTotalIOF | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>TAC (R$)</ion-col>
+                    <ion-col text-right>{{parcela.valorTAC | number:'1.2-2'}}</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>CET mensal</ion-col>
+                    <ion-col text-right>{{parcela.percentualCETMensal | number:'1.2-2'}}%</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>CET anual</ion-col>
+                    <ion-col text-right>{{parcela.percentualCETAnual | number:'1.2-2'}}%</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+    <div class="btn-full-warp">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button block ion-button (click)="enviarParaMesa()" >{{tituloBotao}}</button>
+                </ion-col>
+                <ion-col>
+                    <button block ion-button (click)="enviarParaDocumentacao()"[disabled]="botaoEncaminhar">Encaminhar</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <ion-toolbar>
+        <mcc-rodape trocaPagina={{trocaPagina}}></mcc-rodape>
+    </ion-toolbar>
+</ion-footer>
