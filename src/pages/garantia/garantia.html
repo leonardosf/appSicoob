@@ -61,14 +61,16 @@
             </ion-card-content>
         </ion-card>
     </div>
-
-    <ion-grid>
-            <ion-row>
-                <ion-col style="text-align: right">
-                     <button ion-button (click)="incluirGarantia()">+</button>
-                </ion-col>
-            </ion-row>
-    </ion-grid>
+    <div class="btn-full-warp">
+        <ion-grid class="operacao-list">
+                <ion-row>
+                    <ion-col style="text-align: right">
+                           <span id='labelBotao'> Adicionar Garantia</span>
+                        <button ion-button (click)="incluirGarantia()">+</button>
+                    </ion-col>
+                </ion-row>
+        </ion-grid>
+    </div>
     <ion-card class="garantia-resumo" *ngIf="garantias.length > 0" >
         <ion-card-header>
             <ion-row>

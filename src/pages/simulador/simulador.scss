@@ -79,6 +79,12 @@
                 &.item-select {
                     height: 100%;
                 }
+                &.item-input {
+                    border-bottom: 1px solid $singular-terciaria;
+                }
+                &.item-datetime {
+                    border-bottom: 1px solid $singular-terciaria;
+                }
             }
         }
 

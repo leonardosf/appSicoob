@@ -35,6 +35,17 @@
                         <ion-row>
                             <ion-col>
                                 <ion-item>
+                                    <ion-label stacked>Linha de Crédito</ion-label>
+                                    <ion-select interface="action-sheet" [(ngModel)]="linhaDeCredito" ngControl="linhaCredito" #linhaCredito="ngModel" name="linhaCredito"
+                                        cancelText="Cancelar" (ionBlur)="atualizarTrocaPagina()" required>
+                                        <ion-option *ngFor="let linha of linhas" [value]="linha.idLinhaCredito">{{linha.nomeComercialLinhaCredito}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-item>
                                     <ion-label color="primary" stacked>Valor da Operação (R$)</ion-label>
                                     <ion-input type="tel" text-right maxlength="10" mascara="MONETARIO" [(ngModel)]="valorOperacao" ngControl="valOper" #valOper="ngModel"
                                         name="valOper" (ionBlur)="atualizarTrocaPagina()" required></ion-input>
@@ -54,20 +65,9 @@
                         <ion-row>
                             <ion-col>
                                 <ion-item>
-                                    <ion-label>Primeiro Vencimento</ion-label>
+                                    <ion-label color="primary" stacked>Primeiro Vencimento</ion-label>
                                     <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="primeiroVencimento" ngControl="primeiroVencimentoData" #primeiroVencimentoData="ngModel"
-                                        name="primeiroVencimentoData" required></ion-datetime>
-                                </ion-item>
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col>
-                                <ion-item>
-                                    <ion-label stacked>Linha de Crédito</ion-label>
-                                    <ion-select interface="action-sheet" [(ngModel)]="linhaDeCredito" ngControl="linhaCredito" #linhaCredito="ngModel" name="linhaCredito"
-                                        cancelText="Cancelar" (ionBlur)="atualizarTrocaPagina()" required>
-                                        <ion-option *ngFor="let linha of linhas" [value]="linha.idLinhaCredito">{{linha.nomeComercialLinhaCredito}}</ion-option>
-                                    </ion-select>
+                                        name="primeiroVencimentoData"></ion-datetime>
                                 </ion-item>
                             </ion-col>
                         </ion-row>

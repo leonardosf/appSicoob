@@ -89,7 +89,7 @@ export class SimuladorPage {
         events.subscribe('simulacao:carregarNovaSimulacao', () => {
             this.carregarNovaSimulacao();
         });
-        this.tituloPagina = this.tomador ? 'Proposta | Simulação' : 'Simulação de Microcrédito';
+        this.tituloPagina = this.tomador ? 'Proposta | Simulação' : 'Simulação de Emprestimo';
         this.carregarDias();
     }
 
