@@ -91,10 +91,17 @@ export class SimuladorPage {
         });
         this.tituloPagina = this.tomador ? 'Proposta | Simulação' : 'Simulação de Emprestimo';
         this.carregarDias();
+        this.validarPrimeiroVencimento();
     }
 
     ionViewWillEnter() {
         this.carregarLinhas();
+    }
+
+    validarPrimeiroVencimento() {
+        console.log(this.primeiroVencimento);
+        this.primeiroVencimento = new Date(new Date().getTime()+30*24*60*60*1000);
+        console.log(this.primeiroVencimento);
     }
 
     atualizarTrocaPagina() {
@@ -216,7 +223,7 @@ export class SimuladorPage {
         //     });
 
         this.idNsuSimulacao = 'IDNSU-123456789';
-        this.planos = [{quantidadeParcelas : '12', maiorValorParcela:500.00,  percentualTaxaJuros:1.3, primeiroVencimento: '07/03',
+        this.planos = [{quantidadeParcelas : '12', maiorValorParcela:500.00,  percentualTaxaJuros:1.3, primeiroVencimento: new Date('07/04/2018'),
         valorDoSeguro: 10, valorTotalIOF: 20, valorTAC: 30, percentualCETMensal: 2, percentualCETAnual:24  }];
         this.exibirTodosOsPlanos = this.planos.length <= 12;
         this.exibirBotaoExpandir = this.planos.length > 12;
@@ -295,13 +302,14 @@ export class SimuladorPage {
     detalharParcela(parcelaSelecionada) {
         
         this.mensagem.setFaseAtualProposta("Cadastro");
+        console.log("primeiro vencimento="+this.primeiroVencimento+ " Dia Vencimento"+this.diaVencimento);
         this.nav.push(SimuladorDetalhePage,
             {tomador: this.tomador,
                 nomePessoa: this.nomePessoa,
                 numCpfCnpj: this.numCpfCnpj,
                 tomadorLSE: this.tomadorLSE,
                 // capacidadePagamento: this.capacidadePagamento,
-                primeiroVencimento: this.primeiroVencimento,
+                primeiroVencimento: this.primeiroVencimento != null ? this.primeiroVencimento : this.diaVencimento,
                 linhaDeCredito: this.linhaVerificada,
                 parcela: parcelaSelecionada,
                 valorOperacao: this.valorOperacao,

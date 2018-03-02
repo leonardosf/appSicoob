@@ -134,7 +134,7 @@ export class SelecionarClienteSimuladorPage {
   }
 
   abreSimulacaoPage(){
-    this.mensagem.setInicioProposta("MenuSimulacao")
+    this.mensagem.setInicioProposta("MenuSimulacao");
     this.nav.push(SimuladorPage, {tomadorAvulso: this.tomador});
   }
 
