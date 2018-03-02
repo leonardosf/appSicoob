@@ -7,6 +7,7 @@ import { Paths } from '../../app/paths';
 import { MensagemServicoProvider } from '../../providers/mensagem.servico';
 import { TomadorLSE } from '../../model/TomadorLSE';
 import { PageGeneric } from '../gerenic/pageGeneric';
+import { OperacaoPage } from '../operacao/operacao';
 
 @Component({
     templateUrl: 'home.html'
@@ -53,7 +54,7 @@ export class HomePage {
     }
 
     abrir(menu) {
-        if(menu.pagina == "OperacaoPage"){
+        if(menu.pagina == OperacaoPage){
             this.mensagem.setInicioProposta("MesaOperacacoes");
         }
         this.app.getActiveNav().push(menu.pagina);
