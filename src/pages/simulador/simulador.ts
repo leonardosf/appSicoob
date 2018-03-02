@@ -40,7 +40,7 @@ export class SimuladorPage {
     tipoPessoa: String = "CPF";
     inputMaskCPF: String = Util.mask.CPF;
     inputMaskCNPJ: String = Util.mask.CNPJ;
-    diaVencimento: Number;
+    diaVencimento: Number = 0;
     exibirTodosOsPlanos: boolean = false;
     exibirBotaoExpandir: boolean = true;
     tituloPagina: String;
@@ -99,9 +99,8 @@ export class SimuladorPage {
     }
 
     validarPrimeiroVencimento() {
-        console.log(this.primeiroVencimento);
+
         this.primeiroVencimento = new Date(new Date().getTime()+30*24*60*60*1000);
-        console.log(this.primeiroVencimento);
     }
 
     atualizarTrocaPagina() {

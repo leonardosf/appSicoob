@@ -40,27 +40,39 @@
                     </ion-row>
                 </ion-grid>
             </ion-card-header>
-            <ion-card-content>
-                <ion-grid>
-                    <ion-row>
-                        <ion-col col-4>TELEFONE</ion-col>
-                        <ion-col col-8>
-                            <ion-list *ngFor="let telefone of tomador.telefones">
-                                {{telefone.ddd+telefone.telefone | telefone}}
-                            </ion-list>
-                        </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-4>Endereço</ion-col>
-                        <ion-col col-8>{{tomador.endereco.descricao}} - {{tomador.endereco.complemento}} - {{tomador.endereco.bairro}}</ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-4>Última<br/>Renovação</ion-col>
-                        <ion-col col-8>{{tomador.dataRenovacaoCadastral | date: 'dd/MM/yyyy'}}</ion-col>
-                    </ion-row>
-                </ion-grid>
 
-            </ion-card-content>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-4>Última
+                                <br/>Renovação</ion-col>
+                            <ion-col class='simulador-cliente' col-8>{{ultimaRenovacao | date: 'dd/MM/yyyy'}}</ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-4>Risco Cliente</ion-col>
+                            <ion-col col-8 class='simulador-cliente'>
+                                {{riscoCliente}}
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-4>PD</ion-col>
+                            <ion-col col-8 class='simulador-cliente'>
+                                {{pd}}
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-4>Risco Bacen</ion-col>
+                            <ion-col col-8 class='simulador-cliente'>
+                                {{riscoBacen}}
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-4>Consulta em</ion-col>
+                            <ion-col col-8 class='simulador-cliente'>{{consultaRealizada | date: 'dd/MM/yyyy'}}</ion-col>
+                        </ion-row>
+                    </ion-grid>
+                
+                </ion-card-content>
         </ion-card>
 
         <div class="btn-full-warp" *ngIf="tomador">

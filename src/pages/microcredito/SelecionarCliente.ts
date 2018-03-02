@@ -20,6 +20,11 @@ export class SelecionarClientePage {
   cpfCnpjFormatado:String;
   exibirConteudoTomador:boolean = true;
   habilitaBotaoNovo:boolean = true;
+  ultimaRenovacao: Date;
+  consultaRealizada: Date;
+  riscoCliente: string;
+  pd: string;
+  riscoBacen: string;
 
   constructor(
     public http: Http,
@@ -36,8 +41,18 @@ export class SelecionarClientePage {
       this.cpfCnpj = this.navParams.get("cpfCnpj");
       this.consultaPessoaCapes();
     }
+    this.preencherInformacoesCliente();
   }
 
+  preencherInformacoesCliente(){
+
+    this.ultimaRenovacao = new Date();
+    this.consultaRealizada = new Date();
+    this.riscoCliente = 'A';
+    this.pd = '?';
+    this.riscoBacen = 'Risco Inexistente' ;
+  }
+  
   consultaPessoaCapes(){
     if(!this.cpfCnpj || this.cpfCnpj == null || this.cpfCnpj == ''){
       this.mensagem.mensagemAlerta('CPF/CNPJ não informado!', 'Informe um CPF ou CNPJ.');

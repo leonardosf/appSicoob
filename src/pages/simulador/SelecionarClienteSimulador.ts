@@ -22,6 +22,11 @@ export class SelecionarClienteSimuladorPage {
   textoEstadoOperacao:string;
   exibirConteudoTomador:boolean = true;
   habilitaBotaoNovo:boolean = true;
+  ultimaRenovacao: Date;
+  consultaRealizada: Date;
+  riscoCliente: string;
+  pd: string;
+  riscoBacen: string;
 
   constructor(
     public http: Http,
@@ -45,6 +50,16 @@ export class SelecionarClienteSimuladorPage {
     //   return;
     // }
     this._consultaPessoaCapes();
+    this.preencherInformacoesCliente();
+  }
+
+  preencherInformacoesCliente(){
+
+    this.ultimaRenovacao = new Date();
+    this.consultaRealizada = new Date();
+    this.riscoCliente = 'R1';
+    this.pd = '10%';
+    this.riscoBacen = 'A' ;
   }
 
   _consultaPessoaCapes(){
