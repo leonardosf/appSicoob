@@ -71,8 +71,52 @@
                             <ion-col col-8 class='simulador-cliente'>{{consultaRealizada | date: 'dd/MM/yyyy'}}</ion-col>
                         </ion-row>
                     </ion-grid>
-                
                 </ion-card-content>
+        </ion-card>
+        <ion-card padding-sm id="resumo">
+            <ion-card-content >
+                    <ion-card-header>
+                        <ion-row>
+                            <ion-col>
+                                Portfólios
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-header>
+
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-3>
+                               <span style="font-size: 12px">Portfólio</span>
+                            </ion-col>
+                            <ion-col col-3>
+                                <span style="font-size: 12px">Limite Concedido</span>
+                            </ion-col>
+                            <ion-col col-3>
+                                <span style="font-size: 12px">Disponível</span>
+                            </ion-col>
+                            <ion-col col-3>
+                                <span style="font-size: 12px">Utilizado</span>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    
+                    <ion-grid >
+                        <ion-row *ngFor="let limite of limiteCliente">
+                            <ion-col>
+                                <small>{{limite.portfolio}}</small>
+                            </ion-col>
+                            <ion-col>
+                                <small>{{limite.limiteConcedido  | number:'1.2-2'}}</small>
+                            </ion-col>
+                            <ion-col>
+                                <small>{{limite.limiteDisponivel  | number:'1.2-2'}}</small>
+                            </ion-col>
+                            <ion-col>
+                                <small>{{limite.limiteUtilizado  | number:'1.2-2'}}</small>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+            </ion-card-content>
         </ion-card>
 
         <div class="btn-full-warp" *ngIf="tomador">

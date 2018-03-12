@@ -25,5 +25,6 @@ export class TomadorLSE{
     dataNascimentoPessoaFisica:Date;
     bolAssociado:boolean;
     hasDocument:boolean;
+    codigoResponsabilidade: Number;
 
 }

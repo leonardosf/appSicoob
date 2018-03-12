@@ -81,21 +81,37 @@
         </ion-card-header >
     
         <ion-list radio-group>
-                <ion-card *ngFor="let garantia of garantias" >
+                <ion-card>
                     <ion-card-content>
-                        <ion-grid class="operacao-list">
+                          <ion-grid class="operacao-list">
                             <ion-row class="operacao-item" align-items-center>
-                                <ion-col>
-                                    <h2><small>Tipo </small>{{garantia.tipoGarantia}}</h2>
+                                <ion-col col-3>
+                                    <h2>Tipo </h2>
                                 </ion-col>
-                                <ion-col>
-                                        <h2><small>Grupo </small>{{garantia.grupoGarantia}}</h2>
+                                <ion-col col-3>
+                                        <h2>Grupo </h2>
                                     </ion-col>
-                                <ion-col>
-                                    <h2><small>Descrição</small>{{garantia.descricao}}</h2>
+                                <ion-col col-3>
+                                    <h2>Descrição</h2>
                                 </ion-col>
-                                <ion-col>
-                                    <h2><small>Valor </small>{{garantia.valor}}</h2>
+                                <ion-col col-3>
+                                    <h2>Valor </h2>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <ion-grid class="operacao-list" *ngFor="let garantia of garantias">
+                            <ion-row class="operacao-item" align-items-center>
+                                <ion-col col-3>
+                                    <h2> <small>{{garantia.tipoGarantia}}</small></h2>
+                                </ion-col>
+                                <ion-col col-3>
+                                        <h2><small>{{garantia.grupoGarantia}}</small></h2>
+                                    </ion-col>
+                                <ion-col col-3>
+                                    <h2><small>{{garantia.descricao}}</small></h2>
+                                </ion-col>
+                                <ion-col col-3>
+                                    <h2><small>{{garantia.valor}}</small></h2>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
@@ -110,7 +126,7 @@
                      <button ion-button block (click)="botaoHabilitado()"> {{tituloBotao}}</button>
                 </ion-col>
                 <ion-col >
-                    <button ion-button block (click)="enviarMesa()" [disabled]="botaoEncaminhar"> Encaminhar</button>
+                    <button ion-button block (click)="enviarParaEstudo()" [disabled]="botaoEncaminhar"> Encaminhar</button>
                 </ion-col>
                 <!-- <ion-col style="text-align: center">
                     <ion-fab >

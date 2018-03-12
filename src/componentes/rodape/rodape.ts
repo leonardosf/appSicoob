@@ -60,6 +60,10 @@ export class Rodape {
                     this.itens = itensMenu.iconRodaPeCadastro().iconRodaPeDocumentacao().iconRodaPeGarantia().construir();
                     break;
                 }
+                case "Estudo": {
+                    this.itens = itensMenu.iconRodaPeCadastro().iconRodaPeDocumentacao().iconRodaPeGarantia().iconRodaPeEstudo().construir();
+                    break;
+                }
             }
         } else {
 
@@ -81,6 +85,10 @@ export class Rodape {
                 }
                 case "Garantia": {
                     this.itens = itensMenu.iconRodaPeCadastro().iconRodaPeDocumentacao().iconRodaPeGarantia().construir();
+                    break;
+                }
+                case "Estudo": {
+                    this.itens = itensMenu.iconRodaPeCadastro().iconRodaPeDocumentacao().iconRodaPeGarantia().iconRodaPeEstudo().construir();
                     break;
                 }
             }

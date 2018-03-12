@@ -1,0 +1,103 @@
+<ion-header>
+    <mcc-cabecalho titulo="Estudo"></mcc-cabecalho>
+</ion-header>
+
+<ion-content padding-sm id="estudopage">
+    <div id="div-estudopage">
+        <!-- TOMADOR -->
+        <div *ngIf="tomador.nomePessoa && tomador.numCpfCnpj">
+            <ion-card padding-sm id="tomador-info">
+                <ion-card-header>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-auto>
+                                <i class="mc-icon-user icon"></i>
+                            </ion-col>
+                            <ion-col>
+                                <h1>
+                                    {{tomador.nomePessoa}}
+                                    <small>{{tomador.numCpfCnpj}}</small>
+                                </h1>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-header>
+            </ion-card>
+        </div>
+    
+        <div>
+            <ion-card padding-sm>
+                <ion-grid>
+                    <ion-list *ngFor="let item of items">
+                        <button class="list-info" detail-none (click)="expandItem(item)" ion-item>
+                            <i class={{item.icon}}></i><i>{{item.titulo}}</i>
+                            <div class="expandable">
+                                <expandable *ngIf="item.dto"  [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+                                    <div *ngIf="item.titulo == 'Enquadramento da Proposta'">
+                                        <ion-row style="padding-bottom: 8px">
+                                            <h1>{{item.cabecalho}}</h1>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                Data da Proposta:
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <i>{{item.dto.dataProposta | date: 'dd/MM/yyyy'}}</i>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                Classificação da Operação:
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <i>{{item.dto.classificacaoOperacao}}</i>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                Origem do Recurso:
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <i>{{item.dto.origemRecurso}}</i> 
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                Finalidade:
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <i>{{item.dto.finalidade}}</i> 
+                                            </ion-col>
+                                        </ion-row>    
+                                        <ion-row>
+                                            <ion-col col-6>
+                                                Pérfil Tarifário:
+                                            </ion-col>
+                                            <ion-col col-6>
+                                                <i>{{item.dto.perfilTarifaril}}</i> 
+                                            </ion-col>
+                                        </ion-row>                            
+                                    </div>
+                                </expandable>
+                            </div>
+                        </button>   
+                        <!-- <button class="list-info" detail-none (click)="expandItem(item)" ion-item><i class={{item.icon}}></i>
+                            <ion-thumbnail item-start>
+                                <img class="mc-icon-calculadora">
+                            </ion-thumbnail>
+                            {{item.titulo}}
+                            <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+                                Hello people
+                            </expandable>
+                            <button ion-button clear item-end>View</button>
+                        </button> -->
+                    </ion-list>
+                </ion-grid>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer id="app-footer">
+    <mcc-rodape trocaPagina={{trocaPagina}}></mcc-rodape>
+</ion-footer>

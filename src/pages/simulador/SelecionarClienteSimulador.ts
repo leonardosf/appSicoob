@@ -8,6 +8,7 @@ import {SimuladorPage} from "../../app/paginas";
 import {MensagemServicoProvider} from "../../providers/mensagem.servico";
 import { Endereco } from "../../model/Endereco";
 import { Telefone } from "../../model/Telefone";
+import { LimiteTomador } from "../../model/LimiteTomador";
 
 @Component({
   templateUrl: 'SelecionarClienteSimulador.html'
@@ -27,6 +28,7 @@ export class SelecionarClienteSimuladorPage {
   riscoCliente: string;
   pd: string;
   riscoBacen: string;
+  limiteCliente: Array<LimiteTomador> = new Array<LimiteTomador>();
 
   constructor(
     public http: Http,
@@ -60,6 +62,8 @@ export class SelecionarClienteSimuladorPage {
     this.riscoCliente = 'R1';
     this.pd = '10%';
     this.riscoBacen = 'A' ;
+    this.limiteCliente.push(new LimiteTomador('Cartão de Crédito',35000,32500,2500));
+    this.limiteCliente.push(new LimiteTomador('Cheque Especial',100000,100000,0));
   }
 
   _consultaPessoaCapes(){

@@ -26,6 +26,8 @@ import { DocumentoServico } from '../providers/documento-servico/documento-servi
 import { Keyboard } from '@ionic-native/keyboard';
 import { MaxLengthDirective } from '../directives/max-length/max-length';
 import { PageGeneric } from '../pages/gerenic/pageGeneric';
+import { ExpandableComponent } from '../components/expandable/expandable';
+import { EstudoPage } from '../pages/estudo/estudo';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { PageGeneric } from '../pages/gerenic/pageGeneric';
     DocumentacaoPage,
     ImagemView,
     AcompanhamentoRegistrarPage,
-    MaxLengthDirective
+    MaxLengthDirective,
+    ExpandableComponent,
+    EstudoPage
   ],
   imports: [
     BrowserModule,
@@ -101,6 +105,7 @@ import { PageGeneric } from '../pages/gerenic/pageGeneric';
     DocumentacaoPage,
     ImagemView,
     AcompanhamentoRegistrarPage,
+    EstudoPage,
   ],
   providers: [
     StatusBar,

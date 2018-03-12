@@ -2,6 +2,7 @@ import { MensagemPage } from './../pages/mensagem/mensagem';
 import { OperacaoPage, SelecionarClientePage,  AcompanhamentoPage, RelatorioPage,
          SelecionarClienteSimuladorPage, DesempenhoPage, HomePage, DocumentacaoPage, PropostaPage, SimuladorDetalhePage, GarantiaPage, DocumentacaoHomePage } from './paginas';
 import { NavController } from 'ionic-angular';
+import { EstudoPage } from '../pages/estudo/estudo';
 
 export class ItensMenu{
     private itensMenu = new Array<any>();
@@ -148,6 +149,17 @@ export class ItensMenu{
             icone: 'garantia',
             pagina: GarantiaPage,
             ativa: ['GarantiaPage']
+        }
+        this.itensMenu.push(item);
+        return this;
+     }
+
+     public iconRodaPeEstudo():ItensMenu {
+        let item =  { 
+            titulo: 'Estudo',
+            icone: 'estudo',
+            pagina: EstudoPage,
+            ativa: ['EstudoPage']
         }
         this.itensMenu.push(item);
         return this;

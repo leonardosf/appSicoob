@@ -17,6 +17,7 @@ import {DocumentacaoPage} from "../documentacao/documentacao";
 import { DocumentacaoHomePage } from '../documentacao/documentacao-home';
 import { MensagemServicoProvider } from '../../providers/mensagem.servico';
 import { PageGeneric } from '../gerenic/pageGeneric';
+import { EstudoPage } from '../estudo/estudo';
 
 
 @Component({
@@ -73,8 +74,7 @@ export class OperacaoPage {
 
     let lstProposta:Array<Operacao>;
     let operacao:Operacao = new Operacao();
-    let operacao2:Operacao = new Operacao();
-    let operacao3:Operacao = new Operacao();
+ 
     
     operacao.idOperacao = 1234;
     operacao.nome = 'Carlos Costa';
@@ -90,6 +90,8 @@ export class OperacaoPage {
     operacao.documento = true;
     operacao.idLinhaCredito = 1234;
 
+    let operacao2:Operacao = new Operacao();
+    
     operacao2.idOperacao = 12345;
     operacao2.nome = 'Leonardo Soares';
     operacao2.cpfCnpj = '88888888888';
@@ -103,6 +105,8 @@ export class OperacaoPage {
     operacao2.cssClass = 'cancelada';
     operacao2.documento = true;
     operacao2.idLinhaCredito = 12345;
+
+    let operacao3:Operacao = new Operacao();
 
     operacao3.idOperacao = 123456;
     operacao3.nome = 'Rafael Rodrigues';
@@ -118,7 +122,23 @@ export class OperacaoPage {
     operacao3.documento = true;
     operacao3.idLinhaCredito = 123456;
 
-    lstProposta = [operacao,operacao2, operacao3];
+    let operacao4:Operacao = new Operacao();
+
+    operacao4.idOperacao = 1234567;
+    operacao4.nome = 'João Jose';
+    operacao4.cpfCnpj = '77777777777';
+    operacao4.dataOperacao = new Date;
+    operacao4.situacao = 'Estudo';
+    operacao4.dataHoraUltimaVisita = new Date;
+    operacao4.idTipopendencia = 1234567;
+    operacao4.idEstadoOperacao = 1;
+    operacao4.exibir = true;
+    operacao4.idSituacaoCredito = 1;
+    operacao4.cssClass = 'prospeccao';
+    operacao4.documento = true;
+    operacao4.idLinhaCredito = 1234567;
+
+    lstProposta = [operacao,operacao2, operacao3, operacao4];
 
     this.operacoes = lstProposta;
   }
@@ -139,9 +159,7 @@ export class OperacaoPage {
     // });
 
     let estado:EstadoOperacao = new EstadoOperacao();
-    let estado1:EstadoOperacao = new EstadoOperacao();
-    let estado2:EstadoOperacao = new EstadoOperacao();
-    let estado3:EstadoOperacao = new EstadoOperacao();
+   
 
     estado.idEstadoOperacao = 0;
     estado.descricao = 'Todas';
@@ -151,6 +169,8 @@ export class OperacaoPage {
     estado.dataHoraInclusao = new Date;
     estado.idUsuarioInclusao = '0';
 
+    let estado1:EstadoOperacao = new EstadoOperacao();
+
     estado1.idEstadoOperacao = 1;
     estado1.descricao = 'Cadastro';
     estado1.bolSisbr = false;
@@ -158,6 +178,8 @@ export class OperacaoPage {
     estado1.bolAtivo = true;
     estado1.dataHoraInclusao = new Date;
     estado1.idUsuarioInclusao = '1';
+
+    let estado2:EstadoOperacao = new EstadoOperacao();
 
     estado2.idEstadoOperacao = 2;
     estado2.descricao = 'Documentação';
@@ -167,6 +189,8 @@ export class OperacaoPage {
     estado2.dataHoraInclusao = new Date;
     estado2.idUsuarioInclusao = '2';
 
+    let estado3:EstadoOperacao = new EstadoOperacao();
+
     estado3.idEstadoOperacao = 3;
     estado3.descricao = 'Garantia';
     estado3.bolSisbr = false;
@@ -175,7 +199,17 @@ export class OperacaoPage {
     estado3.dataHoraInclusao = new Date;
     estado3.idUsuarioInclusao = '3';
 
-    this.estadosOperacao = [estado, estado1, estado2, estado3];
+    let estado4:EstadoOperacao = new EstadoOperacao();
+
+    estado4.idEstadoOperacao = 4;
+    estado4.descricao = 'Estudo';
+    estado4.bolSisbr = false;
+    estado4.bolMobile = true;
+    estado4.bolAtivo = true;
+    estado4.dataHoraInclusao = new Date;
+    estado4.idUsuarioInclusao = '3';
+
+    this.estadosOperacao = [estado, estado1, estado2, estado3, estado4];
   }
 
   public abrirFiltros(event){
@@ -258,9 +292,11 @@ export class OperacaoPage {
             this.mensagem.setFaseAtualProposta("Garantia");
             this.nav.push(GarantiaPage, {"tomador": this._tomador,"isMesa": true });
 
+        } else if(operacao.situacao == 'Estudo'){
+            this.mensagem.setFaseAtualProposta("Estudo");
+            this.nav.push(EstudoPage, {'tomador': this._tomador});
         } else {
-            
-            this.nav.push(PropostaPage, {'tomador': this._tomador});
+
         }
     }
   }

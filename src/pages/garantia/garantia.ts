@@ -7,6 +7,7 @@ import { GarantiaIncluirPage } from "./garantia-incluir";
 import { GarantiaDTO } from "../../model/GarantiaDTO";
 import { PropostaPage } from "../microcredito/proposta";
 import { OperacaoPage } from "../../app/paginas";
+import { EstudoPage } from "../estudo/estudo";
 
 @Component({
     templateUrl: 'garantia.html'
@@ -43,15 +44,12 @@ export class GarantiaPage{
         this.percRealAlcancado = 100;
         this.pessoalExigido = 1;
         this.garantia = navParams.get('garantia');
-        this.pessoalAlcancado = navParams.get('numGarantia');
+        this.pessoalAlcancado = this.garantias.length;
 
         if(this.garantia){
             this.garantias.push(this.garantia);
         }
 
-        if(!this.pessoalAlcancado){
-            this.pessoalAlcancado = 0;
-        }
         this.isMesa = navParams.get('isMesa');
         this.definirBotao();
     }
@@ -90,7 +88,7 @@ export class GarantiaPage{
     }
     botaoHabilitado(){
         if(this.tituloBotao == 'Cancelar'){
-            this.enviarMesa();
+            this.enviarParaMesa();
         }else{
 
             this.tituloBotao = 'Cancelar';
@@ -98,7 +96,12 @@ export class GarantiaPage{
         }
     }
 
-    enviarMesa(){
+    enviarParaEstudo(){
+        this.mensagem.setFaseAtualProposta("Estudo");
+        this.nav.push(EstudoPage, {"tomador": this.tomador});
+    }
+
+    enviarParaMesa(){
         this.nav.push(OperacaoPage, {"tomador": this.tomador});
     }
 }

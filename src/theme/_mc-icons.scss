@@ -27,6 +27,13 @@ $mc-icon-warning: "\e901";
 $mc-icon-user: "\e900";
 $mc-icon-encaminhar: "\ea34";
 $mc-icon-garantia: "\e98e";
+$mc-icon-calculadora: "\e925";
+$mc-icon-pessoa: "\e930";
+$mc-icon-analises: "\e973";
+$mc-icon-grupo: "\e972";
+$mc-icon-anotacoes: "\e924";
+$mc-icon-anotacoesC: "\e974";
+$mc-icon-estudo: "\e909";
 @font-face {
     font-family: 'mc-icons';
     src: url('#{$icomoon-font-path}/mc-icons.eot?dhppme');
@@ -158,6 +165,48 @@ $mc-icon-garantia: "\e98e";
 .mc-icon-garantia {
     &:before {
         content: $mc-icon-garantia;
+    }
+}
+
+.mc-icon-calculadora {
+    &:before {
+        content: $mc-icon-calculadora;
+    }
+}
+
+.mc-icon-pessoa {
+    &:before {
+        content: $mc-icon-pessoa;
+    }
+}
+
+.mc-icon-analises {
+    &:before {
+        content: $mc-icon-analises;
+    }
+}
+
+.mc-icon-grupo {
+    &:before {
+        content: $mc-icon-grupo;
+    }
+}
+
+.mc-icon-anotacoes {
+    &:before {
+        content: $mc-icon-anotacoes;
+    }
+}
+
+.mc-icon-anotacoesC {
+    &:before {
+        content: $mc-icon-anotacoesC;
+    }
+}
+
+.mc-icon-estudo {
+    &:before {
+        content: $mc-icon-estudo;
     }
 }
 
