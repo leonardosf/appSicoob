@@ -89,7 +89,7 @@
                             <ion-col>
                                 <ion-item>
                                     <ion-label color="primary" stacked>Tipo de Seguro</ion-label>
-                                    <ion-select [(ngModel)]="tipoDeSeguro" interface="alert" ngControl="tipoDeSeguros" #tipoDeSeguros="ngModel" name="tipoDeSeguros"
+                                    <ion-select [(ngModel)]="tipoDeSeguro" (ionChange)="atualizacaoSeguro()" interface="alert" ngControl="tipoDeSeguros" #tipoDeSeguros="ngModel" name="tipoDeSeguros"
                                         required>
                                         <ion-option *ngFor="let tipo of tipoSeguros" [value]="tipo.codigo">{{tipo.nome}}</ion-option>
                                     </ion-select>
@@ -98,7 +98,7 @@
                             <ion-col>
                                 <ion-item>
                                     <ion-label color="primary" stacked>Corretor</ion-label>
-                                    <ion-select [(ngModel)]="corretorDeSeguro" interface="action-sheet" ngControl="corretorDeSeguros" #corretorDeSeguros="ngModel" name="corretorDeSeguros"
+                                    <ion-select [(ngModel)]="corretorDeSeguro" [disabled]="campoCorretor" interface="action-sheet" ngControl="corretorDeSeguros" #corretorDeSeguros="ngModel" name="corretorDeSeguros"
                                         required>
                                         <ion-option *ngFor="let corretor of corretorSeguros" [value]="corretor.codigo">{{corretor.nome}}</ion-option>
                                     </ion-select>
@@ -109,7 +109,7 @@
                             <ion-col>
                                 <ion-item>
                                     <ion-label stacked>Seguradora</ion-label>
-                                    <ion-select interface="action-sheet" [(ngModel)]="seguradoraDeSeguro" ngControl="seguradoraDeSeguros" #seguradoraDeSeguros="ngModel" name="seguradoraDeSeguros"
+                                    <ion-select interface="action-sheet" [(ngModel)]="seguradoraDeSeguro" [disabled]="campoSeguradora" ngControl="seguradoraDeSeguros" #seguradoraDeSeguros="ngModel" name="seguradoraDeSeguros"
                                         cancelText="Cancelar" required>
                                         <ion-option *ngFor="let seguradora of seguradoras" [value]="seguradora.codigo">{{seguradora.nome}}</ion-option>
                                     </ion-select>

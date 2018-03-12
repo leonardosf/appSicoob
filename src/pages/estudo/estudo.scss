@@ -55,6 +55,25 @@
                     }
                 }
             }
+            .item-inner {
+                background-image: none;
+                &:before {
+                    font-family: 'mc-icons' !important;
+                    content: $mc-icon-expandir;
+                    color: #fff;
+                    position: absolute;
+                    right: 8px;
+                    font-size: 13px;
+                    top: 20px;
+                }
+                // &:dectiv {
+                //     content: $mc-icon-proximo;
+                //     position: absolute;
+                //     right: 8px;
+                //     font-size: 13px;
+                //     top: 20px;
+                // }
+            }
         }
     }
 }

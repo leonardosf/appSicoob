@@ -43,6 +43,8 @@ export class SimuladorPage {
     diaVencimento: Number = 0;
     exibirTodosOsPlanos: boolean = false;
     exibirBotaoExpandir: boolean = true;
+    campoSeguradora: boolean = false;
+    campoCorretor: boolean = false;
     tituloPagina: String;
     // capacidadePagamentoSomenteLeitura: boolean = false;
     trocaPagina:boolean = true;
@@ -255,6 +257,19 @@ export class SimuladorPage {
             this.quantidadeDeParcelas = null;
             this.exibirTodosOsPlanos = false;
             this.carregarPlanos();
+        }
+    }
+
+    atualizacaoSeguro(){
+
+        if(this.tipoDeSeguro == 3){
+            this.campoCorretor = true;
+            this.campoSeguradora = true;
+            this.corretorDeSeguro = null;
+            this.seguradoraDeSeguro = null;
+        }else{
+            this.campoCorretor = false;
+            this.campoSeguradora = false;
         }
     }
 

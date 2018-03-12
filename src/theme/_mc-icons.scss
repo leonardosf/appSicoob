@@ -27,13 +27,14 @@ $mc-icon-warning: "\e901";
 $mc-icon-user: "\e900";
 $mc-icon-encaminhar: "\ea34";
 $mc-icon-garantia: "\e98e";
-$mc-icon-calculadora: "\e925";
-$mc-icon-pessoa: "\e930";
+$mc-icon-calculadora: "\e926";
+$mc-icon-pessoa: "\e931";
 $mc-icon-analises: "\e973";
 $mc-icon-grupo: "\e972";
 $mc-icon-anotacoes: "\e924";
 $mc-icon-anotacoesC: "\e974";
 $mc-icon-estudo: "\e909";
+$mc-icon-expandir: "\e917";
 @font-face {
     font-family: 'mc-icons';
     src: url('#{$icomoon-font-path}/mc-icons.eot?dhppme');
@@ -207,6 +208,12 @@ $mc-icon-estudo: "\e909";
 .mc-icon-estudo {
     &:before {
         content: $mc-icon-estudo;
+    }
+}
+
+.mc-icon-expandir {
+    &:before {
+        content: $mc-icon-expandir;
     }
 }
 

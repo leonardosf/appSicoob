@@ -42,7 +42,6 @@ export class DocumentacaoHomePage {
         this.documentos.push(new Documento(3,'Título de Eleitor','Título de Eleitor do tomador',null));
         this.faseDocumento.push(new FaseDocumento('Garantia Real',this.documentos)); 
         this.isMesa = navParams.get('isMesa');
-        console.log(this.isMesa);
         this.definirBotao();
     }
 

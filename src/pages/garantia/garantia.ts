@@ -43,11 +43,13 @@ export class GarantiaPage{
         this.realAlcancado = 1000;
         this.percRealAlcancado = 100;
         this.pessoalExigido = 1;
-        this.garantia = navParams.get('garantia');
-        this.pessoalAlcancado = this.garantias.length;
-
-        if(this.garantia){
-            this.garantias.push(this.garantia);
+        this.garantias = navParams.get('garantias');
+        console.log(this.garantias);
+        if(this.garantias){
+            this.pessoalAlcancado = this.garantias.length;
+        }else{
+            this.garantias = new Array<GarantiaDTO>();
+            this.pessoalAlcancado = 0;
         }
 
         this.isMesa = navParams.get('isMesa');
@@ -80,7 +82,7 @@ export class GarantiaPage{
 
     incluirGarantia(){
         // this.nav.push(GarantiaIncluirPage,  {"isMesa": true });
-        this.nav.push(GarantiaIncluirPage);
+        this.nav.push(GarantiaIncluirPage, {"garantias": this.garantias});
     }
 
     cancelar() {

@@ -29,7 +29,7 @@
             <ion-card padding-sm>
                 <ion-grid>
                     <ion-list *ngFor="let item of items">
-                        <button class="list-info" detail-none (click)="expandItem(item)" ion-item>
+                        <button class="list-info" (click)="expandItem(item)" ion-item>
                             <i class={{item.icon}}></i><i>{{item.titulo}}</i>
                             <div class="expandable">
                                 <expandable *ngIf="item.dto"  [expandHeight]="itemExpandHeight" [expanded]="item.expanded">

@@ -52,13 +52,15 @@ export class GarantiaIncluirPage{
     abaPessoal:boolean = true;
     abaReal:boolean = true;
     consultaCpf:boolean = false;
+    garantias: Array<GarantiaDTO> = new Array<GarantiaDTO>();
 
     constructor(public http: Http, public navParams: NavParams,
         private nav:NavController, private mensagem: MensagemServicoProvider) {
 
        this.preencherDadosInicias();
-       
-        this.titulo = 'Incluir Garantia';
+       this.garantias = navParams.get('garantias');
+       console.log(this.garantias);
+       this.titulo = 'Incluir Garantia';
     }
 
     preencherDadosInicias(){
@@ -271,7 +273,11 @@ export class GarantiaIncluirPage{
                   this.garantia.tipoGarantia = tipoElement.nome;
               }
           });
-
+            console.log(this.garantias);
+          if(!this.garantias){
+            this.garantias =  new Array<GarantiaDTO>();
+          }
+          this.garantias.push(this.garantia);
           let tomador = new TomadorLSE();
           tomador.nomePessoa = 'Carlos Costa';
           tomador.numCpfCnpj = '999.999.999-99';
@@ -290,7 +296,7 @@ export class GarantiaIncluirPage{
           // this.exibirConteudoTomador = false;
           // this.exibirTomador = true;   
 
-          this.nav.push(GarantiaPage, { "garantia": this.garantia , "numGarantia": 1, "tomador": tomador });
+          this.nav.push(GarantiaPage, { "garantias": this.garantias , "tomador": tomador });
 
       }
 
