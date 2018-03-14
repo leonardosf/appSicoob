@@ -1,7 +1,7 @@
 #estudopage {
     .grid {
         .list{
-            .list-info {
+            .item {
                 background-color: transparent;
                 padding: 0;
 
@@ -15,46 +15,18 @@
                     font-style: normal;
                     white-space: normal;
                 }
-        
-                .expandable {
-                    .expand-wrapper {
+            }
 
-                        padding-top: 6px;
-                        color: #fff;
-                        font-weight: 300 !important;
-                        font-size: 12px !important;
+            .expandable {
+                .expand-wrapper {
 
-                        .row {
-                            padding: 0;
-                            
-                            h1 {
-                                color: $app-page-title-color !important;
-                                font-size: 12px !important;
-                                font-weight: 300 !important;
-                                font-style: normal;
-                                text-transform: uppercase;
-                                
-                
-                            }
-
-                            .col {
-                                padding-top: 0;
-                                padding-left: 0;
-            
-                                i{
-                                    font-size: 12px !important;
-                                    display: block;
-                                }
-                            }
-            
-                            i {
-                                padding-left: 4px;
-                                text-transform: capitalize;
-                            }
-                        }
-                    }
+                    padding-top: 0;
+                    color: #fff;
+                    font-weight: 300 !important;
+                    font-size: 12px !important;
                 }
             }
+
             .item-inner {
                 background-image: none;
                 &:before {

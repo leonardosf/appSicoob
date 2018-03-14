@@ -1,0 +1,223 @@
+<div id="dadosCliente">
+    <!-- PESSOA FISICA -->
+    <ion-row >
+        <h1>Pessoa Física</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Data de Nascimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClientePessoaFisicaDTO.dataNascimento | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Idade:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClientePessoaFisicaDTO.idade}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Profissão:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClientePessoaFisicaDTO.profissao}}</i> 
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Estado Civil:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClientePessoaFisicaDTO.estadoCivil}}</i> 
+        </ion-col>
+    </ion-row>    
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Regime de Casamento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClientePessoaFisicaDTO.regimeCasamento}}</i> 
+        </ion-col>
+    </ion-row> 
+    <!-- DADOS DO CÔNJUGE -->
+    <ion-row >
+        <h1>Dados do Cônjuge</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Nome:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteConjugeDTO.nome}}</i>
+        </ion-col>
+    </ion-row>  
+    <ion-row>
+        <ion-col col-6>
+            CPF:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteConjugeDTO.cpf}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Profissão:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteConjugeDTO.profissao}}</i>
+        </ion-col>
+    </ion-row>   
+    <ion-row>
+        <ion-col col-6>
+            Renda Bruta Mensal - Fixa:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteConjugeDTO.rendaBrutaMensal}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Renda Bruta Mensal - Variável:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteConjugeDTO.rendaBrutaMensalVariavel}}</i>
+        </ion-col>
+    </ion-row>      
+    <!-- INFORMAÇÕES CADASTRAIS POSITIVAS -->
+    <ion-row >
+        <h1>Informações Cadastrais Positivas</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Patrimônio Total:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteInfCadastraisPositivasDTO.patrimonioTotal}}</i>
+        </ion-col>
+    </ion-row>  
+    <ion-row>
+        <ion-col col-6>
+            Renda/Receita Bruta Mensal - Fixa:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteInfCadastraisPositivasDTO.rendaReceitaBrutaMensal}}</i>
+        </ion-col>
+    </ion-row>   
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Renda/Receita Bruta Mensal - Variável:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteInfCadastraisPositivasDTO.rendaReceitaBrutaMensalVariavel}}</i>
+        </ion-col>
+    </ion-row>    
+    <!-- RESPONSABILIDADE DIRETA - COOPERATIVA -->
+    <ion-row >
+        <h1>Responsabilidade Direta - Cooperativa</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Produto:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.produto}}</i>
+        </ion-col>
+    </ion-row> 
+    <ion-row>
+        <ion-col col-6>
+            Vencimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.vencido}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Curto Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.curtoPrazo}}</i>
+        </ion-col>
+    </ion-row>   
+    <ion-row>
+        <ion-col col-6>
+            Médio Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.medioPrazo}}</i>
+        </ion-col>
+    </ion-row>     
+    <ion-row>
+        <ion-col col-6>
+            Longo Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.longoPrazo}}</i>
+        </ion-col>
+    </ion-row>  
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Longo Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespDiretaDTO.saldoDevedor}}</i>
+        </ion-col>
+    </ion-row>   
+    <!-- RESPONSABILIDADE INDIRETA - COOPERATIVA -->
+    <ion-row >
+        <h1>Responsabilidade Indireta - Cooperativa</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Produto:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.produto}}</i>
+        </ion-col>
+    </ion-row> 
+    <ion-row>
+        <ion-col col-6>
+            Vencimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.vencido}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Curto Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.curtoPrazo}}</i>
+        </ion-col>
+    </ion-row>   
+    <ion-row>
+        <ion-col col-6>
+            Médio Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.medioPrazo}}</i>
+        </ion-col>
+    </ion-row>     
+    <ion-row>
+        <ion-col col-6>
+            Longo Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.longoPrazo}}</i>
+        </ion-col>
+    </ion-row>  
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Longo Prazo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.dadosClienteRespIndiretaDTO.saldoDevedor}}</i>
+        </ion-col>
+    </ion-row>      
+                             
+</div>

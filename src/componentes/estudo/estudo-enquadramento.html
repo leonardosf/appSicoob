@@ -1,0 +1,288 @@
+<div id="enquadramento">
+    <!-- PROPOSTA DE CREDITO -->
+    <ion-row >
+        <h1>Proposta de Crédito</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Data da Proposta:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoPropostaCreditoDTO.dataProposta | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Classificação da Operação:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoPropostaCreditoDTO.classificacaoOperacao}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Origem do Recurso:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoPropostaCreditoDTO.origemRecurso}}</i> 
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Finalidade:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoPropostaCreditoDTO.finalidade}}</i> 
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Pérfil Tarifário:
+        </ion-col>
+        <ion-col col-6>
+            <i style="padding-bottom: 8px">{{dto.enquadramentoPropostaCreditoDTO.perfilTarifaril}}</i> 
+        </ion-col>
+    </ion-row>
+    <!-- PARCELAMENTO -->
+    <ion-row >
+        <h1>Parcelamento</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Periodicidade de Pagamento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.periodicidade}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Tipo de Vencimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.tipoVencimento}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Dia:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.dia}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Primeiro Vencimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.primeiroVencimento | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Último Vencimento:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.ultimoVencimento | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Dias Operacação:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoParcelamentoDTO.diasOperacao}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Financia IOF:
+        </ion-col>
+        <ion-col col-6>
+            <ion-checkbox color="dark" disabled="true" [(ngModel)]="dto.enquadramentoParcelamentoDTO.financiaIOF" ngControl="enquadramentoParcelamentoDTO" #enquadramentoParcelamentoDTO="ngModel"
+                name="enquadramentoParcelamentoDTO"></ion-checkbox>
+        </ion-col>
+    </ion-row>
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Financia TAC:
+        </ion-col>
+        <ion-col col-6>
+            <ion-checkbox color="dark" disabled="true" [(ngModel)]="dto.enquadramentoParcelamentoDTO.financiaTAC" ngControl="enquadramentoParcelamentoDTO" #enquadramentoParcelamentoDTO="ngModel"
+                name="enquadramentoParcelamentoDTO"></ion-checkbox>
+        </ion-col>
+    </ion-row>
+    <!-- TAXAS -->
+    <ion-row >
+        <h1>Taxas</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Tipo de Taxa de Juros:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.tipoTaxaJuros}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Tabela Taxa de Juros:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.tipoTaxaJuros}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Taxa Juros:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.taxaJuros}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Taxa Mora:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.taxaMora}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Taxa Juros Inad.:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.taxaJurosInad}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Taxa Multa:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.taxaMulta}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Índice de Atraso:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.indiceAtraso}}</i>
+        </ion-col>
+    </ion-row> 
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Índice de Correção:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoTaxasDTO.indiceCorrecao}}</i>
+        </ion-col>
+    </ion-row>
+    <!-- SEGURO -->
+    <ion-row >
+        <h1>Seguro</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Tipo:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoSeguroDTO.tipo}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Corretor:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoSeguroDTO.corretor}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Seguradora:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoSeguroDTO.seguradora}}</i>
+        </ion-col>
+    </ion-row> 
+<!-- RESUMO DO PLANO DE PAGAMENTO -->
+<ion-row >
+        <h1>Resumo do Plano de Pagamento</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Menor Valor Parcela:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.menorValorParcela}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Maior Valor Parcela:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Valor Juros:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.valorJuros}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Valor IOF + ADC:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.valorIOFADC}}</i>
+        </ion-col>
+    </ion-row>         
+    <ion-row>
+        <ion-col col-6>
+            Valor TAC:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.valorTAC}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            Seguro:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.seguro}}</i>
+        </ion-col>
+    </ion-row>    
+    <ion-row>
+        <ion-col col-6>
+            CET Anual:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.cetAnual}}</i>
+        </ion-col>
+    </ion-row>     
+    <ion-row>
+        <ion-col col-6>
+            CET Mensal:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.cetMensal}}</i>
+        </ion-col>
+    </ion-row>      
+    <ion-row>
+        <ion-col col-6>
+            Demais Despesas:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.enquadramentoResPlanoPagamentoDTO.demaisDespesas}}</i>
+        </ion-col>
+    </ion-row>         
+</div>

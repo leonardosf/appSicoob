@@ -28,6 +28,8 @@ import { MaxLengthDirective } from '../directives/max-length/max-length';
 import { PageGeneric } from '../pages/gerenic/pageGeneric';
 import { ExpandableComponent } from '../components/expandable/expandable';
 import { EstudoPage } from '../pages/estudo/estudo';
+import { EstudoEnquadramento } from '../componentes/estudo/estudo-enquadramento';
+import { EstudoDadosCliente } from '../componentes/estudo/estudo-dadosCliente';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { EstudoPage } from '../pages/estudo/estudo';
     AcompanhamentoRegistrarPage,
     MaxLengthDirective,
     ExpandableComponent,
-    EstudoPage
+    EstudoPage,
+    EstudoEnquadramento,
+    EstudoDadosCliente,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +110,8 @@ import { EstudoPage } from '../pages/estudo/estudo';
     ImagemView,
     AcompanhamentoRegistrarPage,
     EstudoPage,
+    EstudoEnquadramento,
+    EstudoDadosCliente
   ],
   providers: [
     StatusBar,
