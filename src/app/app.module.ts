@@ -26,10 +26,13 @@ import { DocumentoServico } from '../providers/documento-servico/documento-servi
 import { Keyboard } from '@ionic-native/keyboard';
 import { MaxLengthDirective } from '../directives/max-length/max-length';
 import { PageGeneric } from '../pages/gerenic/pageGeneric';
-import { ExpandableComponent } from '../components/expandable/expandable';
+import { ExpandableComponent } from '../componentes/expandable/expandable';
 import { EstudoPage } from '../pages/estudo/estudo';
 import { EstudoEnquadramento } from '../componentes/estudo/estudo-enquadramento';
-import { EstudoDadosCliente } from '../componentes/estudo/estudo-dadosCliente';
+import { EstudoDadosCliente } from '../componentes/estudo/estudo-dados-cliente';
+import { EstudoReciprocidadeCliente } from '../componentes/estudo/estudo-reciprocidade-cliente';
+import { EstudoAnalisesDiversas } from '../componentes/estudo/estudo-analises-diversas';
+import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoes-cadastrais';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,9 @@ import { EstudoDadosCliente } from '../componentes/estudo/estudo-dadosCliente';
     EstudoPage,
     EstudoEnquadramento,
     EstudoDadosCliente,
+    EstudoReciprocidadeCliente,
+    EstudoAnalisesDiversas,
+    EstudoAnotacoesCadastrais
   ],
   imports: [
     BrowserModule,
@@ -111,7 +117,10 @@ import { EstudoDadosCliente } from '../componentes/estudo/estudo-dadosCliente';
     AcompanhamentoRegistrarPage,
     EstudoPage,
     EstudoEnquadramento,
-    EstudoDadosCliente
+    EstudoDadosCliente,
+    EstudoReciprocidadeCliente,
+    EstudoAnalisesDiversas,
+    EstudoAnotacoesCadastrais
   ],
   providers: [
     StatusBar,

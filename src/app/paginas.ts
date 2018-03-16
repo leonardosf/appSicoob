@@ -22,4 +22,5 @@ export * from '../pages/documentacao/documentacao';
 export * from '../pages/acompanhamento/acompanhamento-registrar';
 export * from '../pages/garantia/garantia-incluir';
 export * from '../pages/documentacao/documentacao-home';
+export * from '../pages/estudo/estudo';
 

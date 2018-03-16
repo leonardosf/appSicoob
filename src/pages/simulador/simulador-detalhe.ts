@@ -7,6 +7,8 @@ import { SimuladorPage, PropostaPage, DocumentacaoPage, OperacaoPage } from '../
 import { MensagemServicoProvider } from '../../providers/mensagem.servico';
 import { DocumentacaoHomePage } from '../documentacao/documentacao-home';
 import { PageGeneric } from '../gerenic/pageGeneric';
+import { TipoGarantia } from '../../model/TipoGarantia';
+import { Conta } from '../../model/Conta';
 
 @Component({
     templateUrl: 'simulador-detalhe.html'
@@ -28,6 +30,15 @@ export class SimuladorDetalhePage {
     tituloBotao: String;
     nomePessoa: String;
     numCpfCnpj: String;
+    tipoCriterio: String ='credito';
+    tipoCriteriosCredito:  Array<TipoGarantia> = new Array<TipoGarantia>();
+    tipoDeCriterioCredito: number;
+    tipoCriteriosDebito:  Array<TipoGarantia> = new Array<TipoGarantia>();
+    contasCredito:  Array<Conta> = new Array<Conta>();
+    contaDeCredito: number;
+    contaDeDebito: number;
+    contasDebito:  Array<Conta> = new Array<Conta>();
+    tipoDeCriterioDebito: number;
     isExcluir: boolean;
     botaoEncaminhar: boolean;
     iconMenu:any;
@@ -54,6 +65,23 @@ export class SimuladorDetalhePage {
         this.valorOperacao = navParams.get('valorOperacao');
         this.idNsuSimulacao = navParams.get('idNsuSimulacao');
         this.isExcluir = navParams.get('isExcluir');
+        this.tipoCriteriosCredito.push(new TipoGarantia(1 , "CONTA CORRENTE"));
+        this.tipoCriteriosDebito.push(new TipoGarantia(1 , "BOLETO"));
+
+        this.tipoCriteriosCredito.push(new TipoGarantia(2 , "DOC"));
+        this.tipoCriteriosDebito.push(new TipoGarantia(2 , "CONTA CORRENTE"));
+
+        this.contasCredito.push(new Conta(756, 1 , 12345));
+        this.contasCredito.push(new Conta(756, 14 ,54321));
+        this.contasCredito.push(new Conta(756, 20, 98765));
+
+        this.contasDebito.push(new Conta(756, 2 , 14736));
+        this.contasDebito.push(new Conta(756, 24 ,96374));
+        this.contasDebito.push(new Conta(756, 30, 56789));
+
+        this.tipoCriteriosDebito.push()
+        console.log(this.tipoCriteriosCredito);
+        console.log(this.tipoCriteriosDebito);
         this.definirTitulo();
         this.definirBotao();
         
@@ -131,4 +159,32 @@ export class SimuladorDetalhePage {
         this.nav.pop();
     }
 
+    selecionarContaCredito(contas){
+
+        this.contasCredito.map((listItem) => {
+            if(contas == listItem ){
+                listItem.cssClass = 'buttonSelect';
+            } else{
+                listItem.cssClass = 'buttonDefault';
+            }
+ 
+            return listItem;
+ 
+        });
+
+    }
+    selecionarContaDebito(contas){
+
+        this.contasDebito.map((listItem) => {
+            if(contas == listItem ){
+                listItem.cssClass = 'buttonSelect';
+            } else{
+                listItem.cssClass = 'buttonDefault';
+            }
+ 
+            return listItem;
+ 
+        });
+
+    }
 }

@@ -1,0 +1,240 @@
+<div class="estudo">
+    <!-- ASSOCIADO -->
+    <ion-row>
+        <h1>Associado</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Associado Desde:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.associadoDesde | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Data da Última Integralização:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.dataUltimaIntegralizacao | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Valor Última Integralização:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.valorUltimaIntegralizacao}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Capital - Subscrito:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.capitalSubscrito}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Capital - Integralizado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.capitalIntegralizado}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Capital - A Integralizar:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.capitalAIntegralizar}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Capital - Bloqueado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAssociadoDTO.capitalBloqueado}}</i>
+        </ion-col>
+    </ion-row>
+
+     <!-- CONTA CORRENTE -->
+     <ion-row>
+        <h1>Conta Corrente</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Cliente Desde:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteContaCorrenteDTO.clienteDesde | date: 'dd/MM/yyyy'}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Saldo em C/C:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteContaCorrenteDTO.saldoCC}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Limete Conta Corrente:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteContaCorrenteDTO.limeteContaCorrente}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Depósitos Bloqueados:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteContaCorrenteDTO.depositosBloqueados}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Saldo Bloq. Judicial:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteContaCorrenteDTO.saldoBloqueadoJudicial}}</i>
+        </ion-col>
+    </ion-row>
+     <!-- SALDO MÉDIO CC -->
+     <ion-row>
+        <h1>Saldo Médio CC</h1>
+    </ion-row>
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-4 *ngFor="let item of dto.reciprocidadeClienteSaldoMedioCCDTO.periodo">
+            <ion-row>
+                <span>{{item.mes | date: 'MM/yyyy'}}</span><i>R$ {{item.valor}}</i>
+            </ion-row>
+        </ion-col>
+        <ion-col col-5>
+            <ion-row>
+                Média Trimestral:<i>{{dto.reciprocidadeClienteSaldoMedioCCDTO.mediaTrimestral}}</i>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+     <!-- APLICAÇÕES -->
+     <ion-row>
+        <h1>Aplicações</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Depósito a prazo (DAP) disponível:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.depositoPrazoDisponivel}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Depósito sem vencimento (RDC) disponível:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.depositoSemVencimetoDisponivel}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Poupança rural disponível:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.poupancaRuralDisponivel}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            LCA disponível:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.lcaDisponivel}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Depósito a prazo (DAP) bloqueado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.depositoPrazoBloqueado}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Depósito sem vencimento (RDC) bloqueado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.depositoSemVencimentoBloqueado}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Poupança rural bloqueado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.poupancaRuralBloqueado}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            LCA bloqueado:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteAplicacaoDTO.lcsBloqueado}}</i>
+        </ion-col>
+    </ion-row>
+     <!-- COBRANÇA -->
+     <ion-row>
+        <h1>Cobrança</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Cobrança Simples:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteCobrancaDTO.cobrancaSimples}}</i>
+        </ion-col>
+    </ion-row>     
+    <ion-row>
+        <ion-col col-6>
+            Cobrança Vinculada:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteCobrancaDTO.cobrancaVinculada}}</i>
+        </ion-col>
+    </ion-row>     
+    <ion-row style="padding-bottom: 8px">
+        <ion-col col-6>
+            Cobrança Caucionada:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteCobrancaDTO.cobrancaCaucionada}}</i>
+        </ion-col>
+    </ion-row>     
+     <!-- SALDO PROCAPCRED -->
+     <ion-row>
+        <h1>Saldo Procapcred</h1>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Valor Op.:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteSaldoProcapCredDTO.valorOp}}</i>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6>
+            Saldo Dev.:
+        </ion-col>
+        <ion-col col-6>
+            <i>{{dto.reciprocidadeClienteSaldoProcapCredDTO.saldoDev}}</i>
+        </ion-col>
+    </ion-row>
+
+</div>

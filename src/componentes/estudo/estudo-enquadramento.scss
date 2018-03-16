@@ -1,32 +1,3 @@
-#enquadramento {
-    .row {
-                            
-        h1 {
-            color: $app-page-title-color !important;
-            font-size: 12px !important;
-            font-weight: 300 !important;
-            font-style: normal;
-            text-transform: uppercase;
-            
-    
-        }
-    
-        .col {
-            padding: 0;
-            i{
-                color: $app-page-title-color !important;
-                font-style: normal;
-                font-size: 12px !important;
-                display: block;
-            }
-            .checkbox {
-                padding-left: 2px;
-            }
-        }
-    
-        i {
-            padding-left: 4px;
-            text-transform: capitalize;
-        }
-    }
+.enquadramento {
+
 }

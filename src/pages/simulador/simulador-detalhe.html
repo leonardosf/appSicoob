@@ -91,6 +91,111 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
+
+    <ion-card margin-top class="simulador-box">
+        <ion-card-header id="cabecalho">
+                Critério Favorecido 
+        </ion-card-header>
+        <div id="documentos">
+                <ion-segment [(ngModel)]="tipoCriterio" ngControl="tipoCriterios" #tipoCriterios="ngModel" name="tipoCriterios">
+                <ion-segment-button  value="credito">
+                    Crédito
+                </ion-segment-button>
+                <ion-segment-button  value="debito">
+                    Débito
+                </ion-segment-button>
+            </ion-segment>
+        
+        </div>
+        
+        
+        <ion-grid>
+            <ion-row *ngIf="tipoCriterio == 'credito'">
+                <ion-col>
+                    <ion-item>
+                        <ion-label>Critério</ion-label>
+                        <ion-select interface="alert" [(ngModel)]="tipoDeCriterioCredito" ngControl="tipoDeCriterioCreditos" #tipoDeCriterioCreditos="ngModel"
+                            name="tipoDeCriterioCreditos" cancelText="Cancelar">
+                            <ion-option *ngFor="let credito of tipoCriteriosCredito" [value]="credito.codigo">{{credito.nome}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="tipoCriterio == 'debito'">
+                <ion-col>
+                    <ion-item>
+                        <ion-label>Critério</ion-label>
+                        <ion-select interface="alert" [(ngModel)]="tipoDeCriterioDebito" ngControl="tipoDeCriterioDebitos" #tipoDeCriterioDebitos="ngModel"
+                            name="tipoDeCriterioDebitos" cancelText="Cancelar">
+                            <ion-option *ngFor="let debito of tipoCriteriosDebito" [value]="debito.codigo">{{debito.nome}}
+            
+                            </ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                </ion-row>
+                <ion-grid *ngIf="tipoCriterio == 'credito' && tipoDeCriterioCredito">
+                    <ion-row class="listaConta">
+                        <ion-col col-4>
+                            <span>Banco</span>
+                        </ion-col>
+                        <ion-col col-4>
+                            <span>Agência</span>
+                        </ion-col>
+                        <ion-col col-4>
+                            <span>Conta</span>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-grid *ngIf="tipoCriterio == 'credito'">
+                        <ion-row class="listaConta" *ngFor="let contas of contasCredito">
+                            <button (click)="selecionarContaCredito(contas)" [ngClass]="contas.cssClass">
+                                <ion-col col-4>
+                                    <span > {{contas.banco }}</span>
+                                </ion-col>
+                                <ion-col col-4>
+                                    <span>{{contas.agencia }}</span>
+                                </ion-col>
+                                <ion-col col-4>
+                                    <span >{{contas.conta }}</span>
+                                </ion-col>
+                            </button>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-grid>
+                <ion-grid *ngIf="tipoCriterio == 'debito' && tipoDeCriterioDebito">
+                        <ion-row class="listaConta">
+                            <ion-col col-4>
+                                <span>Banco</span>
+                            </ion-col>
+                            <ion-col col-4>
+                                <span>Agência</span>
+                            </ion-col>
+                            <ion-col col-4>
+                                <span>Conta</span>
+                            </ion-col>
+                        </ion-row>
+                    <ion-grid *ngIf="tipoCriterio == 'debito'">
+                        <ion-row class="listaConta" *ngFor="let contas of contasDebito">
+                                <button (click)="selecionarContaDebito(contas)" [ngClass]="contas.cssClass">
+                                    <ion-col col-4>
+                                        <span>{{contas.banco }}</span>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <span>{{contas.agencia }}</span>
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <span>{{contas.conta }}</span>
+                                    </ion-col>
+                                </button>
+                        </ion-row>
+                    </ion-grid>
+                </ion-grid>
+        </ion-grid>
+    </ion-card>
+
     <div class="btn-full-warp">
         <ion-grid>
             <ion-row>

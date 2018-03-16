@@ -1,0 +1,58 @@
+<div class="estudo">
+    <!-- IMPEDITIVA ABSOLUTA -->
+    <ion-row>
+        <h1>Impeditiva Absoluta</h1>
+    </ion-row>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                Tipo
+            </ion-col>
+            <ion-col col-4>
+                Quantidade
+            </ion-col>
+            <ion-col col-4>
+                Valor
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row *ngFor="let item of dto.anotacoesCadastraisImpetitivaAbsolutaDTO.lstImpetitivaAbsoluta">
+            <ion-col>
+                <i>{{item.tipo}}</i>
+            </ion-col>
+            <ion-col>
+                <i>{{item.quantidade}}</i>
+            </ion-col>
+            <ion-col>
+                <i>{{item.valor}}</i>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                Origem Info.
+            </ion-col>
+            <ion-col col-4>
+                Dt. Anotação
+            </ion-col>
+            <ion-col col-4>
+                Dt. Ocorrência
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row *ngFor="let item of dto.anotacoesCadastraisImpetitivaAbsolutaDTO.lstImpetitivaAbsoluta">
+            <ion-col col-4>
+                <i>{{item.origemInfo}}</i>
+            </ion-col>
+            <ion-col col-4>
+                <i>{{item.dtAnotacao | date: 'dd/MM/yyyy'}}</i>
+            </ion-col>
+            <ion-col col-4>
+                <i>{{item.dtOcorrencia | date: 'dd/MM/yyyy'}}</i>
+            </ion-col>
+        </ion-row>        
+    </ion-grid>
+</div>

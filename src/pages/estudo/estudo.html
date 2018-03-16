@@ -28,17 +28,38 @@
         <div>
             <ion-card padding-sm>
                 <ion-grid>
-                    <ion-list *ngFor="let item of items">
+                    <ion-list *ngFor="let item of itens">
                         <button (click)="expandItem(item)" ion-item>
-                            <i class={{item.icon}}></i><i>{{item.titulo}}</i>
+                            <i class={{item.icon}} [ngClass]="item"></i><i>{{item.titulo}}</i>
                         </button>   
                             <div class="expandable">
-                                <expandable *ngIf="item.expanded"  [expandHeight]="item.tamanhoLabel" [expanded]="item.expanded">
+                                <expandable *ngIf="item.expanded" [expanded]="item.expanded">
                                     <div *ngIf="item.titulo == 'Enquadramento da Proposta'">
                                         <enquadramento [dto]="item.dto"></enquadramento>
                                     </div>
                                     <div *ngIf="item.titulo == 'Dados do Cliente'">
                                         <dadoscliente [dto]="item.dto"></dadoscliente>
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Reciprocidade do Cliente'">
+                                        <reciprocidadeCliente [dto]="item.dto"></reciprocidadeCliente>
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Análises Diversas'">
+                                        <analisesDiversas [dto]="item.dto"></analisesDiversas>
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Grupo Econômico'">
+                                        <!-- <dadoscliente [dto]="item.dto"></dadoscliente> -->
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Análise de Garantia'">
+                                        <!-- <dadoscliente [dto]="item.dto"></dadoscliente> -->
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Análise de Garantia'">
+                                        <!-- <dadoscliente [dto]="item.dto"></dadoscliente> -->
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Anotações Cadastrais'">
+                                        <anotacoesCadastrais [dto]="item.dto"></anotacoesCadastrais>
+                                    </div>
+                                    <div *ngIf="item.titulo == 'Anotações de Crédito'">
+                                        <!-- <dadoscliente [dto]="item.dto"></dadoscliente> -->
                                     </div>
                                 </expandable>
                             </div>

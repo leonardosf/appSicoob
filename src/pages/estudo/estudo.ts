@@ -11,9 +11,24 @@ import { EnquadramentoResPlanoPagamentoDTO } from "../../model/EnquadramentoResP
 import { DadosClienteDTO } from "../../model/DadosClienteDTO";
 import { DadosClientePessoaFisicaDTO } from "../../model/DadosClientePessoaFisicaDTO";
 import { DadosClienteConjugeDTO } from "../../model/DadosClienteConjugeDTO";
-import { DadosClienteInfCadastraisPositivasDTO } from "../../model/DadosClienteInfCadastraisPositivasDTO";
+import { DadosClienteInfCadasPositivasDTO } from "../../model/DadosClienteInfCadasPositivasDTO";
 import { DadosClienteRespDiretaDTO } from "../../model/DadosClienteRespDiretaDTO";
 import { DadosClienteRespIndiretaDTO } from "../../model/DadosClienteRespIndiretaDTO";
+import { DadosClienteRespContaCorrenteDTO } from "../../model/DadosClienteRespContaCorrenteDTO";
+import { ReciprocidadeClienteDTO } from "../../model/ReciprocidadeClienteDTO";
+import { ReciprocidadeClienteAssociadoDTO } from "../../model/ReciprocidadeClienteAssociadoDTO";
+import { ReciprocidadeClienteSaldoMedioCCDTO } from "../../model/ReciprocidadeClienteSaldoMedioCCDTO";
+import { ReciprocidadeClienteContaCorrenteDTO } from "../../model/ReciprocidadeClienteContaCorrenteDTO";
+import { ReciprocidadeClienteAplicacaoDTO } from "../../model/ReciprocidadeClienteAplicacaoDTO";
+import { ReciprocidadeClienteCobrancaDTO } from "../../model/ReciprocidadeClienteCobrancaDTO";
+import { ReciprocidadeClienteSaldoProcapCredDTO } from "../../model/ReciprocidadeClienteSaldoProcapCredDTO";
+import { AnalisesDiversasDTO } from "../../model/AnalisesDiversasDTO";
+import { AnalisesDiversasCapPagAnualEntidadeDTO } from "../../model/AnalisesDiversasCapPagAnualEntidadeDTO";
+import { AnalisesDiversasCapPagAnualSCRDTO } from "../../model/AnalisesDiversasCapPagAnualSCRDTO";
+import { AnalisesDiversasEndividamentoEntBanDTO } from "../../model/AnalisesDiversasEndividamentoEntBanDTO";
+import { AnalisesDiversasEndividamentoSCRDTO } from "../../model/AnalisesDiversasEndividamentoSCRDTO";
+import { AnotacoesCadastraisDTO } from "../../model/AnotacoesCadastraisDTO";
+import { AnotacoesCadastraisImpetitivaAbsolutaDTO } from "../../model/AnotacoesCadastraisImpetitivaAbsolutaDTO";
 
 @Component({
     templateUrl: 'estudo.html'
@@ -22,9 +37,12 @@ import { DadosClienteRespIndiretaDTO } from "../../model/DadosClienteRespIndiret
 export class EstudoPage{
  
     private tomador:TomadorLSE;
-    items: any = [];
+    itens: any = [];
     enquadramentoDTO:EnquadramentoDTO;
     dadosClienteDTO:DadosClienteDTO;
+    reciprocidadeClienteDTO:ReciprocidadeClienteDTO;
+    analisesDiversasDTO:AnalisesDiversasDTO;
+    anotacoesCadastraisDTO:AnotacoesCadastraisDTO;
     trocaPagina:boolean = true;
 
     constructor(public navParams: NavParams) {
@@ -37,82 +55,194 @@ export class EstudoPage{
 
         this.comporReciprocidade();
 
-        this.comporAnaliseDiversas();
-
-        this.comporGrupoEconomico();
-
-        this.comporAnalisesGarantia();
+        this.comporAnalisesDiversas();
 
         this.comporAnotacoesCadastrais();
 
-        this.comporAnotacoesCredito();
-
-        this.comporItensList();
+        this.comporItens();
     
     }
 
-    comporAnotacoesCredito(): any {
-        // throw new Error("Method not implemented.");
+    comporItens() {
+
+        this.itens = [
+            {titulo: 'Enquadramento da Proposta',
+             icon: 'mc-icon-calculadora',
+             dto: this.enquadramentoDTO,
+             expanded: false},
+            {titulo: 'Dados do Cliente',
+             icon: 'mc-icon-pessoa',
+             dto: this.dadosClienteDTO,
+             expanded: false},
+            {titulo: 'Reciprocidade do Cliente',
+             icon: 'mc-icon-pessoa',
+             dto: this.reciprocidadeClienteDTO,
+             expanded: false},
+            {titulo: 'Análises Diversas',
+             icon: 'mc-icon-analises',
+             dto: this.analisesDiversasDTO,
+             expanded: false},
+            {titulo: 'Grupo Econômico',
+             icon: 'mc-icon-grupo',
+             dto: this.enquadramentoDTO,
+             expanded: false},
+            {titulo: 'Análise de Garantia',
+             icon: 'mc-icon-analises',
+             dto: this.enquadramentoDTO,
+             expanded: false},
+            {titulo: 'Anotações Cadastrais',
+             icon: 'mc-icon-anotacoes',
+             dto: this.anotacoesCadastraisDTO,
+             expanded: false},
+            {titulo: 'Anotações de Crédito',
+             icon: 'mc-icon-anotacoesC',
+             dto: this.enquadramentoDTO,
+             expanded: false}
+        ];
     }
 
-    comporAnotacoesCadastrais(): any {
-        // throw new Error("Method not implemented.");
+    comporAnotacoesCadastrais() {
+
+        this.anotacoesCadastraisDTO = new AnotacoesCadastraisDTO();
+        this.anotacoesCadastraisDTO.setAnotacoesCadastraisImpetitivaAbsolutaDTO(new AnotacoesCadastraisImpetitivaAbsolutaDTO());
+        this.anotacoesCadastraisDTO.getAnotacoesCadastraisImpetitivaAbsolutaDTO().lstImpetitivaAbsoluta = [{tipo: "Crédito baixado como prejuízo",
+                                                                                                            quantidade: 1,
+                                                                                                            valor: 77492,
+                                                                                                            origemInfo: "serasa",
+                                                                                                            dtAnotacao: new Date,
+                                                                                                            dtOcorrencia: new Date},
+                                                                                                           {tipo: "Declarações Falsas Prejudiciais",
+                                                                                                            quantidade: 1,
+                                                                                                            valor: 77492,
+                                                                                                            origemInfo: "serasa",
+                                                                                                            dtAnotacao: new Date,
+                                                                                                            dtOcorrencia: new Date}];
+
     }
 
-    comporAnalisesGarantia(): any {
-        // throw new Error("Method not implemented.");
+    comporAnalisesDiversas() {
+
+        this.analisesDiversasDTO = new AnalisesDiversasDTO();
+        this.analisesDiversasDTO.setAnalisesDiversasCapPagAnualEntidadeDTO(new AnalisesDiversasCapPagAnualEntidadeDTO());
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualEntidadeDTO().receitaBrutaAnual = 200000;
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualEntidadeDTO().dividas = 3450;
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualEntidadeDTO().capacidadePagamento = 190000;
+
+        this.analisesDiversasDTO.setAnalisesDiversasCapPagAnualSCRDTO(new AnalisesDiversasCapPagAnualSCRDTO());
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualSCRDTO().receitaBrutaAnual = 2000000;
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualSCRDTO().dataBaseConsultaSCR = "";
+        this.analisesDiversasDTO.getAnalisesDiversasCapPagAnualSCRDTO().capacidadePagamento = 0;
+
+        this.analisesDiversasDTO.setAnalisesDiversasEndividamentoEntBanDTO(new AnalisesDiversasEndividamentoEntBanDTO());
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoEntBanDTO().patrimonioTotal = 30000;
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoEntBanDTO().dividas = 10000;
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoEntBanDTO().grauEndividamento = 500000;
+
+        this.analisesDiversasDTO.setAnalisesDiversasEndividamentoSCRDTO(new AnalisesDiversasEndividamentoSCRDTO());
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoSCRDTO().patrimonioTotal = 25000;
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoSCRDTO().dividas = 0;
+        this.analisesDiversasDTO.getAnalisesDiversasEndividamentoSCRDTO().grauEndividamento = 0;
+
+
+
     }
 
-    comporGrupoEconomico(): any {
-        // throw new Error("Method not implemented.");
+    comporReciprocidade() {
+
+        this.reciprocidadeClienteDTO = new ReciprocidadeClienteDTO();
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteAssociadoDTO(new ReciprocidadeClienteAssociadoDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().associadoDesde = new Date;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().dataUltimaIntegralizacao = new Date;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().valorUltimaIntegralizacao = "100,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().capitalSubscrito = "800,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().capitalIntegralizado = "600,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().capitalAIntegralizar = "200,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAssociadoDTO().capitalBloqueado = "0,00";
+
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteContaCorrenteDTO(new ReciprocidadeClienteContaCorrenteDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteContaCorrenteDTO().clienteDesde = new Date;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteContaCorrenteDTO().saldoCC = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteContaCorrenteDTO().limeteContaCorrente = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteContaCorrenteDTO().depositosBloqueados = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteContaCorrenteDTO().saldoBloqueadoJudicial = "0,00";
+
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteSaldoMedioCCDTO(new ReciprocidadeClienteSaldoMedioCCDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteSaldoMedioCCDTO().periodo = [{mes: new Date,valor: "300,00"},
+                                                                                         {mes: new Date,valor: "600,00"},
+                                                                                         {mes: new Date,valor: "900,00"}];
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteSaldoMedioCCDTO().mediaTrimestral = "600,00";
+
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteAplicacaoDTO(new ReciprocidadeClienteAplicacaoDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().depositoPrazoDisponivel = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().depositoSemVencimetoDisponivel = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().poupancaRuralDisponivel = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().lcaDisponivel = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().depositoPrazoBloqueado = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().depositoSemVencimentoBloqueado = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().poupancaRuralBloqueado = "0,00";
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteAplicacaoDTO().lcsBloqueado = "0,00";
+
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteCobrancaDTO(new ReciprocidadeClienteCobrancaDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteCobrancaDTO().cobrancaSimples = 0;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteCobrancaDTO().cobrancaVinculada = 500;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteCobrancaDTO().cobrancaCaucionada = 1000;
+
+        this.reciprocidadeClienteDTO.setReciprocidadeClienteSaldoProcapCredDTO(new ReciprocidadeClienteSaldoProcapCredDTO());
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteSaldoProcapCredDTO().valorOp = 0;
+        this.reciprocidadeClienteDTO.getReciprocidadeClienteSaldoProcapCredDTO().saldoDev = 0;
     }
 
-    comporAnaliseDiversas(): any {
-        // throw new Error("Method not implemented.");
-    }
+    comporDadosCliente() {
 
-    comporDadosCliente(): any {
-        
         this.dadosClienteDTO = new DadosClienteDTO();
         this.dadosClienteDTO.setDadosClientePessoaFisicaDTO(new DadosClientePessoaFisicaDTO());
         this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().dataNascimento = new Date;
-        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().idade = 47;
-        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().profissao = "";
+        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().idade = "47 anos";
+        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().profissao = "Análista";
         this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().estadoCivil = "Solteiro";
-        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().regimeCasamento = "";
+        this.dadosClienteDTO.getDadosClientePessoaFisicaDTO().regimeCasamento = "Comunhão Parcial";
 
         this.dadosClienteDTO.setDadosClienteConjugeDTO(new DadosClienteConjugeDTO());
         this.dadosClienteDTO.getDadosClienteConjugeDTO().nome = "Maria maria";
         this.dadosClienteDTO.getDadosClienteConjugeDTO().cpf = "999.999.999-99";
-        this.dadosClienteDTO.getDadosClienteConjugeDTO().profissao = "Analista";
-        this.dadosClienteDTO.getDadosClienteConjugeDTO().rendaBrutaMensal = 20000;
-        this.dadosClienteDTO.getDadosClienteConjugeDTO().rendaBrutaMensalVariavel = 5000;
+        this.dadosClienteDTO.getDadosClienteConjugeDTO().profissao = "Bancária";
+        this.dadosClienteDTO.getDadosClienteConjugeDTO().rendaBrutaMensalFixa = "10.000";
+        this.dadosClienteDTO.getDadosClienteConjugeDTO().rendaBrutaMensalVariavel = "1.000";
 
-        this.dadosClienteDTO.setDadosClienteInfCadastraisPositivasDTO(new DadosClienteInfCadastraisPositivasDTO());
-        this.dadosClienteDTO.getDadosClienteInfCadastraisPositivasDTO().patrimonioTotal = 200000;
-        this.dadosClienteDTO.getDadosClienteInfCadastraisPositivasDTO().rendaReceitaBrutaMensal = 20000;
-        this.dadosClienteDTO.getDadosClienteInfCadastraisPositivasDTO().rendaReceitaBrutaMensalVariavel = 5000;
+        this.dadosClienteDTO.setDadosClienteInfCadasPositivasDTO(new DadosClienteInfCadasPositivasDTO());
+        this.dadosClienteDTO.getDadosClienteInfCadasPositivasDTO().patrimonioTotal = "200.000";
+        this.dadosClienteDTO.getDadosClienteInfCadasPositivasDTO().rendaReceitaBrutaMensalFixa = "10.000";
+        this.dadosClienteDTO.getDadosClienteInfCadasPositivasDTO().rendaReceitaBrutaMensalVariavel = "5.000";
 
-        this.dadosClienteDTO.setDadosClienteRespDiretaDTO(new DadosClienteRespDiretaDTO());
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().produto = "EMP";
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().vencido = "700,00";
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().curtoPrazo = "7.000,00";
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().medioPrazo = "13.000,00";
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().longoPrazo = "20.000,00";
-        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().saldoDevedor = "30.700,00";
+        this.dadosClienteDTO.setDadosClienteRespDiretaDTO(new Array<DadosClienteRespDiretaDTO>());
 
-        this.dadosClienteDTO.setDadosClienteRespIndiretaDTO(new DadosClienteRespIndiretaDTO());
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().produto = "EMP";
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().vencido = "700,00";
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().curtoPrazo = "7.000,00";
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().medioPrazo = "13.000,00";
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().longoPrazo = "20.000,00";
-        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().saldoDevedor = "30.700,00";
+        let respDireta:DadosClienteRespDiretaDTO = new DadosClienteRespDiretaDTO;
+        respDireta.produto = "EMP";
+        respDireta.vencido = "800,00";
+        respDireta.curtoPrazo = "1.800,00";
+        respDireta.medioPrazo = "2.800,00";
+        respDireta.longoPrazo = "5.600,00";
+        respDireta.saldoDevedor = "10.600,00";
+
+        this.dadosClienteDTO.getDadosClienteRespDiretaDTO().push(respDireta);
         
-    }
+        this.dadosClienteDTO.setDadosClienteRespIndiretaDTO(new Array<DadosClienteRespIndiretaDTO>());
 
-    comporReciprocidade(): any {
-        // throw new Error("Method not implemented.");
+        let respIndireta:DadosClienteRespDiretaDTO = new DadosClienteRespDiretaDTO;
+        respIndireta.produto = "EMP";
+        respIndireta.vencido = "1.800,00";
+        respIndireta.curtoPrazo = "11.800,00";
+        respIndireta.medioPrazo = "21.800,00";
+        respIndireta.longoPrazo = "51.600,00";
+        respIndireta.saldoDevedor = "101.600,00";
+
+        this.dadosClienteDTO.getDadosClienteRespIndiretaDTO().push(respIndireta);
+
+        this.dadosClienteDTO.setDadosClienteRespContaCorrenteDTO(new DadosClienteRespContaCorrenteDTO());
+        this.dadosClienteDTO.getDadosClienteRespContaCorrenteDTO().utilizacaoLimeteCC = "0,00";
+        this.dadosClienteDTO.getDadosClienteRespContaCorrenteDTO().qtdDiasUtilizacaoLimeteCC = "0";
+        this.dadosClienteDTO.getDadosClienteRespContaCorrenteDTO().adiantamentoDepositante = "0,00";
+        this.dadosClienteDTO.getDadosClienteRespContaCorrenteDTO().riscoSacado = "0,00";
     }
 
     comporEnquadramento() {
@@ -159,52 +289,11 @@ export class EstudoPage{
         this.enquadramentoDTO.getEnquadramentoResPlanoPagamentoDTO().cetAnual = "239,1897 %";
         this.enquadramentoDTO.getEnquadramentoResPlanoPagamentoDTO().cetMensal = "10,5599 %";
         this.enquadramentoDTO.getEnquadramentoResPlanoPagamentoDTO().demaisDespesas = "0,00";
-
-    }
-
-    comporItensList() {
-
-        this.items = [
-            {titulo: 'Enquadramento da Proposta',
-             icon: 'mc-icon-calculadora',
-             dto: this.enquadramentoDTO,
-             expanded: false,
-             tamanhoLabel: 760},
-            {titulo: 'Dados do Cliente',
-             icon: 'mc-icon-pessoa',
-             dto: this.dadosClienteDTO,
-             expanded: false,
-             tamanhoLabel: 760},
-            {titulo: 'Reciprocidade do Cliente',
-             icon: 'mc-icon-pessoa',
-             dto: this.enquadramentoDTO,
-             expanded: false},
-            {titulo: 'Análises Diversas',
-             icon: 'mc-icon-analises',
-             dto: this.enquadramentoDTO,
-             expanded: false},
-            {titulo: 'Grupo Econômico',
-             icon: 'mc-icon-grupo',
-             dto: this.enquadramentoDTO,
-             expanded: false},
-            {titulo: 'Análise de Garantia',
-             icon: 'mc-icon-analises',
-             dto: this.enquadramentoDTO,
-             expanded: false},
-            {titulo: 'Anotações Cadastrais',
-             icon: 'mc-icon-anotacoes',
-             dto: this.enquadramentoDTO,
-             expanded: false},
-            {titulo: 'Anotações de Crédito',
-             icon: 'mc-icon-anotacoesC',
-             dto: this.enquadramentoDTO,
-             expanded: false}
-        ];
     }
 
     expandItem(item){
  
-        this.items.map((listItem) => {
+        this.itens.map((listItem) => {
             if(item == listItem && item.dto){
                 listItem.expanded = !item.expanded;
             } 

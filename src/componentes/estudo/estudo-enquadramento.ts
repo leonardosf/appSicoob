@@ -10,8 +10,6 @@ export class EstudoEnquadramento {
     @Input()
     private dto:EnquadramentoDTO;
 
-    ex: boolean;
-
     constructor() {
 
     }
