@@ -58,6 +58,8 @@ export class SimuladorPage {
     corretorDeSeguro: number;
     seguradoraDeSeguro: number;
     seguradoras: Array<Seguro> = new Array<Seguro>();
+    tabelaTaxaJuros;
+    tabelasTaxaJuros = [];
 
 
     constructor(private http:Http, private toastCtrl: ToastController,
@@ -98,6 +100,7 @@ export class SimuladorPage {
 
     ionViewWillEnter() {
         this.carregarLinhas();
+        this.carregarTabelasTaxaJuros();
     }
 
     validarPrimeiroVencimento() {
@@ -175,6 +178,11 @@ export class SimuladorPage {
 
         // });
         this.linhas.push(new LinhaCredito(1 + ";"+ new Date(), "CRÉDITO PESSOAL SICOOB - PRÉ"));
+    }
+    
+    carregarTabelasTaxaJuros() {
+        this.tabelasTaxaJuros = [{idTabela: 1, nome: "TABELA MENSAL"},{idTabela: 2, nome: "TABELA ANUAL"}];
+        console.log(this.tabelasTaxaJuros);
     }
 
     filtrarPlanos(planos) {

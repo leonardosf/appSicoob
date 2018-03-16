@@ -2,7 +2,7 @@
     <mcc-cabecalho titulo="{{tituloPagina}}"></mcc-cabecalho>
 </ion-header>
 
-<ion-content padding-sm id="simuladorpage">
+<ion-content padding-sm class="simuladorpage">
 
     <form #f="ngForm">
         <div *ngIf="nomePessoa && numCpfCnpj">
@@ -84,6 +84,15 @@
                                     <ion-toggle [(ngModel)]="financiaIOF" ngControl="financiaDeIof" #financiaDeIof="ngModel" name="financiaDeIof" start></ion-toggle>
                                 </ion-item>
                             </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-item>
+                                <ion-label stacked>Tabela Taxa de Juros</ion-label>
+                                <ion-select interface="action-sheet" [(ngModel)]="tabelaTaxaJuros" ngControl="tabelaTaxa" #tabelaTaxa="ngModel" name="tabelaTaxa"
+                                    cancelText="Cancelar" (ionBlur)="atualizarTrocaPagina()" required>
+                                    <ion-option *ngFor="let tabela of tabelasTaxaJuros" [value]="tabela.idTabela">{{tabela.nome}}</ion-option>
+                                </ion-select>
+                            </ion-item>
                         </ion-row>
                         <ion-row>
                             <ion-col>
