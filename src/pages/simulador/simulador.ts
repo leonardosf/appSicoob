@@ -298,6 +298,7 @@ export class SimuladorPage {
         this.corretorDeSeguro = null;
         this.financiaTac = null;
         this.financiaIof = null;
+        this.tabelaTaxaJuros = null;
     }
 
     verificaLinhaSelecionada() {

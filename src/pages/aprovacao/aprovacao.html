@@ -1,31 +1,52 @@
-<ion-header>
-    <mcc-cabecalho titulo="Mesa de Operações"></mcc-cabecalho>
-    <ion-toolbar id="page-filter" *ngIf="this.exibirFiltro">
+<ion-header id="page-filter">
+    <mcc-cabecalho titulo="Aprovação"></mcc-cabecalho>
+    <ion-toolbar class="filtro">
         <ion-grid>
             <ion-row>
-                <ion-col *ngIf="situacao">
-                    <small>Fase</small>
-                    <span>{{situacao}}</span>
+                <ion-col *ngIf="grupoAlcadas">
+                    <small>Grupo Alçadas</small>
+                    <span>{{grupoAlcadas}}</span>
+                </ion-col>
+                <ion-col *ngIf="nomeTomador">
+                    <small>Nome Tomador</small>
+                    <span>{{nomeTomador}}</span>
+                </ion-col>
+                <ion-col *ngIf="valorOperacao">
+                    <small>Valor Operação</small>
+                    <span>{{valorOperacao}}</span>
                 </ion-col>
                 <ion-col *ngIf="cpfCnpj">
                     <small>CPF/CNPJ</small>
                     <span>{{cpfCnpj}}</span>
                 </ion-col>
+                <ion-col *ngIf="tipoProduto">
+                    <small>Produto</small>
+                    <span>{{tipoProduto}}</span>
+                </ion-col>
+                <ion-col *ngIf="periodo">
+                    <small>Período</small>
+                    <span>{{periodo}}</span>
+                </ion-col>
+                <ion-col *ngIf="cooperativa">
+                    <small>Cooperativa/PA</small>
+                    <span>{{cooperativa}}</span>
+                </ion-col>
                 <ion-col *ngIf="numProposta">
-                    <small>Nº Proposta</small>
+                    <small>Numero Proposta</small>
                     <span>{{numProposta}}</span>
                 </ion-col>
                 <ion-col col-auto>
                     <button ion-button light (click)="abrirFiltros($event)">
-						<ion-icon name="more"></ion-icon>
-					</button>
+                        <ion-icon name="more"></ion-icon>
+                    </button>
                 </ion-col>
             </ion-row>
         </ion-grid>
     </ion-toolbar>
 </ion-header>
 
-<ion-content id="operacao-page" padding-sm>
+
+<ion-content class="aprovacao-page" padding-sm>
     <div *ngIf="semResultado" class="menssagem info">
         <i class="mc-icon-info"></i>
         <p>Nenhum registro encontrado para os últimos 30 dias!</p>
@@ -53,8 +74,8 @@
                                 <ion-col>
                                     <small>data</small>
                                     <span>
-                                          {{operacao.dataOperacao | date: 'dd/MM/yyyy'}}
-                                        </span>
+                                        {{operacao.dataOperacao | date: 'dd/MM/yyyy'}}
+                                    </span>
                                 </ion-col>
                                 <ion-col class="operacao-item-situacao">
                                     <small>fase</small>
@@ -72,6 +93,5 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-
 
 </ion-content>

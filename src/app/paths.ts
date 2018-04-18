@@ -40,7 +40,7 @@ export class Paths{
     public static readonly TOMADORES_QUESTIONARIOS:string = Paths.getUrl()+"tomadores/{codTipoPessoa}/questionarios";
     public static readonly PLANOS_PAGAMENTO:string = Paths.getUrl()+"planos-pagamento?idLinhaCredito={idLinhaCredito}&dataCadastroLinhaCredito={dataCadastroLinhaCredito}"+
                   "&valorOperacao={valorOperacao}&diaVencimento={diaVencimento}&capacidadePagamento={capacidadePagamento}&numCpfCnpj={numCpfCnpj}&idPessoa={idPessoa}";
-	public static readonly VERSAO:string = Paths.getUrl()+"versoes";
+	public static readonly VERSAO:string = /*Paths.getUrl()+"versoes";*/ "1.0.0";
     public static readonly RELATORIOS_CONSULTA:string = Paths.getUrl()+"relatorios";
     public static readonly RELATORIOS_DETALHE:string = Paths.getUrl()+"relatorios/{idOperacaoCredito}/detalhe-operacao";                                    
 }

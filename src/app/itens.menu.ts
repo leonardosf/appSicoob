@@ -3,6 +3,7 @@ import { OperacaoPage, SelecionarClientePage,  AcompanhamentoPage, RelatorioPage
          SelecionarClienteSimuladorPage, DesempenhoPage, HomePage, DocumentacaoPage, PropostaPage, SimuladorDetalhePage, GarantiaPage, DocumentacaoHomePage } from './paginas';
 import { NavController } from 'ionic-angular';
 import { EstudoPage } from '../pages/estudo/estudo';
+import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
 
 export class ItensMenu{
     private itensMenu = new Array<any>();
@@ -50,6 +51,18 @@ export class ItensMenu{
             icone: 'simular',
             pagina: SelecionarClienteSimuladorPage,
             ativa: ['SelecionarClienteSimuladorPage']
+        };
+
+        this.itensMenu.push(item);
+        return this;
+    }
+
+    public aprovacao():ItensMenu{
+       let item = {
+            titulo: 'Aprovação',
+            icone: 'aprovacao',
+            pagina: AprovacaoPage,
+            ativa: ['AprovacaoPage']
         };
 
         this.itensMenu.push(item);
@@ -123,7 +136,7 @@ export class ItensMenu{
      public iconRodaPeCadastro():ItensMenu{
         let item =  {
              titulo: 'Cadastro',
-             icone: 'microcredito',
+             icone: 'rodape-cadastro',
              pagina: SimuladorDetalhePage,
              ativa: ['SimuladorDetalhePage']
             }
@@ -135,7 +148,7 @@ export class ItensMenu{
      public iconRodaPeDocumentacao():ItensMenu {
         let item =  { 
             titulo: 'Documentação',
-            icone: 'relatorio',
+            icone: 'rodape-documentacao',
             pagina: DocumentacaoHomePage,
             ativa: ['DocumentacaoHomePage']
         }
@@ -146,7 +159,7 @@ export class ItensMenu{
      public iconRodaPeGarantia():ItensMenu {
         let item =  { 
             titulo: 'Garantia',
-            icone: 'garantia',
+            icone: 'rodape-garantia',
             pagina: GarantiaPage,
             ativa: ['GarantiaPage']
         }
@@ -157,7 +170,7 @@ export class ItensMenu{
      public iconRodaPeEstudo():ItensMenu {
         let item =  { 
             titulo: 'Estudo',
-            icone: 'estudo',
+            icone: 'rodape-estudo',
             pagina: EstudoPage,
             ativa: ['EstudoPage']
         }

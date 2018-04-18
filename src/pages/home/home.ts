@@ -39,7 +39,7 @@ export class HomePage {
 
     private menu() {
         let itensMenu: ItensMenu = new ItensMenu();
-        this.menus = itensMenu.simular().operacoes().construir();
+        this.menus = itensMenu.simular().operacoes().aprovacao().construir();
 
         this.perfil = this.mensagem.getUserLogado();
        

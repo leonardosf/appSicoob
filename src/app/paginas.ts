@@ -23,4 +23,6 @@ export * from '../pages/acompanhamento/acompanhamento-registrar';
 export * from '../pages/garantia/garantia-incluir';
 export * from '../pages/documentacao/documentacao-home';
 export * from '../pages/estudo/estudo';
-
+export * from '../pages/aprovacao/aprovacao';
+export * from '../pages/aprovacao/filtroAprovacao';
+export * from '../pages/aprovacao/detalhe-aprovacao';

@@ -11,7 +11,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HomePage, LoginPage,DocumentacaoHomePage, OperacaoPage, LsePage, AcompanhamentoPage, RelatorioPage, RelatorioDetalhesPage,
         SimuladorPage, SimuladorDetalhePage,GarantiaIncluirPage,GarantiaPage, AcompanhamentoDetalhesPage, SelecionarClientePage,
         PropostaPage, FiltroOperacaoPage, FiltroAcompanhamentoPage, DocumentacaoPage,
-        AcompanhamentoDocumentoPage, DesempenhoPage, MensagemPage, MensagemDetalhePage, SelecionarClienteSimuladorPage, AcompanhamentoRegistrarPage } from './paginas';
+        AcompanhamentoDocumentoPage, DesempenhoPage, MensagemPage, MensagemDetalhePage, SelecionarClienteSimuladorPage, AcompanhamentoRegistrarPage, filtroAprovacaoPage, DetalheAprovacaoPage} from './paginas';
 import { Cabecalho, Menu, CpfCnpjPipe, Rodape, TelefonePipe, Documento, ImagemView } from './componentes';
 import { MensagemServicoProvider } from '../providers/mensagem.servico';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
@@ -33,6 +33,7 @@ import { EstudoDadosCliente } from '../componentes/estudo/estudo-dados-cliente';
 import { EstudoReciprocidadeCliente } from '../componentes/estudo/estudo-reciprocidade-cliente';
 import { EstudoAnalisesDiversas } from '../componentes/estudo/estudo-analises-diversas';
 import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoes-cadastrais';
+import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,10 @@ import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoe
     EstudoDadosCliente,
     EstudoReciprocidadeCliente,
     EstudoAnalisesDiversas,
-    EstudoAnotacoesCadastrais
+    EstudoAnotacoesCadastrais,
+    AprovacaoPage,
+    filtroAprovacaoPage,
+    DetalheAprovacaoPage
   ],
   imports: [
     BrowserModule,
@@ -120,7 +124,10 @@ import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoe
     EstudoDadosCliente,
     EstudoReciprocidadeCliente,
     EstudoAnalisesDiversas,
-    EstudoAnotacoesCadastrais
+    EstudoAnotacoesCadastrais,
+    AprovacaoPage,
+    filtroAprovacaoPage,
+    DetalheAprovacaoPage
   ],
   providers: [
     StatusBar,

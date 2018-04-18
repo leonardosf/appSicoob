@@ -1,0 +1,75 @@
+<div class="popoverpage">
+    <ion-list radio-group [(ngModel)]="grupoAlcadas" (ngModelChange)="filtrarGrupoAlcadas()">
+        <ion-list-header>
+            <button (click)="fechar()" ion-button small outline menuClose>
+                <ion-icon name="close" class="text-white"></ion-icon>
+            </button>
+            Grupo Alçadas
+            <button ion-button (click)="limparNumProposta()">
+                limpar
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-list-header>
+
+        <ion-item *ngFor="let grupo of lstGrupoAlcadas">
+            <ion-label>{{grupo}}</ion-label>
+            <ion-radio [value]="grupo"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Nome Tomador
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Nome tomador" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Valor Operação
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Valor Operação" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            CPF/CNPJ
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="CPF/CNPJ" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Produto
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Produto" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Período
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Periodo" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Cooperativa
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Cooperativa" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Numero Proposta
+        </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Numero Proposta" size="18" maxlength="18"></ion-input>
+        </ion-item>
+    </ion-list>
+</div>

@@ -1,40 +1,61 @@
 //Variables
 $icomoon-font-path: '#{$font-path}/mc-icons';
-$mc-icon-logo-microcredito: "\e91b";
-$mc-icon-logo-full: "\e91a";
-$mc-icon-info: "\e918";
-$mc-icon-checked: "\e917";
-$mc-icon-anterior: "\e915";
-$mc-icon-proximo: "\e916";
-$mc-icon-delete: "\e911";
+$mc-icon-logo-credito: "\e91d";
+$mc-icon-logo-full: "\e91c";
+$mc-icon-info: "\e91b";
+$mc-icon-checked: "\e91a";
+$mc-icon-anterior: "\e917";
+$mc-icon-proximo: "\e918";
+$mc-icon-delete: "\e913";
+/*verificar se estão sendo usadas as
+as duas variaveis abaixo*/
 $mc-icon-exibir-menos: "\e913";
 $mc-icon-exibir-mais: "\e914";
-$mc-icon-configuracoes: "\e90f";
+//
+$mc-icon-configuracoes: "\e911";
 $mc-icon-help: "\e906";
 $mc-icon-options: "\e907";
-$mc-icon-microcredito: "\e908";
+$mc-icon-credito2: "\e908";
 $mc-icon-visitas: "\e909";
-$mc-icon-desempenho: "\e90a";
+$mc-icon-desempenho: "\e90d";
 $mc-icon-relatorio: "\e90b";
-$mc-icon-simular: "\e90c";
-$mc-icon-mensagem: "\e90d";
-$mc-icon-operacoes: "\e90e";
+$mc-icon-simular: "\e90e";
+$mc-icon-mensagem: "\e90f";
+//icons menu home
+$mc-icon-operacoes: "\e910";
+$mc-icon-aprovacao: "\e924";//criar novo icon
+
 $mc-icon-photo-add: "\e905";
 $mc-icon-done: "\e904";
 $mc-icon-assignment: "\e902";
 $mc-icon-add: "\e903";
 $mc-icon-warning: "\e901";
 $mc-icon-user: "\e900";
+/*verificar se estão sendo usadas as
+as duas variaveis abaixo*/
 $mc-icon-encaminhar: "\ea34";
 $mc-icon-garantia: "\e98e";
-$mc-icon-calculadora: "\e926";
+//
+//Criar novo icon para calculado do estudo
+$mc-icon-calculadora: "\e928";
+//
 $mc-icon-pessoa: "\e931";
 $mc-icon-analises: "\e973";
 $mc-icon-grupo: "\e972";
 $mc-icon-anotacoes: "\e924";
 $mc-icon-anotacoesC: "\e974";
+/*verificar se estão sendo usadas as
+as duas variaveis abaixo*/
 $mc-icon-estudo: "\e909";
+//
 $mc-icon-expandir: "\e917";
+
+//icons rodape
+$mc-icon-rodape-cadastro: "\e932";
+$mc-icon-rodape-documentacao: "\e90c";
+$mc-icon-rodape-garantia: "\e98f";
+$mc-icon-rodape-estudo: "\e90a";
+
 @font-face {
     font-family: 'mc-icons';
     src: url('#{$icomoon-font-path}/mc-icons.eot?dhppme');
@@ -61,9 +82,9 @@ $mc-icon-expandir: "\e917";
     -moz-osx-font-smoothing: grayscale;
 }
 
-.mc-icon-logo-microcredito {
+.mc-icon-logo-credito {
     &:before {
-        content: $mc-icon-logo-microcredito;
+        content: $mc-icon-logo-credito;
     }
 }
 
@@ -133,9 +154,9 @@ $mc-icon-expandir: "\e917";
     }
 }
 
-.mc-icon-microcredito {
+.mc-icon-credito2 {
     &:before {
-        content: $mc-icon-microcredito;
+        content: $mc-icon-credito2;
     }
 }
 
@@ -217,6 +238,32 @@ $mc-icon-expandir: "\e917";
     }
 }
 
+$mc-icon-rodape-estudo: "\e90a";
+
+.mc-icon-rodape-cadastro {
+    &:before {
+        content: $mc-icon-rodape-cadastro;
+    }
+}
+
+.mc-icon-rodape-estudo {
+    &:before {
+        content: $mc-icon-rodape-estudo;
+    }
+}
+
+.mc-icon-rodape-garantia {
+    &:before {
+        content: $mc-icon-rodape-garantia;
+    }
+}
+
+.mc-icon-rodape-documentacao {
+    &:before {
+        content: $mc-icon-rodape-documentacao;
+    }
+}
+
 .mc-icon-simular {
     &:before {
         content: $mc-icon-simular;
@@ -232,6 +279,12 @@ $mc-icon-expandir: "\e917";
 .mc-icon-operacoes {
     &:before {
         content: $mc-icon-operacoes;
+    }
+}
+
+.mc-icon-aprovacao {
+    &::before {
+        content: $mc-icon-aprovacao;
     }
 }
 
