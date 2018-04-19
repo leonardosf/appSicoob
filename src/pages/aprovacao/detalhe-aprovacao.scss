@@ -33,6 +33,8 @@
 
             .item-inner {
                 background-image: none;
+                border-bottom: 0;
+                
                 &:before {
                     font-family: 'mc-icons' !important;
                     content: $mc-icon-expandir;
@@ -199,5 +201,48 @@
         font-weight: 300 !important;
         font-style: normal;
         white-space: normal;
+    }
+}
+
+.documentos-list {
+    .row {
+                            
+        h1 {
+            color: $app-page-title-color !important;
+            font-size: 12px !important;
+            font-weight: 300 !important;
+            font-style: normal;
+            text-transform: uppercase;
+            
+    
+        }
+    
+        .col {
+            padding: 0;
+            color: #fff;
+            font-style: normal;
+            font-size: 12px !important;
+
+            span{
+                font-style: normal;
+                font-size: 12px !important;
+                display: block;
+                padding-right: 4px;
+            }
+            i{
+                color: $app-page-title-color !important;
+                font-style: normal;
+                font-size: 12px !important;
+                display: block;
+            }
+            .checkbox {
+                padding-left: 2px;
+            }
+        }
+    
+        i {
+            padding-left: 4px;
+            text-transform: capitalize;
+        }
     }
 }

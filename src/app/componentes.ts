@@ -10,3 +10,4 @@ export * from '../componentes/estudo/estudo-anotacoes-cadastrais';
 export * from '../componentes/estudo/estudo-dados-cliente';
 export * from '../componentes/estudo/estudo-enquadramento';
 export * from '../componentes/estudo/estudo-reciprocidade-cliente';
+export * from '../componentes/aprovacao-parecer/parecer-estudo';

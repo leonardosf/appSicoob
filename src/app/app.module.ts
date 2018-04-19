@@ -34,6 +34,7 @@ import { EstudoReciprocidadeCliente } from '../componentes/estudo/estudo-recipro
 import { EstudoAnalisesDiversas } from '../componentes/estudo/estudo-analises-diversas';
 import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoes-cadastrais';
 import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
+import { ParecerEstudoPage } from '../componentes/aprovacao-parecer/parecer-estudo';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
     EstudoAnotacoesCadastrais,
     AprovacaoPage,
     filtroAprovacaoPage,
-    DetalheAprovacaoPage
+    DetalheAprovacaoPage,
+    ParecerEstudoPage
   ],
   imports: [
     BrowserModule,
@@ -127,7 +129,8 @@ import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
     EstudoAnotacoesCadastrais,
     AprovacaoPage,
     filtroAprovacaoPage,
-    DetalheAprovacaoPage
+    DetalheAprovacaoPage,
+    ParecerEstudoPage
   ],
   providers: [
     StatusBar,

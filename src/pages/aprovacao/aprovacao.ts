@@ -65,13 +65,13 @@ export class AprovacaoPage {
 
     public recuperarOperacoes() {
 
-        let idOperacao;
+        let idOperacao = 1234;
         let lstOperacoes;
         this.operacoes = new Array<Operacao>();
 
-        for (idOperacao = 1; idOperacao <= 5; idOperacao++) {
+        for (let i=0; i <= 5; i++) {
             lstOperacoes = new Operacao();
-            lstOperacoes.idOperacao = idOperacao;
+            lstOperacoes.idOperacao = idOperacao + i;
             lstOperacoes.nome = 'Carlos Costa';
             lstOperacoes.cpfCnpj = '99999999999';
             lstOperacoes.dataOperacao = new Date;

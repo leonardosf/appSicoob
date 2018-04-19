@@ -42,6 +42,6 @@ export class filtroAprovacaoPage {
 
     public itensGrupoAlcadas() {
         this.lstGrupoAlcadas = new Array<any>();
-        this.lstGrupoAlcadas.push('Todos','nivel1','nivel2');
+        this.lstGrupoAlcadas.push('Todos','N1','N2','N3','N4');
     }
 }

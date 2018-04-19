@@ -3,7 +3,7 @@ import { EnquadramentoDTO } from "../../model/EnquadramentoDTO";
 
 @Component({
     selector: 'enquadramento',
-    templateUrl: 'estudo-enquadramento.html',
+    templateUrl: 'estudo-enquadramento.html'
 })
 
 export class EstudoEnquadramento {
