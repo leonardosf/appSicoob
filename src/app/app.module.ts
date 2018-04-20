@@ -35,6 +35,7 @@ import { EstudoAnalisesDiversas } from '../componentes/estudo/estudo-analises-di
 import { EstudoAnotacoesCadastrais } from '../componentes/estudo/estudo-anotacoes-cadastrais';
 import { AprovacaoPage } from '../pages/aprovacao/aprovacao';
 import { ParecerEstudoPage } from '../componentes/aprovacao-parecer/parecer-estudo';
+import { ParecerAnalisePage } from '../componentes/aprovacao-parecer/parecer-analise';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ParecerEstudoPage } from '../componentes/aprovacao-parecer/parecer-estu
     AprovacaoPage,
     filtroAprovacaoPage,
     DetalheAprovacaoPage,
-    ParecerEstudoPage
+    ParecerEstudoPage,
+    ParecerAnalisePage
   ],
   imports: [
     BrowserModule,
@@ -130,7 +132,8 @@ import { ParecerEstudoPage } from '../componentes/aprovacao-parecer/parecer-estu
     AprovacaoPage,
     filtroAprovacaoPage,
     DetalheAprovacaoPage,
-    ParecerEstudoPage
+    ParecerEstudoPage,
+    ParecerAnalisePage
   ],
   providers: [
     StatusBar,

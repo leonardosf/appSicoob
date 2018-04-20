@@ -46,6 +46,9 @@
                                 <div *ngIf="item.titulo == 'Estudo'">
                                     <parecerEstudo [dto]="item.dto"></parecerEstudo>
                                 </div>
+                                <div *ngIf="item.titulo == 'Análise técnica'">
+                                    <parecerAnalise [dto]="item.dto"></parecerAnalise>
+                                </div>
                             </expandable>
                         </div>
                     </ion-list>
@@ -219,8 +222,8 @@
                     <ion-row>
                         <ion-col col-6>
                             <ion-item>
-                                <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" (ionChange)="atualizaAcaoParecer()"
-                                    (onBlur)="atualizaAcaoParecer()" cancelText="Cancelar">
+                                <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" 
+                                (ionChange)="atualizaAcaoParecer()" cancelText="Cancelar" [disabled]='campoAcaoParecer'>
                                     <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
                                     <ion-option *ngFor="let acao of acaoParecer" [value]="acao.descricao">{{acao.descricao}}</ion-option>
                                 </ion-select>

@@ -4,6 +4,7 @@ import { TomadorLSE } from "../../model/TomadorLSE";
 import { EstudoPage } from "../estudo/estudo";
 import { MensagemServicoProvider } from "../../providers/mensagem.servico";
 import { ParecerEstudoDTO } from "../../model/ParecerEstudoDTO";
+import { ParecerAnaliseTecnicaDTO } from "../../model/ParecerAnaliseTecnicaDTO";
 
 @Component({
     templateUrl: 'detalhe-aprovacao.html'
@@ -16,7 +17,9 @@ export class DetalheAprovacaoPage {
     public abaAprovacao:string='resumoProposta';
     private acaoParecer = [];
     private botaoConfirmar: Boolean = true;
+    private campoAcaoParecer: Boolean = false;
     private parecerEstudoDTO:ParecerEstudoDTO;
+    private parecerAnaliseTecnicaDTO:ParecerAnaliseTecnicaDTO;
     private parecerNegocial:String;
 
     constructor(private navParams: NavParams, private nav:NavController, private mensagem:MensagemServicoProvider) {
@@ -98,21 +101,23 @@ export class DetalheAprovacaoPage {
     public confirmar() {
         let novoParecer;
 
-        this.parecerEstudoDTO = new ParecerEstudoDTO();
-        this.parecerEstudoDTO.dataInicio = new Date;
-        this.parecerEstudoDTO.dataTermino = new Date;
-        this.parecerEstudoDTO.usuario = 'usuarioTeste';
-        this.parecerEstudoDTO.estado = 'Encaminhada para análise técnica';
-        this.parecerEstudoDTO.parecerNegocial = this.parecerNegocial;
+        this.parecerAnaliseTecnicaDTO = new ParecerAnaliseTecnicaDTO();
+        this.parecerAnaliseTecnicaDTO.dataInicio = new Date;
+        this.parecerAnaliseTecnicaDTO.dataTermino = new Date;
+        this.parecerAnaliseTecnicaDTO.usuario = 'usuarioTeste';
+        this.parecerAnaliseTecnicaDTO.estado = 'Devolvida para estudo';
+        this.parecerAnaliseTecnicaDTO.parecerNegocial = this.parecerNegocial;
 
-        novoParecer = {titulo: 'Estudo',
-                        icon: 'mc-icon-pessoa',
-                        dto: this.parecerEstudoDTO,
+        novoParecer = {titulo: 'Análise técnica',
+                        icon: 'mc-icon-anotacoes',
+                        dto: this.parecerAnaliseTecnicaDTO,
                         expanded: false
                       }
 
         this.itensParecer.push(novoParecer);
         this.parecerNegocial = "";
+        this.botaoConfirmar = true;
+        this.campoAcaoParecer = true;
 
     }
 

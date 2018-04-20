@@ -1,0 +1,47 @@
+<div>
+        <!-- <ion-row>
+            <h1>Estudo - {{dto.dataInicio | date: 'dd/MM/yyyy'}}</h1>
+        </ion-row> -->
+        <ion-row>
+            <ion-col col-6>
+                Data Início:
+            </ion-col>
+            <ion-col col-6>
+                <i>{{dto.dataInicio | date: 'dd/MM/yyyy'}}</i>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                Data Término:
+            </ion-col>
+            <ion-col col-6>
+                <i>{{dto.dataTermino | date: 'dd/MM/yyyy'}}</i>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                Usuário:
+            </ion-col>
+            <ion-col col-6>
+                <i>{{dto.usuario}}</i>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                Estado:
+            </ion-col>
+            <ion-col col-6>
+                <i>{{dto.estado}}</i>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                Parecer Negocial:
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <i>{{dto.parecerNegocial}}</i>
+            </ion-col>
+        </ion-row>
+    </div>
