@@ -34,7 +34,7 @@ export class Util{
     public static TODOS_DASHBOARDS:number = 3;
 
     
-    public static VERSAO_ATUAL = "1.0.0.29";
+    public static VERSAO_ATUAL = "1.0.0.1";
 
     static mask:any={
         CPF: [ /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/,'-', /\d/, /\d/],
