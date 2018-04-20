@@ -4,12 +4,12 @@
             <button (click)="fechar()" ion-button small outline menuClose>
                 <ion-icon name="close" class="text-white"></ion-icon>
             </button>
-            Nº PROPOSTA
             <button ion-button (click)="limparNumProposta()">
                 limpar
                 <ion-icon name="close"></ion-icon>
             </button>
         </ion-list-header>
+        <ion-list-header>Nº PROPOSTA</ion-list-header>
         <ion-item>
             <ion-input placeholder="Digite o nº proposta" type="tel" size="18" maxlength="18" [(ngModel)]="numProposta" (keyup)="filtrar()"></ion-input>
         </ion-item>

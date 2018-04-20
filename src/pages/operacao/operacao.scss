@@ -94,13 +94,16 @@
 .popoverpage {
     .list {
         border-bottom: 0;
-        margin-bottom: 15px;
+        margin-bottom: 2px;
+        margin-top: 10px;
         .list-header {
+            min-height: 0;
             text-transform: uppercase;
             color: #135B57;
             font-weight: 700;
             font-size: 1.3rem;
             margin-bottom: 0;
+            border-bottom: 0;
             .label {
                 margin-top: $margin-sm;
                 margin-bottom: $margin-sm;
@@ -131,6 +134,15 @@
         .item-block {
             min-height: 0;
             height: 28px;
+        }
+    }
+    .row {
+        .item-inner {
+            border-bottom: 0;
+        }
+        .col {
+            padding: 0;
+            position: relative;
         }
     }
 }

@@ -4,18 +4,23 @@
             <button (click)="fechar()" ion-button small outline menuClose>
                 <ion-icon name="close" class="text-white"></ion-icon>
             </button>
-            Grupo Alçadas
             <button ion-button (click)="limparNumProposta()">
                 limpar
                 <ion-icon name="close"></ion-icon>
             </button>
         </ion-list-header>
-
-        <ion-item *ngFor="let grupo of lstGrupoAlcadas">
-            <ion-label>{{grupo}}</ion-label>
-            <ion-radio [value]="grupo"></ion-radio>
-        </ion-item>
+        <ion-list-header>
+            Grupo Alçadas
+        </ion-list-header>
     </ion-list>
+    <ion-row radio-group>
+        <ion-col *ngFor="let grupo of lstGrupoAlcadas">
+            <ion-item >
+                <ion-label>{{grupo}}</ion-label>
+                <ion-radio [value]="grupo"></ion-radio>
+            </ion-item>
+        </ion-col>
+    </ion-row>
     <ion-list>
         <ion-list-header>
             Nome Tomador

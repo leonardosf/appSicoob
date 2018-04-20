@@ -14,6 +14,13 @@ import { TomadorLSE } from "../../model/TomadorLSE";
 export class AprovacaoPage {
 
     private estadosOperacao: Array<EstadoOperacao>;
+    private nomeTomador:String;
+    private valorOperacao:Number;
+    private cpfCnpj:String;
+    private tipoProduto:String;
+    private periodo:Date;
+    private cooperativa:Number;
+    private numProposta:Number;
     private operacoes: Array<Operacao>;
     private semResultado: boolean = false;
     private grupoAlcadas: any;
@@ -38,6 +45,13 @@ export class AprovacaoPage {
 
         let popover = this.popoverCtrl.create(filtroAprovacaoPage, {
             estadosOperacao: this.estadosOperacao,
+            nomeTomador: this.nomeTomador,
+            valorOperacao: this.valorOperacao,
+            cpfCnpj: this.cpfCnpj,
+            tipoProduto: this.tipoProduto,
+            periodo: this.periodo,
+            cooperativa: this.cooperativa,
+            numProposta: this.numProposta
         });
         popover.present({ ev: event });
     }
@@ -75,7 +89,7 @@ export class AprovacaoPage {
             lstOperacoes.nome = 'Carlos Costa';
             lstOperacoes.cpfCnpj = '99999999999';
             lstOperacoes.dataOperacao = new Date;
-            lstOperacoes.situacao = 'Aprovacao';
+            lstOperacoes.situacao = 'Aprovação';
             lstOperacoes.dataHoraUltimaVisita = new Date;
             lstOperacoes.idTipopendencia = 1234;
             lstOperacoes.idEstadoOperacao = 1;
