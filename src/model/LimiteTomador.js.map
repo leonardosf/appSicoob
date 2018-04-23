@@ -1,0 +1,1 @@
+{"version":3,"file":"LimiteTomador.js","sourceRoot":"","sources":["LimiteTomador.ts"],"names":[],"mappings":"AAAA;IAOI,uBAAY,SAAiB,EAAC,eAAsB,EAChD,gBAAuB,EAAC,eAAsB;QAC9C,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;QAC3B,IAAI,CAAC,eAAe,GAAG,eAAe,CAAC;QACvC,IAAI,CAAC,gBAAgB,GAAG,gBAAgB,CAAC;QACzC,IAAI,CAAC,eAAe,GAAG,eAAe,CAAC;IAC3C,CAAC;IAGL,oBAAC;AAAD,CAAC,AAhBD,IAgBC"}

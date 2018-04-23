@@ -100,7 +100,7 @@ export class GarantiaPage{
 
     enviarParaEstudo(){
         this.mensagem.setFaseAtualProposta("Estudo");
-        this.nav.push(EstudoPage, {"tomador": this.tomador});
+        this.nav.push(EstudoPage, {"tomador": this.tomador, showRodape: true});
     }
 
     enviarParaMesa(){

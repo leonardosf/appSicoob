@@ -73,74 +73,44 @@ export class OperacaoPage {
     // );
 
     let lstProposta:Array<Operacao>;
-    let operacao:Operacao = new Operacao();
- 
-    
-    operacao.idOperacao = 1234;
-    operacao.nome = 'Carlos Costa';
-    operacao.cpfCnpj = '99999999999';
-    operacao.dataOperacao = new Date;
-    operacao.situacao = 'Cadastro';
-    operacao.dataHoraUltimaVisita = new Date;
-    operacao.idTipopendencia = 1234;
-    operacao.idEstadoOperacao = 1;
-    operacao.exibir = true;
-    operacao.idSituacaoCredito = 1;
-    operacao.cssClass = 'aprovada';
-    operacao.documento = true;
-    operacao.idLinhaCredito = 1234;
+    let operacao:Operacao;
+    let idOperacao = 1234;
+    let nome1 = 'Carlos Costa';
+    let cpfCnpj1 = '99999999999';
+    let situacao1 = 'Cadastro';
+    let cssClass1 = 'aprovada';
+    let nome2 = 'Leonardo Soares';
+    let cpfCnpj2 = '88888888888';
+    let situacao2 = 'Documentação';
+    let cssClass2 = 'cancelada';
+    let nome3 = 'Rafael Rodrigues';
+    let cpfCnpj3 = '77777777777';
+    let situacao3 = 'Garantia';
+    let cssClass3 = 'prospeccao';
+    let nome4 = 'João Jose';
+    let situacao4 = 'Estudo';
 
-    let operacao2:Operacao = new Operacao();
-    
-    operacao2.idOperacao = 12345;
-    operacao2.nome = 'Leonardo Soares';
-    operacao2.cpfCnpj = '88888888888';
-    operacao2.dataOperacao = new Date;
-    operacao2.situacao = 'Documentação';
-    operacao2.dataHoraUltimaVisita = new Date;
-    operacao2.idTipopendencia = 12345;
-    operacao2.idEstadoOperacao = 1;
-    operacao2.exibir = true;
-    operacao2.idSituacaoCredito = 1;
-    operacao2.cssClass = 'cancelada';
-    operacao2.documento = true;
-    operacao2.idLinhaCredito = 12345;
+    let i;
+    this.operacoes = new Array();
 
-    let operacao3:Operacao = new Operacao();
+    for(i = 0; i < 4; i++) {
+        operacao = new Operacao();
+        operacao.idOperacao = 1234+i;
+        operacao.nome = (i == 0 ? nome1 : i == 1 ? nome2 : i == 2 ? nome3 : i == 3 ? nome4 : "");
+        operacao.cpfCnpj = (i == 0 ? cpfCnpj1 : i == 1 ? cpfCnpj2 : i == 2 ? cpfCnpj3 : i == 3 ? cpfCnpj3 : "");
+        operacao.dataOperacao = new Date;
+        operacao.situacao = (i == 0 ? situacao1 : i == 1 ? situacao2 : i == 2 ? situacao3 : i == 3 ? situacao4 : "");
+        operacao.dataHoraUltimaVisita = new Date;
+        operacao.idTipopendencia = 1234;
+        operacao.idEstadoOperacao = 1;
+        operacao.exibir = true;
+        operacao.idSituacaoCredito = 1;
+        operacao.cssClass = (i == 0 ? cssClass1 : i == 1 ? cssClass2 : i == 2 ? cssClass3 : i == 3 ? cssClass3 : "");
+        operacao.documento = true;
+        operacao.idLinhaCredito = 1234;
 
-    operacao3.idOperacao = 123456;
-    operacao3.nome = 'Rafael Rodrigues';
-    operacao3.cpfCnpj = '77777777777';
-    operacao3.dataOperacao = new Date;
-    operacao3.situacao = 'Garantia';
-    operacao3.dataHoraUltimaVisita = new Date;
-    operacao3.idTipopendencia = 123456;
-    operacao3.idEstadoOperacao = 1;
-    operacao3.exibir = true;
-    operacao3.idSituacaoCredito = 1;
-    operacao3.cssClass = 'prospeccao';
-    operacao3.documento = true;
-    operacao3.idLinhaCredito = 123456;
-
-    let operacao4:Operacao = new Operacao();
-
-    operacao4.idOperacao = 1234567;
-    operacao4.nome = 'João Jose';
-    operacao4.cpfCnpj = '77777777777';
-    operacao4.dataOperacao = new Date;
-    operacao4.situacao = 'Estudo';
-    operacao4.dataHoraUltimaVisita = new Date;
-    operacao4.idTipopendencia = 1234567;
-    operacao4.idEstadoOperacao = 1;
-    operacao4.exibir = true;
-    operacao4.idSituacaoCredito = 1;
-    operacao4.cssClass = 'prospeccao';
-    operacao4.documento = true;
-    operacao4.idLinhaCredito = 1234567;
-
-    lstProposta = [operacao,operacao2, operacao3, operacao4];
-
-    this.operacoes = lstProposta;
+        this.operacoes.push(operacao);
+    }
   }
 
   private recuperarEstadosOperacao(){
@@ -294,7 +264,7 @@ export class OperacaoPage {
 
         } else if(operacao.situacao == 'Estudo'){
             this.mensagem.setFaseAtualProposta("Estudo");
-            this.nav.push(EstudoPage, {'tomador': this._tomador});
+            this.nav.push(EstudoPage, {'tomador': this._tomador, showRodape: true});
         } else {
 
         }

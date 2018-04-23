@@ -45,6 +45,7 @@ export class EstudoPage{
     anotacoesCadastraisDTO:AnotacoesCadastraisDTO;
     trocaPagina:boolean = true;
     itemSelecionado = '$mc-icon-expandir';
+    showRodape:Boolean = true;
 
     constructor(public navParams: NavParams) {
 
@@ -61,7 +62,9 @@ export class EstudoPage{
         this.comporAnotacoesCadastrais();
 
         this.comporItens();
-    
+
+        this.showRodape = navParams.get('showRodape');
+
     }
 
     comporItens() {

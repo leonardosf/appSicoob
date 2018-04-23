@@ -6,7 +6,7 @@ import { MensagemServicoProvider } from '../../providers/mensagem.servico';
 import { TomadorLSE } from '../../model/TomadorLSE';
 import { PageGeneric } from '../../pages/gerenic/pageGeneric';
 import { LinhaCredito } from '../../model/LinhaCredito';
-import { SimuladorDetalhePage } from '../../app/paginas';
+import { SimuladorDetalhePage, EstudoPage } from '../../app/paginas';
 
 @Component({
     selector: 'mcc-rodape',
@@ -39,11 +39,8 @@ export class Rodape {
 
         let itensMenu: ItensMenu = new ItensMenu();
         this.faseAtualProposta = this.mensagem.getFaseAtualProposta();
-        console.log(this.app.getActiveNav().getActive());
 
         if (this.mensagem.getInicioProposta() == "MenuSimulacao") {
-
-            console.log("Fluxo Pelo Menu Simulação")
 
             itensMenu = new ItensMenu();
             switch (this.faseAtualProposta) {
@@ -68,9 +65,6 @@ export class Rodape {
         } else {
 
             //FLUXO QUANDO A PROPOSTA VIER DO MENU MESA OPERAÇOES
-
-            console.log("Fluxo Pelo Menu Mesa Operações")
-
             itensMenu = new ItensMenu();
 
             switch (this.faseAtualProposta) {
@@ -114,8 +108,10 @@ export class Rodape {
                                                         identificadorLinhacredito: 'Linha de Crédito 1',
                                                         isExcluir: true
                                                     });
-        } else {
+        } else if(menu.pagina == EstudoPage){
 
+            this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador, showRodape: true});
+        } else {
             this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador});
         }
 

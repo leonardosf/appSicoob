@@ -44,4 +44,11 @@ export class filtroAprovacaoPage {
         this.lstGrupoAlcadas = new Array<any>();
         this.lstGrupoAlcadas.push('Todos','N1','N2','N3','N4');
     }
+
+    public limparNumProposta(){
+        this.numProposta = null;
+        this.cpfCnpj = null;
+        this.grupoAlcadas = 'Todas';
+        this.filtrar();
+      }
 }
