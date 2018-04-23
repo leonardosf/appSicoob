@@ -30,7 +30,7 @@
                 <ion-grid>
                     <ion-list *ngFor="let item of itens">
                         <button (click)="expandItem(item)" ion-item>
-                            <i class={{item.icon}} [ngClass]="item"></i><i>{{item.titulo}}</i>
+                            <i class={{item.icon}}></i><i>{{item.titulo}}</i>
                         </button>   
                             <div class="expandable">
                                 <expandable *ngIf="item.expanded" [expanded]="item.expanded">

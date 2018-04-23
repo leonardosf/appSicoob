@@ -122,7 +122,8 @@ export class DetalheAprovacaoPage {
     }
 
     public abrirEstudoProposta() {
-        this.nav.push(EstudoPage, {"tomador": this.mensagem.getTomador});
+        console.log(this.mensagem.getTomador);
+        this.nav.push(EstudoPage, {tomador: this.mensagem.getTomador()});
     }
 
     public imprimir() {

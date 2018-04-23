@@ -19,6 +19,7 @@
                 font-size: 14px;
                 white-space: nowrap;
                 line-height: 1rem;
+                color: #d6e266 !important;
             }
             .operacao-item-situacao span {
                 font-weight: 500
@@ -26,52 +27,96 @@
         }
     }
     .card {
-        border-bottom: 3px solid #686868;
+        border-bottom: 2px solid;
         &.prospeccao {
-            border-color: $app-operacao-prospeccao;
             .operacao-item-situacao {
                 span {
                     color: $app-operacao-prospeccao;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-analise;
+                }
             }
         }
         &.analise {
-            border-color: $app-operacao-analise;
+            border-bottom-color: $app-operacao-analise;
             .operacao-item-situacao {
                 span {
+                    color: $app-operacao-analise;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
                     color: $app-operacao-analise;
                 }
             }
         }
         &.aprovada {
-            border-color: $app-operacao-aprovada;
+            border-bottom-color: $app-operacao-aprovada;
             .operacao-item-situacao {
                 span {
+                    color: $app-operacao-aprovada;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
                     color: $app-operacao-aprovada;
                 }
             }
         }
         &.cancelada {
-            border-color: $app-operacao-cancelada;
             .operacao-item-situacao {
                 span {
                     color: $app-operacao-cancelada;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-analise;
+                }
             }
         }
         &.reprovada {
-            border-color: $app-operacao-reprovada;
             .operacao-item-situacao {
                 span {
                     color: $app-operacao-reprovada;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-analise;
+                }
             }
         }
         &.encerrada {
-            border-color: $app-operacao-encerrada;
             .operacao-item-situacao {
                 span {
                     color: $app-operacao-encerrada;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-analise;
                 }
             }
         }

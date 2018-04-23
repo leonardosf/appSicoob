@@ -44,6 +44,7 @@ export class EstudoPage{
     analisesDiversasDTO:AnalisesDiversasDTO;
     anotacoesCadastraisDTO:AnotacoesCadastraisDTO;
     trocaPagina:boolean = true;
+    itemSelecionado = '$mc-icon-expandir';
 
     constructor(public navParams: NavParams) {
 
@@ -297,7 +298,7 @@ export class EstudoPage{
             if(item == listItem && item.dto){
                 listItem.expanded = !item.expanded;
             } 
- 
+            this.itemSelecionado = 'mc-icon-expandir';
             return listItem;
  
         });

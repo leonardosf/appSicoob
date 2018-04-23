@@ -80,26 +80,28 @@ export class AprovacaoPage {
     public recuperarOperacoes() {
 
         let idOperacao = 1234;
-        let lstOperacoes;
+        let numProposta = 12345678;
+        let operacao;
         this.operacoes = new Array<Operacao>();
 
         for (let i=0; i <= 5; i++) {
-            lstOperacoes = new Operacao();
-            lstOperacoes.idOperacao = idOperacao + i;
-            lstOperacoes.nome = 'Carlos Costa';
-            lstOperacoes.cpfCnpj = '99999999999';
-            lstOperacoes.dataOperacao = new Date;
-            lstOperacoes.situacao = 'Aprovação';
-            lstOperacoes.dataHoraUltimaVisita = new Date;
-            lstOperacoes.idTipopendencia = 1234;
-            lstOperacoes.idEstadoOperacao = 1;
-            lstOperacoes.exibir = true;
-            lstOperacoes.idSituacaoCredito = 1;
-            lstOperacoes.cssClass = 'aprovada';
-            lstOperacoes.documento = true;
-            lstOperacoes.idLinhaCredito = 1234;
+            operacao = new Operacao();
+            operacao.idOperacao = idOperacao + i;
+            operacao.nome = 'Carlos Costa';
+            operacao.cpfCnpj = '99999999999';
+            operacao.dataOperacao = new Date;
+            operacao.situacao = 'Aprovação';
+            operacao.dataHoraUltimaVisita = new Date;
+            operacao.idTipopendencia = 1234;
+            operacao.idEstadoOperacao = 1;
+            operacao.exibir = true;
+            operacao.idSituacaoCredito = 1;
+            operacao.cssClass = 'aprovada';
+            operacao.documento = true;
+            operacao.idLinhaCredito = 1234;
+            operacao.numProposta = numProposta+i;
 
-            this.operacoes.push(lstOperacoes);
+            this.operacoes.push(operacao);
         }
     }
 

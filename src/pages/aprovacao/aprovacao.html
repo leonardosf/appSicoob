@@ -62,8 +62,13 @@
                             <ion-row>
                                 <ion-col>
                                     <h2>
-                                        <small>CPF/CNPJ: {{operacao.cpfCnpj | cpfcnpj}}</small> {{operacao.nome}}
+                                        <small>CPF/CNPJ: {{operacao.cpfCnpj | cpfcnpj}}</small>
+                                        <span>{{operacao.nome}}</span>
                                     </h2>
+                                </ion-col>
+                                <ion-col>
+                                    <small>Nº Proposta</small>
+                                    <span>{{operacao.numProposta}}</span>
                                 </ion-col>
                             </ion-row>
                             <ion-row>
@@ -79,7 +84,7 @@
                                 </ion-col>
                                 <ion-col class="operacao-item-situacao">
                                     <small>fase</small>
-                                    <span>{{operacao.situacao}}</span>
+                                    <i>{{operacao.situacao}}</i>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>

@@ -13,4 +13,5 @@ export class Operacao{
 	public cssClass:string;
 	public documento:boolean;
 	public idLinhaCredito:number;
+	public numProposta:number;
 }

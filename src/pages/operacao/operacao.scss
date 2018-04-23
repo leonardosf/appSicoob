@@ -19,6 +19,7 @@
                 font-size: 14px;
                 white-space: nowrap;
                 line-height: 1rem;
+                color: #d6e266 !important;
             }
             .operacao-item-situacao span {
                 font-weight: 500
@@ -33,12 +34,28 @@
                 span {
                     color: $app-operacao-prospeccao;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-prospeccao;
+                }
             }
         }
         &.analise {
             border-color: $app-operacao-analise;
             .operacao-item-situacao {
                 span {
+                    color: $app-operacao-analise;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
                     color: $app-operacao-analise;
                 }
             }
@@ -49,12 +66,28 @@
                 span {
                     color: $app-operacao-aprovada;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-aprovada;
+                }
             }
         }
         &.cancelada {
             border-color: $app-operacao-cancelada;
             .operacao-item-situacao {
                 span {
+                    color: $app-operacao-cancelada;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
                     color: $app-operacao-cancelada;
                 }
             }
@@ -65,12 +98,28 @@
                 span {
                     color: $app-operacao-reprovada;
                 }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
+                    color: $app-operacao-reprovada;
+                }
             }
         }
         &.encerrada {
             border-color: $app-operacao-encerrada;
             .operacao-item-situacao {
                 span {
+                    color: $app-operacao-encerrada;
+                }
+                i {
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-style: normal;
+                    white-space: nowrap;
+                    line-height: 1rem;
                     color: $app-operacao-encerrada;
                 }
             }
