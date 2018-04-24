@@ -44,15 +44,19 @@ export class DetalheAprovacaoPage {
     public comporAcaoParecer() {
         this.acaoParecer = [
             {
+                codigo: 0,
                 descricao: 'Submeter'
             },
             {
+                codigo: 1,
                 descricao: 'Devolver'
             },
             {
+                codigo: 2,
                 descricao: 'Aprovar'
             },
             {
+                codigo: 3,
                 descricao: 'Reprovar'
             }
         ]
@@ -99,6 +103,7 @@ export class DetalheAprovacaoPage {
     }
 
     public confirmar() {
+
         let novoParecer;
 
         this.parecerAnaliseTecnicaDTO = new ParecerAnaliseTecnicaDTO();
@@ -112,7 +117,7 @@ export class DetalheAprovacaoPage {
                         icon: 'mc-icon-anotacoes',
                         dto: this.parecerAnaliseTecnicaDTO,
                         expanded: false
-                      }
+                        }
 
         this.itensParecer.push(novoParecer);
         this.parecerNegocial = "";

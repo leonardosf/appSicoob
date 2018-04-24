@@ -215,7 +215,7 @@
                 <!-- Caixa de texto parecer-->
                 <i>Parecer</i>
                 <ion-item id="input-textarea">
-                    <ion-textarea [(ngModel)]="parecerNegocial" ngControl="parecerNegocial"></ion-textarea>
+                    <ion-textarea [(ngModel)]="parecerNegocial" ngControl="parecerNegocial" required></ion-textarea>
                 </ion-item>
                 <!-- Botoes -->
                 <ion-grid>
@@ -223,9 +223,9 @@
                         <ion-col col-6>
                             <ion-item>
                                 <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" 
-                                (ionChange)="atualizaAcaoParecer()" cancelText="Cancelar" [disabled]='campoAcaoParecer'>
+                                (ionChange)="atualizaAcaoParecer()" cancelText="Cancelar" [disabled]='campoAcaoParecer' placeholder="Selecione">
                                     <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
-                                    <ion-option *ngFor="let acao of acaoParecer" [value]="acao.descricao">{{acao.descricao}}</ion-option>
+                                    <ion-option *ngFor="let acao of acaoParecer" [value]="acao.codigo">{{acao.descricao}}</ion-option>
                                 </ion-select>
                             </ion-item>
                         </ion-col>
