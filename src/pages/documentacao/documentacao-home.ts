@@ -23,7 +23,9 @@ export class DocumentacaoHomePage {
     documentos: Array<Documento> = new Array<Documento>();
     tituloBotao: string;
     botaoEncaminhar: boolean;
+    botaoGravarCancelar:boolean;
     isMesa: boolean;
+    isAprovacao: boolean;
     trocaPagina:boolean = true;
 
     constructor(public http: Http, public navParams: NavParams,
@@ -42,6 +44,7 @@ export class DocumentacaoHomePage {
         this.documentos.push(new Documento(3,'Título de Eleitor','Título de Eleitor do tomador',null));
         this.faseDocumento.push(new FaseDocumento('Garantia Real',this.documentos)); 
         this.isMesa = navParams.get('isMesa');
+        this.isAprovacao = navParams.get('isAprovacao');
         this.definirBotao();
     }
 
@@ -52,9 +55,14 @@ export class DocumentacaoHomePage {
         if(this.isMesa){
             this.tituloBotao = 'Cancelar';
             this.botaoEncaminhar = false;
+        } else if(this.isAprovacao) {
+            this.tituloBotao = 'Cancelar';
+            this.botaoGravarCancelar = true;
+            this.botaoEncaminhar = true;
         }else{
             this.tituloBotao = 'Gravar';
             this.botaoEncaminhar = true;
+            this.botaoGravarCancelar = true;
         }
     }
 

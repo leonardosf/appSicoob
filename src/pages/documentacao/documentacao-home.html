@@ -48,7 +48,7 @@
             <ion-grid>
                 <ion-row>
                     <ion-col>
-                        <button ion-button block (click)="gravarDocumento()">{{tituloBotao}}</button>
+                        <button ion-button block (click)="gravarDocumento()" [disabled]='botaoGravarCancelar'>{{tituloBotao}}</button>
                     </ion-col>
                     <ion-col>
                         <button ion-button block (click)="enviarParaGarantia()" [disabled]='botaoEncaminhar'>Encaminhar</button>

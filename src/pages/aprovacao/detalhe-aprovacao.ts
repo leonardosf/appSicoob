@@ -5,6 +5,7 @@ import { EstudoPage } from "../estudo/estudo";
 import { MensagemServicoProvider } from "../../providers/mensagem.servico";
 import { ParecerEstudoDTO } from "../../model/ParecerEstudoDTO";
 import { ParecerAnaliseTecnicaDTO } from "../../model/ParecerAnaliseTecnicaDTO";
+import { DocumentacaoHomePage } from "../../app/paginas";
 
 @Component({
     templateUrl: 'detalhe-aprovacao.html'
@@ -20,7 +21,7 @@ export class DetalheAprovacaoPage {
     private campoAcaoParecer: Boolean = false;
     private parecerEstudoDTO:ParecerEstudoDTO;
     private parecerAnaliseTecnicaDTO:ParecerAnaliseTecnicaDTO;
-    private parecerNegocial:String;
+    private parecerNegocialModel:String;
 
     constructor(private navParams: NavParams, private nav:NavController, private mensagem:MensagemServicoProvider) {
 
@@ -102,33 +103,41 @@ export class DetalheAprovacaoPage {
         this.botaoConfirmar = false;
     }
 
-    public confirmar() {
+    public confirmar(f) {
+        if(f.valid) {
 
-        let novoParecer;
+            let novoParecer;
+    
+            this.parecerAnaliseTecnicaDTO = new ParecerAnaliseTecnicaDTO();
+            this.parecerAnaliseTecnicaDTO.dataInicio = new Date;
+            this.parecerAnaliseTecnicaDTO.dataTermino = new Date;
+            this.parecerAnaliseTecnicaDTO.usuario = 'usuarioTeste';
+            this.parecerAnaliseTecnicaDTO.estado = 'Devolvida para estudo';
+            this.parecerAnaliseTecnicaDTO.parecerNegocial = this.parecerNegocialModel;
+    
+            novoParecer = {titulo: 'Análise técnica',
+                            icon: 'mc-icon-anotacoes',
+                            dto: this.parecerAnaliseTecnicaDTO,
+                            expanded: false
+                            }
+    
+            this.itensParecer.push(novoParecer);
+            this.parecerNegocialModel = "";
+            this.botaoConfirmar = true;
+            this.campoAcaoParecer = true;
+        }
 
-        this.parecerAnaliseTecnicaDTO = new ParecerAnaliseTecnicaDTO();
-        this.parecerAnaliseTecnicaDTO.dataInicio = new Date;
-        this.parecerAnaliseTecnicaDTO.dataTermino = new Date;
-        this.parecerAnaliseTecnicaDTO.usuario = 'usuarioTeste';
-        this.parecerAnaliseTecnicaDTO.estado = 'Devolvida para estudo';
-        this.parecerAnaliseTecnicaDTO.parecerNegocial = this.parecerNegocial;
-
-        novoParecer = {titulo: 'Análise técnica',
-                        icon: 'mc-icon-anotacoes',
-                        dto: this.parecerAnaliseTecnicaDTO,
-                        expanded: false
-                        }
-
-        this.itensParecer.push(novoParecer);
-        this.parecerNegocial = "";
-        this.botaoConfirmar = true;
-        this.campoAcaoParecer = true;
 
     }
 
     public abrirEstudoProposta() {
         console.log(this.mensagem.getTomador);
         this.nav.push(EstudoPage, {tomador: this.mensagem.getTomador()});
+    }
+
+    public abrirDocumentacao() {
+        console.log(this.mensagem.getTomador);
+        this.nav.push(DocumentacaoHomePage, {tomador: this.mensagem.getTomador(), isAprovacao: true});
     }
 
     public imprimir() {

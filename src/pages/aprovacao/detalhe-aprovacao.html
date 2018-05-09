@@ -57,27 +57,6 @@
             <!-- Itens da aba proposta estudo -->
             <div *ngSwitchCase="'resumoProposta'" class="documentos-list">
                 <ion-row>
-                    <h1>Detalhamento da Transação</h1>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-6>
-                        Proposta Número:
-                    </ion-col>
-                    <ion-col col-6>
-                        <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.dataProposta | date: 'dd/MM/yyyy'}}</i> -->
-                        <i>21365412</i>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-6>
-                        Fluxo:
-                    </ion-col>
-                    <ion-col col-6>
-                        <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.classificacaoOperacao}}</i> -->
-                        <i>2</i>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
                     <ion-col col-3>
                         Cooperativa:
                     </ion-col>
@@ -95,11 +74,56 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Cliente:
+                        Associado desde:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.finalidade}}</i> -->
-                        <i>Cliente teste</i>
+                        <i>01/01/2000</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Nível risco Cliente:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.finalidade}}</i> -->
+                        <i>R9</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Linha de Crédito:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
+                        <i>Linha Teste</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Indicador de Cálculo:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
+                        <i>Tabela Price</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Número Proposta:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.dataProposta | date: 'dd/MM/yyyy'}}</i> -->
+                        <i>21365412</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Fluxo:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.classificacaoOperacao}}</i> -->
+                        <i>2</i>
                     </ion-col>
                 </ion-row>
                 <ion-row>
@@ -113,25 +137,7 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Data da Operação:
-                    </ion-col>
-                    <ion-col col-6>
-                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
-                        <i>19/04/2018</i>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-6>
-                        Valor da Proposta:
-                    </ion-col>
-                    <ion-col col-6>
-                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
-                        <i>R$ 20.000,00</i>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-6>
-                        Valor da Contratado:
+                        Valor Contratado:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
@@ -149,11 +155,29 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Classificação da Operação:
+                        Ind. Correção:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
                         <i></i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        % Ind. Correção:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
+                        <i>0,0000</i>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        Nível risco Operação:
+                    </ion-col>
+                    <ion-col col-6>
+                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
+                        <i>A</i>
                     </ion-col>
                 </ion-row>
                 <ion-row>
@@ -194,54 +218,57 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Linha de Crédito:
+                        Anotações Cadastrais:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
-                        <i>Linha Teste</i>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col col-6>
-                        Indicador de Cálculo:
-                    </ion-col>
-                    <ion-col col-6>
-                        <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
-                        <i></i>
+                        <i>Sim</i>
                     </ion-col>
                 </ion-row>
             </div>
             <div class="btn-full-warp">
-                <!-- Caixa de texto parecer-->
-                <i>Parecer</i>
-                <ion-item id="input-textarea">
-                    <ion-textarea [(ngModel)]="parecerNegocial" ngControl="parecerNegocial" required></ion-textarea>
-                </ion-item>
-                <!-- Botoes -->
-                <ion-grid>
-                    <ion-row>
-                        <ion-col col-6>
-                            <ion-item>
-                                <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" 
-                                (ionChange)="atualizaAcaoParecer()" cancelText="Cancelar" [disabled]='campoAcaoParecer' placeholder="Selecione">
-                                    <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
-                                    <ion-option *ngFor="let acao of acaoParecer" [value]="acao.codigo">{{acao.descricao}}</ion-option>
-                                </ion-select>
-                            </ion-item>
-                        </ion-col>
-                        <ion-col col-6>
-                            <button ion-button block (click)="confirmar()" [disabled]='botaoConfirmar'>Confirmar</button>
-                        </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-6>
-                            <button ion-button block (click)="abrirEstudoProposta()">Estudo Proposta</button>
-                        </ion-col>
-                        <ion-col col-6>
-                            <button ion-button block (click)="imprimir()">Imprimir</button>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
+                <form #f="ngForm">
+                    <!-- Caixa de texto parecer-->
+                    <i>Parecer</i>
+                    <ion-item id="input-textarea">
+                        <ion-textarea [(ngModel)]="parecerNegocialModel" ngControl="parecerNeg" #parecerNeg="ngModel" name="parecerNeg"></ion-textarea>
+                    </ion-item>
+                    <!-- <p *ngIf="f.submitted && !parecerNeg.valid" class="text-center">
+                        Parecer obrigatório.
+                    </p> -->
+                    <!-- Botoes -->
+                    <ion-grid>
+                        <ion-row>
+
+                            <ion-col col-6>
+                                <ion-item>
+                                    <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" (ionChange)="atualizaAcaoParecer()"
+                                        cancelText="Cancelar" [disabled]='campoAcaoParecer' placeholder="Selecione">
+                                        <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
+                                        <ion-option *ngFor="let acao of acaoParecer" [value]="acao.codigo">{{acao.descricao}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </ion-col>
+
+                            <ion-col col-6>
+                                <button ion-button block (click)="confirmar(f)" type="submit" [disabled]='botaoConfirmar'>Confirmar</button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-6>
+                                <button ion-button block (click)="abrirEstudoProposta()">Estudo</button>
+                            </ion-col>
+                            <ion-col col-6>
+                                <button ion-button block (click)="abrirDocumentacao()">Documentação</button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-6>
+                                <button ion-button block (click)="imprimir()">Imprimir</button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </form>
             </div>
         </div>
     </div>
