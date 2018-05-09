@@ -90,7 +90,7 @@ export class AprovacaoPage {
             operacao.nome = 'Carlos Costa';
             operacao.cpfCnpj = '99999999999';
             operacao.dataOperacao = new Date;
-            operacao.situacao = 'Aprovação';
+            operacao.situacao = 'Nível 2';
             operacao.dataHoraUltimaVisita = new Date;
             operacao.idTipopendencia = 1234;
             operacao.idEstadoOperacao = 1;
