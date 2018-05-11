@@ -156,6 +156,17 @@ export class ItensMenu{
         return this;
      }
 
+     public iconRodaPeImprimir():ItensMenu {
+        let item =  { 
+            titulo: 'Imprimir',
+            icone: 'rodape-documentacao',
+            // pagina: DocumentacaoHomePage,
+            ativa: ['DocumentacaoHomePage']
+        }
+        this.itensMenu.push(item);
+        return this;
+     }
+
      public iconRodaPeGarantia():ItensMenu {
         let item =  { 
             titulo: 'Garantia',

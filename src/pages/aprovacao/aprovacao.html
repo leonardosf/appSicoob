@@ -1,6 +1,10 @@
-<ion-header id="page-filter">
+<ion-header>
     <mcc-cabecalho titulo="Aprovação"></mcc-cabecalho>
-    <ion-toolbar class="filtro">
+</ion-header>
+
+
+<ion-content class="aprovacao-page" padding-sm>
+    <ion-toolbar id="page-filter">
         <ion-grid>
             <ion-row>
                 <ion-col *ngIf="grupoAlcadas">
@@ -43,10 +47,8 @@
             </ion-row>
         </ion-grid>
     </ion-toolbar>
-</ion-header>
 
 
-<ion-content class="aprovacao-page" padding-sm>
     <div *ngIf="semResultado" class="menssagem info">
         <i class="mc-icon-info"></i>
         <p>Nenhum registro encontrado para os últimos 30 dias!</p>

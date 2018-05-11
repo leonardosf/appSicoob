@@ -55,17 +55,44 @@
         }
     }
     .div-detalhe-aprovacao {
-        @media only screen and (min-width:1366px){
-   
+        
+        @media only screen and (min-width:1367px){
+    
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
             width: 800px;
             margin: auto; 
-           
+    
         }
-        @media only screen and (max-width:300px){
-        
-        width: 480px;
-        margin: auto; 
-        
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
         } 
     }
     .div-detalhe-parecer {
@@ -115,23 +142,119 @@
                 margin-bottom: 0
             }
         }
-        @media only screen and (min-width:1366px){
+        
+        @media only screen and (min-width:1367px){
    
-            width: 800px;
-            margin: auto; 
+            width: 1000px;
+            margin-left: 21em; 
            
         }
-        @media only screen and (max-width:300px){
-        
-        width: 480px;
-        margin: auto; 
-        
+    
+        @media only screen and (min-width:801px) and (max-width:1366px){
+       
+            width: 800px;
+            margin-left: 275px; 
+           
         }
+        @media only screen and (max-width:800px){
+        
+            width: 480px;
+            margin: auto; 
+        
+        } 
     }
     .card{
         padding: 0;
         margin: 0;
         width: 100%;
+    }
+
+    #documentos {
+        position: relative;
+        height: 100%;
+        .segment {
+            position: absolute;
+            z-index: 1000;
+            top: 0;
+            .segment-button {
+                span {
+                    font-size: 10px;
+                }
+                i {
+                    display: inline-block;
+                    font-style: normal;
+                    font-size: 11px;
+                }
+                &.segment-button-disabled {
+                    color: #000 !important;
+                    i {
+                        font-weight: normal
+                    }
+                }
+            }
+            &.segment-md {
+                .segment-button {
+                    height: 32px;
+                    line-height: 32px;
+                }
+            }
+        }
+        >div {
+            position: absolute;
+            top: 32px;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+            padding: $margin-sm;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            .item-wrapper:last-child .item-block {
+                border-bottom: none !important
+            }
+            .list {
+                margin-bottom: 0
+            }
+        }
+        
+ @media only screen and (min-width:1367px){
+    
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
+            width: 800px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
+        } 
     }
 }
 
@@ -166,7 +289,7 @@
         margin: 0;
     }
 }
-.btn-full-warp {
+#btn-full-warp {
     padding: 0;
     margin: 0;
     padding-top: 10px;

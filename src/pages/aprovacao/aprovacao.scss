@@ -1,4 +1,9 @@
 .aprovacao-page {
+    .card{
+        background-color: $app-box-color;
+        border: 1px solid $app-box-line-color;
+        border-radius: 4px;
+    }
     .operacao-list {
         .operacao-item {
             color: #fff;
@@ -120,17 +125,44 @@
                 }
             }
         }
-        @media only screen and (min-width:1366px){
-   
-            width: 800px;
-            margin-left: 23em;
-           
+        
+        @media only screen and (min-width:1367px){
+    
+            width: 1000px;
+            margin: auto; 
+    
         }
-        @media only screen and (max-width:300px){
-        
-        width: 480px;
-        margin: auto; 
-        
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
+            width: 800px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
         } 
     }
 
@@ -169,4 +201,55 @@
             }
         }
     }
+}
+
+#page-filter {
+    background-color: $app-box-color;
+    border: 1px solid $app-box-line-color;
+    border-radius: 4px;
+    .filter-order {
+        .icon {
+            font-size: 1.1rem;
+            color: #B6BE37;
+            padding: 2px;
+        }
+    }
+    @media only screen and (min-width:1367px){
+    
+        width: 1000px;
+        margin: auto; 
+
+    }
+
+    @media only screen and (min-width:769px) and (max-width:1366px){
+
+        width: 800px;
+        margin: auto; 
+
+    }
+
+    @media only screen and (width:768px){
+
+            width: 750px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:641px) and (max-width:767px){
+
+            width: 450px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:321px) and (max-width:360px){
+
+        width: 350px;
+        margin: auto; 
+
+    }
+    @media only screen and (width:320px){
+
+        width: 290px;
+        margin: auto; 
+
+    }  
 }

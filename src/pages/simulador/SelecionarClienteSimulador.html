@@ -30,7 +30,9 @@
             <ion-card-header>
                 <ion-grid>
                     <ion-row>
-                        <ion-col col-auto><i class="mc-icon-user icon"></i></ion-col>
+                        <ion-col col-auto>
+                            <i class="mc-icon-user icon"></i>
+                        </ion-col>
                         <ion-col>
                             <h1>
                                 {{tomador.nomePessoa}}
@@ -41,85 +43,84 @@
                 </ion-grid>
             </ion-card-header>
 
-                <ion-card-content>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col col-4>Última
-                                <br/>Renovação</ion-col>
-                            <ion-col class='simulador-cliente' col-8>{{ultimaRenovacao | date: 'dd/MM/yyyy'}}</ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-4>Risco Cliente</ion-col>
-                            <ion-col col-8 class='simulador-cliente'>
-                                {{riscoCliente}}
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-4>PD</ion-col>
-                            <ion-col col-8 class='simulador-cliente'>
-                                {{pd}}
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-4>Risco Bacen</ion-col>
-                            <ion-col col-8 class='simulador-cliente'>
-                                {{riscoBacen}}
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-4>Consulta em</ion-col>
-                            <ion-col col-8 class='simulador-cliente'>{{consultaRealizada | date: 'dd/MM/yyyy'}}</ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-card-content>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-4>Última<br/>Renovação</ion-col>
+                        <ion-col class='simulador-cliente' col-8>{{ultimaRenovacao | date: 'dd/MM/yyyy'}}</ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>Risco Cliente</ion-col>
+                        <ion-col col-8 class='simulador-cliente'>
+                            {{riscoCliente}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>PD</ion-col>
+                        <ion-col col-8 class='simulador-cliente'>
+                            {{pd}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>Risco Bacen</ion-col>
+                        <ion-col col-8 class='simulador-cliente'>
+                            {{riscoBacen}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-4>Consulta em</ion-col>
+                        <ion-col col-8 class='simulador-cliente'>{{consultaRealizada | date: 'dd/MM/yyyy'}}</ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
         </ion-card>
         <ion-card padding-sm id="resumo">
-            <ion-card-content >
-                    <ion-card-header>
-                        <ion-row>
-                            <ion-col>
-                                Portfólios
-                            </ion-col>
-                        </ion-row>
-                    </ion-card-header>
+            <ion-card-content>
+                <ion-card-header>
+                    <ion-row>
+                        <ion-col>
+                            Portfólios
+                        </ion-col>
+                    </ion-row>
+                </ion-card-header>
 
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col col-3>
-                               <span style="font-size: 12px">Portfólio</span>
-                            </ion-col>
-                            <ion-col col-3>
-                                <span style="font-size: 12px">Limite Concedido</span>
-                            </ion-col>
-                            <ion-col col-3>
-                                <span style="font-size: 12px">Disponível</span>
-                            </ion-col>
-                            <ion-col col-3>
-                                <span style="font-size: 12px">Utilizado</span>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                    
-                    <ion-grid >
-                        <ion-row *ngFor="let limite of limiteCliente">
-                            <ion-col>
-                                <small>{{limite.portfolio}}</small>
-                            </ion-col>
-                            <ion-col>
-                                <small>{{limite.limiteConcedido  | number:'1.2-2'}}</small>
-                            </ion-col>
-                            <ion-col>
-                                <small>{{limite.limiteDisponivel  | number:'1.2-2'}}</small>
-                            </ion-col>
-                            <ion-col>
-                                <small>{{limite.limiteUtilizado  | number:'1.2-2'}}</small>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-3>
+                            <span style="font-size: 12px">Portfólio</span>
+                        </ion-col>
+                        <ion-col col-3>
+                            <span style="font-size: 12px">Limite Concedido</span>
+                        </ion-col>
+                        <ion-col col-3>
+                            <span style="font-size: 12px">Disponível</span>
+                        </ion-col>
+                        <ion-col col-3>
+                            <span style="font-size: 12px">Utilizado</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <ion-grid>
+                    <ion-row *ngFor="let limite of limiteCliente">
+                        <ion-col>
+                            <small>{{limite.portfolio}}</small>
+                        </ion-col>
+                        <ion-col>
+                            <small>{{limite.limiteConcedido | number:'1.2-2'}}</small>
+                        </ion-col>
+                        <ion-col>
+                            <small>{{limite.limiteDisponivel | number:'1.2-2'}}</small>
+                        </ion-col>
+                        <ion-col>
+                            <small>{{limite.limiteUtilizado | number:'1.2-2'}}</small>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
             </ion-card-content>
         </ion-card>
 
-        <div class="btn-full-warp" *ngIf="tomador">
+        <div id="btn-full-warp" *ngIf="tomador">
             <ion-grid>
                 <ion-row>
                     <ion-col>

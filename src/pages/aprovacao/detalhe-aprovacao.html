@@ -92,7 +92,7 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Associado desde:
+                        Associado Desde:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoPropostaCreditoDTO.finalidade}}</i> -->
@@ -180,7 +180,7 @@
                 </ion-row>
                 <ion-row>
                     <ion-col col-6>
-                        Nível risco Operação:
+                        Nível Risco Operação:
                     </ion-col>
                     <ion-col col-6>
                         <!-- <i>{{dto.enquadramentoResPlanoPagamentoDTO.maiorValorParcela}}</i> -->
@@ -215,7 +215,7 @@
                     </ion-col>
                 </ion-row>
             </div>
-            <div class="btn-full-warp">
+            <div id="btn-full-warp">
                 <form #f="ngForm">
                     <!-- Caixa de texto parecer-->
                     <i>Parecer</i>
@@ -243,20 +243,13 @@
                                 <button ion-button block (click)="confirmar(f)" type="submit" [disabled]='botaoConfirmar'>Confirmar</button>
                             </ion-col>
                         </ion-row>
-                        <ion-row>
-                            <ion-col col-4>
-                                <button ion-button block (click)="abrirEstudoProposta()">Estudo</button>
-                            </ion-col>
-                            <ion-col col-4>
-                                <button ion-button block (click)="abrirDocumentacao()">GED</button>
-                            </ion-col>
-                            <ion-col col-4>
-                                <button ion-button block (click)="imprimir()">Imprimir</button>
-                            </ion-col>
-                        </ion-row>
                     </ion-grid>
                 </form>
             </div>
         </div>
     </div>
 </ion-content>
+
+<ion-footer id="app-footer" *ngIf="showRodape">
+    <mcc-rodape trocaPagina={{trocaPagina}}></mcc-rodape>
+</ion-footer>

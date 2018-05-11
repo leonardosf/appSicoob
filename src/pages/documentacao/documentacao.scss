@@ -1,16 +1,252 @@
-.page-documentacao {
+$icon-default: #70A8A5;
+#documentacao-page {
 
-    @media only screen and (min-width:1366px){
-   
-        width: 800px;
-        margin-left: 26em;
-       
+    .scroll-content {
+        margin-bottom: 0;
     }
-    @media only screen and (max-width:300px){
-    
-    width: 480px;
-    margin-left: 26em;
-    
-    } 
+    .search-box {
+        padding: 0;
+        overflow: hidden;
+        .col {
+            margin: 0;
+            padding: 0;
+           
+        }
+        .button {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-size: 2.3rem;
+            border: none !important;
+            outline: none;
+            margin: 0;
+        }
+        .label-md {
+            margin-top: 6px;
+        }
+        .input-has-focus {
+            .item-inner {
+                border-bottom-color: transparent;
+                box-shadow: none;
+            }
+        }
+        .search-box-tipo-pessoa {
+            background-color: #1F9A93;
+            color: #fff;
+            font-weight: 700;
+            padding: 0;
+            ion-select {
+                max-width: initial;
+                padding-right: $margin-sm;
+                .select-icon-inner {
+                    color: #fff
+                }
+            }
+        }
+        .search-box-input {
+            padding-left: $margin-sm;
+            .text-input {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    .garantia-box {
+        .grid {
+            padding: 0;
+            .item {
+                background: transparent;
+                padding-left: 0;
+                .label {
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 9px;
+                    letter-spacing: .05rem;
+                }
+                .input-cover,
+                &.item-select {
+                    border-bottom: 1px solid $singular-terciaria;
+                }
+                .text-input,
+                .select,
+                .datetime {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #fff;
+                }
+                &.item-select {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .list {
+        margin-bottom: 0
+    }
 
+    #tomador-info {
+        background-color: $app-box-color;
+        border: 1px solid $app-box-line-color;
+        border-radius: 4px;
+        .grid {
+            padding: 0
+        }
+        .card-header {
+            .col {
+                padding: 0;
+            }
+            .icon {
+                font-size: 30px;
+                color: $icon-default;
+                float: left;
+                margin-right: $margin-sm
+            }
+            h1 {
+                color: $app-box-text-color !important;
+                font-size: 14px !important;
+                font-weight: 300 !important;
+                white-space: normal;
+                small {
+                    display: block;
+                    font-size: 11px;
+                    font-weight: normal;
+                    letter-spacing: 0.05rem;
+                }
+            }
+        }
+        .card-content {
+            color: $app-box-text-color;
+            .grid {
+                .row {
+                    border-top: 1px solid $app-box-line-color;
+                    .col {
+                        &:first-child {
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            font-size: 11px;
+                            letter-spacing: 0.01rem;
+                            white-space: nowrap
+                        }
+                    }
+                }
+            }
+        }
+        .simulador-resumo {
+            background: $app-box-color;
+            .card-header {
+                color: #fff;
+                font-weight: 400;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: .05rem;
+                padding-bottom: 0;
+            }
+            .card-content {
+                padding-top: 0;
+                .grid {
+                    padding: 5px 0 0 0;
+                    letter-spacing: .05rem;
+                    border-top: 1px solid $app-box-line-color;
+                    margin-top: 5px;
+                    span {
+                        display: block;
+                        color: $apoio-primaria;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                    small {
+                        display: block;
+                        font-size: 9px;
+                        text-transform: uppercase;
+                        color: #fff;
+                        font-weight: 200;
+                    }
+                    .col:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+        @media only screen and (min-width:1367px){
+    
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
+            width: 800px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
+        } 
+    }
+
+    .documentos-list {
+        .row {
+                                
+            h1 {
+                color: $app-page-title-color !important;
+                font-size: 12px !important;
+                font-weight: 300 !important;
+                font-style: normal;
+                text-transform: uppercase;
+                
+        
+            }
+        
+            .col {
+                padding: 0;
+                color: #fff;
+                font-style: normal;
+                font-size: 12px !important;
+    
+                span{
+                    font-style: normal;
+                    font-size: 12px !important;
+                    display: block;
+                    padding-right: 4px;
+                }
+                i{
+                    color: $app-page-title-color !important;
+                    font-style: normal;
+                    font-size: 12px !important;
+                    display: block;
+                }
+                .checkbox {
+                    padding-left: 2px;
+                }
+            }
+        
+            i {
+                padding-left: 4px;
+                text-transform: capitalize;
+            }
+        }
+    }
 }

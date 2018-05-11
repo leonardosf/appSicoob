@@ -2,7 +2,7 @@ import { Http } from '@angular/http';
 import { Component } from '@angular/core';
 import { Platform, App, NavParams, NavController } from 'ionic-angular';
 import { ItensMenu } from '../../app/itens.menu';
-import { LoginPage } from '../../app/paginas';
+import { LoginPage, AprovacaoPage } from '../../app/paginas';
 import { Paths } from '../../app/paths';
 import { MensagemServicoProvider } from '../../providers/mensagem.servico';
 import { TomadorLSE } from '../../model/TomadorLSE';
@@ -56,7 +56,9 @@ export class HomePage {
     abrir(menu) {
         if(menu.pagina == OperacaoPage){
             this.mensagem.setInicioProposta("MesaOperacacoes");
-        }
+        } else if(menu.pagina == AprovacaoPage) {
+            this.mensagem.setInicioProposta("Aprovacao");
+        } 
         this.app.getActiveNav().push(menu.pagina);
     }
 

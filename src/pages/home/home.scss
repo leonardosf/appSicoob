@@ -1,8 +1,10 @@
 #div-padrao{
+
     margin-top: 10px;
-    @media only screen and (min-width:1366px){
-   
-        width: 800px;
+    
+    @media only screen and (min-width:1367px){
+
+        width: 1000px;
         margin: auto;
 
         #box-menu {
@@ -15,29 +17,81 @@
                 }
             }
         }
+
     }
 
-    @media only screen and (max-width:300px){
+    @media only screen and (min-width:768px) and (max-width:1366px){
+
+            width: 800px;
+            margin: auto;
+
+            #box-menu {
+
+                .item{
     
-    width: 480px;
-    margin: auto; 
+                    span{
     
+                        font-size: 15px;
+                    }
+                }
+            }
+
+    }
+    @media only screen and (min-width:641px) and (max-width:767px){
+
+        width: 450px;
+        margin: auto; 
+
+    }
+    @media only screen and (min-width:321px) and (max-width:360px){
+
+        width: 350px;
+        margin: auto; 
+
+    }
+    @media only screen and (width:320px){
+
+        width: 320px;
+        margin: auto; 
+
     } 
+
+
 }
 
 #div-lojista{
     margin-top: 10px;
-    @media only screen and (min-width:1366px){
-   
-        width: 800px;
+
+    @media only screen and (min-width:1367px){
+
+        width: 1000px;
         margin: auto; 
+
     }
-    
-    @media only screen and (max-width:300px){
-    
-    width: 480px;
-    margin: auto; 
-    
+
+    @media only screen and (min-width:769px) and (max-width:1366px){
+
+            width: 800px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:641px) and (max-width:768px){
+
+            width: 450px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:321px) and (max-width:640px){
+
+        width: 330px;
+        margin: auto; 
+
+    }
+    @media only screen and (width:320px){
+
+        width: 290px;
+        margin: auto; 
+
     } 
 }
 

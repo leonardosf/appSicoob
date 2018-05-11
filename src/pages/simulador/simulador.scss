@@ -54,6 +54,9 @@
         }
     }
     .simulador-box {
+        background-color: $app-box-color;
+        border: 1px solid $app-box-line-color;
+        border-radius: 4px;
         .grid {
             padding: 0;
             .item {
@@ -89,18 +92,44 @@
             }
         }
 
-        @media only screen and (min-width:1366px){
-   
+        @media only screen and (min-width:1367px){
+
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
             width: 800px;
             margin: auto; 
-           
+    
         }
-        @media only screen and (max-width:300px){
-        
-        width: 480px;
-        margin: auto; 
-        
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
         }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
+        } 
         
     }
     .simulador-resumo {
@@ -139,21 +168,134 @@
             }
         }
         
-        @media only screen and (min-width:1366px){
-   
+        @media only screen and (min-width:1367px){
+
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
             width: 800px;
             margin: auto; 
-           
+    
         }
-        @media only screen and (max-width:300px){
-        
-        width: 480px;
-        margin: auto; 
-        
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
         } 
     }
     .list {
         margin-bottom: 0
+    }
+
+    #tomador-info {
+        background-color: $app-box-color;
+        border: 1px solid $app-box-line-color;
+        border-radius: 4px;
+        .grid {
+            padding: 0
+        }
+        .card-header {
+            .col {
+                padding: 0;
+            }
+            .icon {
+                font-size: 30px;
+                color: $icon-default;
+                float: left;
+                margin-right: $margin-sm
+            }
+            h1 {
+                color: $app-box-text-color !important;
+                font-size: 14px !important;
+                font-weight: 300 !important;
+                white-space: normal;
+                small {
+                    display: block;
+                    font-size: 11px;
+                    font-weight: normal;
+                    letter-spacing: 0.05rem;
+                }
+            }
+        }
+        .card-content {
+            color: $app-box-text-color;
+            .grid {
+                .row {
+                    border-top: 1px solid $app-box-line-color;
+                    .col {
+                        &:first-child {
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            font-size: 11px;
+                            letter-spacing: 0.01rem;
+                            white-space: nowrap
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (min-width:1367px){
+
+            width: 1000px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (min-width:769px) and (max-width:1366px){
+    
+            width: 800px;
+            margin: auto; 
+    
+        }
+    
+        @media only screen and (width:768px){
+    
+                width: 750px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:641px) and (max-width:767px){
+    
+                width: 450px;
+                margin: auto; 
+    
+        }
+        @media only screen and (min-width:321px) and (max-width:360px){
+    
+            width: 350px;
+            margin: auto; 
+    
+        }
+        @media only screen and (width:320px){
+    
+            width: 290px;
+            margin: auto; 
+    
+        } 
     }
 }
 
@@ -185,4 +327,81 @@
     height: 20px;
     padding: $margin-sm 0;
     box-shadow: none;
+}
+
+.btn-full-warp {
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    .item-select {
+        background-color: transparent;
+
+        .item-inner {
+            border-bottom: 1px solid #94e1d6;
+            text-align: center;
+        }
+
+    }
+    .input-wrapper {
+        .label{
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            font-weight: 380 !important;
+        }
+        .select {
+            padding: 0;
+            padding-right: 3px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+    }
+    i{
+        text-transform: uppercase;
+        color: $app-box-text-color !important;
+        font-size: 13px !important;
+        font-weight: 300 !important;
+        font-style: normal;
+        white-space: normal;
+    }
+
+    @media only screen and (min-width:1367px){
+
+        width: 1000px;
+        margin: auto; 
+
+    }
+
+    @media only screen and (min-width:769px) and (max-width:1366px){
+
+        width: 800px;
+        margin: auto; 
+
+    }
+
+    @media only screen and (width:768px){
+
+            width: 750px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:641px) and (max-width:767px){
+
+            width: 450px;
+            margin: auto; 
+
+    }
+    @media only screen and (min-width:321px) and (max-width:360px){
+
+        width: 350px;
+        margin: auto; 
+
+    }
+    @media only screen and (width:320px){
+
+        width: 290px;
+        margin: auto; 
+
+    } 
 }

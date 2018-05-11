@@ -92,16 +92,23 @@
         border: none;
     }
 
-    @media only screen and (min-width:1366px){
+    @media only screen and (min-width:1367px){
    
-        width: 800px;
-        margin: auto; 
+        width: 1000px;
+        margin-left: 21em; 
        
     }
-    @media only screen and (max-width:300px){
+
+    @media only screen and (min-width:801px) and (max-width:1366px){
+   
+        width: 800px;
+        margin-left: 275px; 
+       
+    }
+    @media only screen and (max-width:800px){
     
-    width: 480px;
-    margin: auto; 
+        width: 480px;
+        margin: auto; 
     
     } 
 }

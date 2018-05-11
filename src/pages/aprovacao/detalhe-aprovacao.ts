@@ -22,6 +22,8 @@ export class DetalheAprovacaoPage {
     private parecerEstudoDTO:ParecerEstudoDTO;
     private parecerAnaliseTecnicaDTO:ParecerAnaliseTecnicaDTO;
     private parecerNegocialModel:String;
+    showRodape:Boolean = true;
+    trocaPagina:boolean = true;
 
     constructor(private navParams: NavParams, private nav:NavController, private mensagem:MensagemServicoProvider) {
 
@@ -128,16 +130,6 @@ export class DetalheAprovacaoPage {
         }
 
 
-    }
-
-    public abrirEstudoProposta() {
-        console.log(this.mensagem.getTomador);
-        this.nav.push(EstudoPage, {tomador: this.mensagem.getTomador()});
-    }
-
-    public abrirDocumentacao() {
-        console.log(this.mensagem.getTomador);
-        this.nav.push(DocumentacaoHomePage, {tomador: this.mensagem.getTomador(), isAprovacao: true});
     }
 
     public imprimir() {

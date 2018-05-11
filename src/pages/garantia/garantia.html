@@ -3,64 +3,60 @@
 </ion-header>
 
 <ion-content padding-sm id="garantiapage">
-    <div *ngIf="nomePessoa && numCpfCnpj">
-        <ion-card padding-sm id="tomador-info">
-            <ion-card-header>
-                <ion-grid>
-                    <ion-row>
-                        <ion-col col-auto>
-                            <i class="mc-icon-user icon"></i>
-                        </ion-col>
-                        <ion-col>
-                            <h1>
-                                {{nomePessoa}}
-                                <small>{{numCpfCnpj}}</small>
-                            </h1>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
-            </ion-card-header>
-        </ion-card>
-    </div>
-    <div>
-        <ion-card class="garantia-resumo">
-            <ion-card-header>
+    <ion-card padding-sm class="tomador-info">
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-auto>
+                        <i class="mc-icon-user icon"></i>
+                    </ion-col>
+                    <ion-col>
+                        <h1>
+                            {{nomePessoa}}
+                            <small>{{numCpfCnpj}}</small>
+                        </h1>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+    </ion-card>
+    <ion-card class="garantia-resumo">
+        <ion-card-header>
+            <ion-row>
+                <ion-col>
+                    Real
+                </ion-col>
+                <ion-col></ion-col>
+                <ion-col>
+                    Pessoal
+                </ion-col>
+            </ion-row>        
+        </ion-card-header >
+        <ion-card-content>
+            <ion-grid>
                 <ion-row>
                     <ion-col>
-                        Real
+                        <small>Exigido</small>
+                        <span>{{realExigido}}</span>
+                        <small>Percentual</small>
+                        <span>{{percRealExigido}}</span>
                     </ion-col>
-                    <ion-col></ion-col>
                     <ion-col>
-                        Pessoal
+                        <small>Alcançado</small>
+                        <span>{{realAlcancado}}</span>
+                        <small> Percentual</small>
+                        <span>{{percRealAlcancado}}</span>
                     </ion-col>
-                </ion-row>        
-            </ion-card-header >
-            <ion-card-content>
-                <ion-grid>
-                    <ion-row>
-                        <ion-col>
-                            <small>Exigido</small>
-                            <span>{{realExigido}}</span>
-                            <small>Percentual</small>
-                            <span>{{percRealExigido}}</span>
-                        </ion-col>
-                        <ion-col>
-                            <small>Alcançado</small>
-                            <span>{{realAlcancado}}</span>
-                            <small> Percentual</small>
-                            <span>{{percRealAlcancado}}</span>
-                        </ion-col>
-                        <ion-col>
-                            <small>Exigido</small>
-                            <span>{{pessoalExigido}}</span>
-                            <small> Alcançado</small>
-                            <span>{{pessoalAlcancado}}</span>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
-            </ion-card-content>
-        </ion-card>
-    </div>
+                    <ion-col>
+                        <small>Exigido</small>
+                        <span>{{pessoalExigido}}</span>
+                        <small> Alcançado</small>
+                        <span>{{pessoalAlcancado}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
     <div class="btn-full-warp">
         <ion-grid class="operacao-list">
                 <ion-row>

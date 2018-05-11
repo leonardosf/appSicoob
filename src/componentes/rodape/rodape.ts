@@ -40,6 +40,7 @@ export class Rodape {
         let itensMenu: ItensMenu = new ItensMenu();
         this.faseAtualProposta = this.mensagem.getFaseAtualProposta();
 
+        //FLUXO QUANDO A PROPOSTA VIER DO MENU SIMULAÇÃO
         if (this.mensagem.getInicioProposta() == "MenuSimulacao") {
 
             itensMenu = new ItensMenu();
@@ -62,9 +63,16 @@ export class Rodape {
                     break;
                 }
             }
+        } else if(this.mensagem.getInicioProposta() == "Aprovacao") {
+
+             //FLUXO QUANDO A PROPOSTA VIER DA MENU APROVAÇÕES
+             itensMenu = new ItensMenu();
+
+            this.itens = itensMenu.iconRodaPeEstudo().iconRodaPeDocumentacao().iconRodaPeImprimir().construir();
+
         } else {
 
-            //FLUXO QUANDO A PROPOSTA VIER DO MENU MESA OPERAÇOES
+            //FLUXO QUANDO A PROPOSTA VIER DA MENU MESA OPERAÇOES
             itensMenu = new ItensMenu();
 
             switch (this.faseAtualProposta) {
@@ -109,13 +117,12 @@ export class Rodape {
                                                         isExcluir: true
                                                     });
         } else if(menu.pagina == EstudoPage){
-
             this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador, showRodape: true});
         } else {
             this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador});
         }
 
-        this.app.getActiveNav().remove(0, this.app.getActiveNav().getViews().length);
+        // this.app.getActiveNav().remove(0, this.app.getActiveNav().getViews().length);
     }
 
     abrir(menu){
