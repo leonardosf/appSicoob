@@ -166,23 +166,35 @@
             }
             
             @media only screen and (min-width:1367px){
-   
+
                 width: 1000px;
-                margin-left: 21em; 
-               
+                margin: auto; 
+        
             }
         
-            @media only screen and (min-width:801px) and (max-width:1366px){
-           
-                width: 800px;
-                margin-left: 275px; 
-               
+            @media only screen and (min-width:769px) and (max-width:1366px){
+        
+                    width: 800px;
+                    margin: auto; 
+        
             }
-            @media only screen and (max-width:800px){
-            
-                width: 480px;
+            @media only screen and (min-width:641px) and (max-width:768px){
+        
+                    width: 450px;
+                    margin: auto; 
+        
+            }
+            @media only screen and (min-width:321px) and (max-width:360px){
+        
+                width: 350px;
                 margin: auto; 
-            
+        
+            }
+            @media only screen and (width:320px){
+        
+                width: 290px;
+                margin: auto; 
+        
             } 
         }
         .list {

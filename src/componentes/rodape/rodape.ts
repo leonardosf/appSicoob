@@ -116,12 +116,11 @@ export class Rodape {
                                                         identificadorLinhacredito: 'Linha de Crédito 1',
                                                         isExcluir: true
                                                     });
-        } else if(menu.pagina == EstudoPage){
+        } else if(menu.pagina == EstudoPage && (menu.pagina != this.app.getActiveNav().getActive().component)){
             this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador, showRodape: true});
-        } else {
+        } else if (menu.pagina != this.app.getActiveNav().getActive().component){
             this.app.getActiveNav().push(menu.pagina, {"tomador": this.tomador});
         }
-
         // this.app.getActiveNav().remove(0, this.app.getActiveNav().getViews().length);
     }
 

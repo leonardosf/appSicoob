@@ -217,7 +217,7 @@
             }
         }
         
- @media only screen and (min-width:1367px){
+        @media only screen and (min-width:1367px){
     
             width: 1000px;
             margin: auto; 
@@ -254,7 +254,50 @@
             width: 290px;
             margin: auto; 
     
-        } 
+        }
+        .documentos-list {
+            background: transparent;
+            .row {
+                                    
+                h1 {
+                    color: $app-page-title-color !important;
+                    font-size: 12px !important;
+                    font-weight: 300 !important;
+                    font-style: normal;
+                    text-transform: uppercase;
+                    
+            
+                }
+            
+                .col {
+                    padding: 0;
+                    color: #fff;
+                    font-style: normal;
+                    font-size: 12px !important;
+        
+                    span{
+                        font-style: normal;
+                        font-size: 12px !important;
+                        display: block;
+                        padding-right: 4px;
+                    }
+                    i{
+                        color: $app-page-title-color !important;
+                        font-style: normal;
+                        font-size: 12px !important;
+                        display: block;
+                    }
+                    .checkbox {
+                        padding-left: 2px;
+                    }
+                }
+            
+                i {
+                    padding-left: 4px;
+                    text-transform: capitalize;
+                }
+            }
+        }
     }
 }
 
@@ -324,48 +367,5 @@
         font-weight: 300 !important;
         font-style: normal;
         white-space: normal;
-    }
-}
-
-.documentos-list {
-    .row {
-                            
-        h1 {
-            color: $app-page-title-color !important;
-            font-size: 12px !important;
-            font-weight: 300 !important;
-            font-style: normal;
-            text-transform: uppercase;
-            
-    
-        }
-    
-        .col {
-            padding: 0;
-            color: #fff;
-            font-style: normal;
-            font-size: 12px !important;
-
-            span{
-                font-style: normal;
-                font-size: 12px !important;
-                display: block;
-                padding-right: 4px;
-            }
-            i{
-                color: $app-page-title-color !important;
-                font-style: normal;
-                font-size: 12px !important;
-                display: block;
-            }
-            .checkbox {
-                padding-left: 2px;
-            }
-        }
-    
-        i {
-            padding-left: 4px;
-            text-transform: capitalize;
-        }
     }
 }
