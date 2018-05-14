@@ -16,8 +16,9 @@ export class HomePage {
     private menus;
     private menusAux;
     public cpfCnpj: string;
-    public teste;
+    public usuario:String = "lojista";
     public perfil:String;
+    public titulo:String = "Lojista";
     quantidadeMensagensNaoLidas = 0;
 
     constructor(public app: App,
@@ -45,7 +46,8 @@ export class HomePage {
        
         // REMOVER APOS APRESENTAÇÃO DO PROTOTIPO
         if(this.perfil.toUpperCase() != "lojista".toUpperCase()) {
-            this.teste = "none";
+            this.usuario = "cooperativa";
+            this.titulo = "Cooperativa";
         }
         
 

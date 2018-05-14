@@ -1,11 +1,10 @@
 <ion-header>
-    <mcc-cabecalho icoVoltar={{icoVoltar}} icoHome="true"></mcc-cabecalho>
+    <mcc-cabecalho icoVoltar={{icoVoltar}} icoHome="true" titulo="{{titulo}}"></mcc-cabecalho>
 </ion-header>
 
 <ion-content>
     <!-- PERFIL COOPERATIVA -->
-    <div id="div-padrao">
-        <span id="text-label">COOPERATIVA</span>
+    <div id="div-padrao" *ngIf="usuario == 'cooperativa'">
         <ion-grid id="box-menu">
             <ion-row>
                 <ion-col col-6 *ngFor="let menu of menus" (click)="abrir(menu)">
@@ -18,8 +17,7 @@
         </ion-grid>
     </div>
     <!-- PERFIL LOGISTA -->
-    <div id="div-lojista" [ngStyle]="{'display':teste}">
-        <span id="text-label">LOJISTA</span>
+    <div id="div-lojista" *ngIf="usuario == 'lojista'">
         <ion-grid id="box-menu">
             <ion-row>
                 <ion-col col-6 *ngFor="let menu of menus" (click)="abrir(menu)">
