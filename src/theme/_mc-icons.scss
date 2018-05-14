@@ -2,7 +2,8 @@
 $icomoon-font-path: '#{$font-path}/mc-icons';
 $mc-icon-logo-credito: "\e91d";
 $mc-icon-logo-full: "\e91c";
-$mc-icon-logo-sicoob-retarg-full: "\e91ee";
+$mc-icon-logo-sicoob-retag-full: "\e91ee";
+$mc-icon-logo-credito-retag-full: "\e91ef";
 $mc-icon-info: "\e91b";
 $mc-icon-checked: "\e91a";
 $mc-icon-anterior: "\e917";
@@ -24,7 +25,7 @@ $mc-icon-simular: "\e90e";
 $mc-icon-mensagem: "\e90f";
 //icons menu home
 $mc-icon-operacoes: "\e910";
-$mc-icon-aprovacao: "\e924";//criar novo icon
+$mc-icon-aprovacao: "\e925";//criar novo icon
 
 $mc-icon-photo-add: "\e905";
 $mc-icon-done: "\e904";
@@ -95,9 +96,15 @@ $mc-icon-rodape-estudo: "\e90a";
     }
 }
 
-.mc-icon-logo-sicoob-retarg-full {
+.mc-icon-logo-sicoob-retag-full {
     &:before {
-        content: $mc-icon-logo-sicoob-retarg-full;
+        content: $mc-icon-logo-sicoob-retag-full;
+    }
+}
+
+.mc-icon-logo-credito-retag-full {
+    &:before {
+        content: $mc-icon-logo-credito-retag-full;
     }
 }
 
