@@ -215,38 +215,38 @@
                     </ion-col>
                 </ion-row>
             </div>
-            <div id="btn-full-warp">
-                <form #f="ngForm">
-                    <!-- Caixa de texto parecer-->
-                    <i>Parecer</i>
-                    <ion-item id="input-textarea">
-                        <ion-textarea [(ngModel)]="parecerNegocialModel" ngControl="parecerNeg" #parecerNeg="ngModel" name="parecerNeg"></ion-textarea>
-                    </ion-item>
-                    <!-- <p *ngIf="f.submitted && !parecerNeg.valid" class="text-center">
-                        Parecer obrigatório.
-                    </p> -->
-                    <!-- Botoes -->
-                    <ion-grid>
-                        <ion-row>
-
-                            <ion-col col-6>
-                                <ion-item>
-                                    <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" (ionChange)="atualizaAcaoParecer()"
-                                        cancelText="Cancelar" [disabled]='campoAcaoParecer' placeholder="Selecione">
-                                        <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
-                                        <ion-option *ngFor="let acao of acaoParecer" [value]="acao.codigo">{{acao.descricao}}</ion-option>
-                                    </ion-select>
-                                </ion-item>
-                            </ion-col>
-
-                            <ion-col col-6>
-                                <button ion-button block (click)="confirmar(f)" type="submit" [disabled]='botaoConfirmar'>Confirmar</button>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </form>
-            </div>
         </div>
+    </div>
+    <div id="btn-full-warp">
+        <form #f="ngForm">
+            <!-- Caixa de texto parecer-->
+            <i>Parecer</i>
+            <ion-item id="input-textarea">
+                <ion-textarea [(ngModel)]="parecerNegocialModel" ngControl="parecerNeg" #parecerNeg="ngModel" name="parecerNeg"></ion-textarea>
+            </ion-item>
+            <!-- <p *ngIf="f.submitted && !parecerNeg.valid" class="text-center">
+                Parecer obrigatório.
+            </p> -->
+            <!-- Botoes -->
+            <ion-grid>
+                <ion-row>
+
+                    <ion-col col-6>
+                        <ion-item>
+                            <ion-select interface="alert" [(ngModel)]="acaoParecerModel" ngControl="acaoPar" #acaoPar="ngModel" name="acaoPar" (ionChange)="atualizaAcaoParecer()"
+                                cancelText="Cancelar" [disabled]='campoAcaoParecer' placeholder="Selecione">
+                                <!-- <ion-option value='Selecione'>Selecione</ion-option> -->
+                                <ion-option *ngFor="let acao of acaoParecer" [value]="acao.codigo">{{acao.descricao}}</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+
+                    <ion-col col-6>
+                        <button ion-button block (click)="confirmar(f)" type="submit" [disabled]='botaoConfirmar'>Confirmar</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </form>
     </div>
 </ion-content>
 

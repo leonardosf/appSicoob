@@ -92,44 +92,57 @@
             }
         }
 
-        @media only screen and (min-width:1367px){
+        @media only screen and (width:1600px){
 
             width: 1000px;
-            margin: auto; 
-    
+            margin: auto;
         }
     
-        @media only screen and (min-width:769px) and (max-width:1366px){
+        @media only screen and (width:1440px){
+    
+            width: 900px;
+            margin: auto;
+        }
+        
+        @media only screen and (width:1366px){
     
             width: 800px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1360px) {
+    
+            width: 700px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1280px) {
+    
+            width: 600px;
             margin: auto; 
     
         }
     
-        @media only screen and (width:768px){
+        @media only screen and (width:1024px) {
     
-                width: 750px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:641px) and (max-width:767px){
-    
-                width: 450px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:321px) and (max-width:360px){
-    
-            width: 350px;
+            width: 500px;
             margin: auto; 
     
         }
-        @media only screen and (width:320px){
     
-            width: 290px;
+        @media only screen and (width:800px){
+    
+            width: 400px;
             margin: auto; 
     
         } 
+    
+        @media only screen and (width:600px){
+    
+            width: 300px;
+            margin: auto; 
+    
+        }
         
     }
     .simulador-resumo {
@@ -168,44 +181,57 @@
             }
         }
         
-        @media only screen and (min-width:1367px){
+        @media only screen and (width:1600px){
 
             width: 1000px;
-            margin: auto; 
-    
+            margin: auto;
         }
     
-        @media only screen and (min-width:769px) and (max-width:1366px){
+        @media only screen and (width:1440px){
+    
+            width: 900px;
+            margin: auto;
+        }
+        
+        @media only screen and (width:1366px){
     
             width: 800px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1360px) {
+    
+            width: 700px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1280px) {
+    
+            width: 600px;
             margin: auto; 
     
         }
     
-        @media only screen and (width:768px){
+        @media only screen and (width:1024px) {
     
-                width: 750px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:641px) and (max-width:767px){
-    
-                width: 450px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:321px) and (max-width:360px){
-    
-            width: 350px;
+            width: 500px;
             margin: auto; 
     
         }
-        @media only screen and (width:320px){
     
-            width: 290px;
+        @media only screen and (width:800px){
+    
+            width: 400px;
             margin: auto; 
     
         } 
+    
+        @media only screen and (width:600px){
+    
+            width: 300px;
+            margin: auto; 
+    
+        }
     }
     .list {
         margin-bottom: 0
@@ -258,44 +284,58 @@
                 }
             }
         }
-        @media only screen and (min-width:1367px){
+
+        @media only screen and (width:1600px){
 
             width: 1000px;
-            margin: auto; 
-    
+            margin: auto;
         }
     
-        @media only screen and (min-width:769px) and (max-width:1366px){
+        @media only screen and (width:1440px){
+    
+            width: 900px;
+            margin: auto;
+        }
+        
+        @media only screen and (width:1366px){
     
             width: 800px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1360px) {
+    
+            width: 700px;
+            margin: auto;
+        }
+    
+        @media only screen and (width:1280px) {
+    
+            width: 600px;
             margin: auto; 
     
         }
     
-        @media only screen and (width:768px){
+        @media only screen and (width:1024px) {
     
-                width: 750px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:641px) and (max-width:767px){
-    
-                width: 450px;
-                margin: auto; 
-    
-        }
-        @media only screen and (min-width:321px) and (max-width:360px){
-    
-            width: 350px;
+            width: 500px;
             margin: auto; 
     
         }
-        @media only screen and (width:320px){
     
-            width: 290px;
+        @media only screen and (width:800px){
+    
+            width: 400px;
             margin: auto; 
     
         } 
+    
+        @media only screen and (width:600px){
+    
+            width: 300px;
+            margin: auto; 
+    
+        }
     }
 }
 
@@ -366,42 +406,55 @@
         white-space: normal;
     }
 
-    @media only screen and (min-width:1367px){
+    @media only screen and (width:1600px){
 
         width: 1000px;
-        margin: auto; 
-
+        margin: auto;
     }
 
-    @media only screen and (min-width:769px) and (max-width:1366px){
+    @media only screen and (width:1440px){
+
+        width: 900px;
+        margin: auto;
+    }
+    
+    @media only screen and (width:1366px){
 
         width: 800px;
+        margin: auto;
+    }
+
+    @media only screen and (width:1360px) {
+
+        width: 700px;
+        margin: auto;
+    }
+
+    @media only screen and (width:1280px) {
+
+        width: 600px;
         margin: auto; 
 
     }
 
-    @media only screen and (width:768px){
+    @media only screen and (width:1024px) {
 
-            width: 750px;
-            margin: auto; 
-
-    }
-    @media only screen and (min-width:641px) and (max-width:767px){
-
-            width: 450px;
-            margin: auto; 
-
-    }
-    @media only screen and (min-width:321px) and (max-width:360px){
-
-        width: 350px;
+        width: 500px;
         margin: auto; 
 
     }
-    @media only screen and (width:320px){
 
-        width: 290px;
+    @media only screen and (width:800px){
+
+        width: 400px;
         margin: auto; 
 
     } 
+
+    @media only screen and (width:600px){
+
+        width: 300px;
+        margin: auto; 
+
+    }
 }

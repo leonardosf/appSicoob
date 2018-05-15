@@ -38,37 +38,58 @@
 
 .theme-row {
   @include make-row;
-  @media only screen and (min-width:1367px){
-   
-    width: 1000px;
-    margin: auto; 
-   
-  }
 
-  @media only screen and (min-width:769px) and (max-width:1366px){
+   @media only screen and (width:1600px){
+
+      width: 1000px;
+      margin: auto;
+    }
+
+    @media only screen and (width:1440px){
+
+      width: 900px;
+      margin: auto;
+    }
+    
+    @media only screen and (width:1366px){
 
       width: 800px;
-      margin: auto; 
-    
-  }
-  @media only screen and (min-width:641px) and (max-width:768px){
+      margin: auto;
+    }
 
-      width: 450px;
-      margin: auto; 
+    @media only screen and (width:1360px) {
 
-  }
-  @media only screen and (min-width:321px) and (max-width:640px){
+      width: 700px;
+      margin: auto;
+    }
 
-    width: 330px;
-    margin: auto; 
+    @media only screen and (width:1280px) {
 
-  }
-  @media only screen and (width:320px){
+        width: 600px;
+        margin: auto; 
 
-    width: 290px;
-    margin: auto; 
+    }
 
-  } 
+    @media only screen and (width:1024px) {
+
+        width: 500px;
+        margin: auto; 
+
+    }
+
+    @media only screen and (width:800px){
+
+        width: 400px;
+        margin: auto; 
+
+    } 
+
+    @media only screen and (width:600px){
+
+        width: 300px;
+        margin: auto; 
+
+    }
 }
 
 
