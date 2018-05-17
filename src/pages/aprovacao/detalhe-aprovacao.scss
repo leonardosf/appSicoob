@@ -250,7 +250,7 @@
             background: rgba(0, 0, 0, 0.2);
             padding: $margin-sm;
             overflow-x: hidden;
-            overflow-y: scroll;
+            overflow-y: hidden;
             .item-wrapper:last-child .item-block {
                 border-bottom: none !important
             }

@@ -13,6 +13,12 @@
         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.45);
         height: 65px !important;
         overflow: hidden;
+        img{
+            text-align: center;
+            max-width: 100%;
+            height: 40px !important;
+            overflow: hidden;
+        }
     }
     .label {
         i:before {
