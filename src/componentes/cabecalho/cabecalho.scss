@@ -152,6 +152,12 @@
         span {
             display: none;
         }
+        img {
+            text-align: center;
+            max-width: 100%;
+            height: 30px !important;
+            overflow: hidden;
+        }
     }
     .row {
         display: flex;
